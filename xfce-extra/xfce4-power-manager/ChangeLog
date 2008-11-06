@@ -3,6 +3,10 @@
 # $Header: $
 
   06 Nov 2008; Christoph Mende <angelos@gentoo.org>
+  +xfce4-power-manager-0.6.0_rc1.ebuild:
+  Initial non-live ebuild
+
+  06 Nov 2008; Christoph Mende <angelos@gentoo.org>
   +xfce4-power-manager-9999.ebuild:
   Initial import
 
