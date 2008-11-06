@@ -1,0 +1,23 @@
+# ChangeLog for xfce-base/xfce-utils
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  24 Sep 2008; Christoph Mende <angelos@gentoo.org> metadata.xml,
+  xfce-utils-9999.ebuild:
+  Added lock USE flag for screen locking
+
+  08 Sep 2008; Christoph Mende <angelos@gentoo.org> xfce-utils-9999.ebuild:
+  Removed --enable-gdm and fixed xfce4 dependencies
+
+  23 Jun 2008; Christoph Mende <angelos@gentoo.org> xfce-utils-9999.ebuild:
+  Removed old mcs references
+
+  29 Sep 2007; Christoph Mende <angelos@gentoo.org> +files/Gentoo:
+  Added missing Gentoo file
+
+  29 Jun 2007; Christoph Mende <angelos@gentoo.org> xfce-utils-9999.ebuild:
+  Removed deprecated dependency on <dbus-1
+
+  06 Jun 2007; Christoph Mende <angelos@gentoo.org> ChangeLog:
+  Initial ChangeLog
+

@@ -1,0 +1,16 @@
+# ChangeLog for xfce-extra/exo
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  23 Jun 2008; Christoph Mende <angelos@gentoo.org> exo-9999.ebuild:
+  Removed old mcs references
+
+  29 May 2008; Christoph Mende <angelos@gentoo.org> exo-9999.ebuild:
+  python_mod_* functions are already aware
+
+  18 Dec 2007; Christoph Mende <angelos@gentoo.org> exo-9999.ebuild:
+  Moved MY_PN before inherit as we need it in the eclass
+
+  06 Jun 2007; Christoph Mende <angelos@gentoo.org> ChangeLog:
+  Initial ChangeLog
+

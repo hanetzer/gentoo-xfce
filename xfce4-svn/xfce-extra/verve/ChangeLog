@@ -1,0 +1,13 @@
+# ChangeLog for xfce-extra/verve
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  04 Dec 2007; Christoph Mende <angelos@gentoo.org> verve-9999.ebuild:
+  Add DOCS
+
+  29 Jun 2007; Christoph Mende <angelos@gentoo.org> verve-9999.ebuild:
+  Removed deprecated dependency on <dbus-1
+
+  08 Jun 2007; Christoph Mende <angelos@gentoo.org> +verve-0.3.5.ebuild:
+  Initial import
+

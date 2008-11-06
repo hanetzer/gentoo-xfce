@@ -1,0 +1,12 @@
+# ChangeLog for xfce-extra/xfce4-volstatus-icon
+# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  24 Jul 2007; Christoph Mende <angelos@gentoo.org>
+  xfce4-volstatus-icon-9999.ebuild:
+  Added dependency on ghal since it's split from xfce4-volstatus-icon
+
+  12 Jun 2007; Christoph Mende <angelos@gentoo.org>
+  +xfce4-volstatus-icon-9999.ebuild:
+  Initial import
+

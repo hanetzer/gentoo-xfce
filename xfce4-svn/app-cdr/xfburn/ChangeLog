@@ -1,0 +1,43 @@
+# ChangeLog for xfce-extra/xfburn
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  28 Jun 2008; Christoph Mende <angelos@gentoo.org> xfburn-9999.ebuild:
+  Added --enable-final
+
+  23 Jun 2008; Christoph Mende <angelos@gentoo.org> xfburn-9999.ebuild:
+  Sync with the main tree
+
+  29 May 2008; Christoph Mende <angelos@gentoo.org> xfburn-9999.ebuild:
+  Sync with the main tree
+
+  10 May 2008; Christoph Mende <angelos@gentoo.org> xfburn-9999.ebuild:
+  Updated ebuild to reflect changes on upstream's svn
+
+  25 Feb 2008; Christoph Mende <angelos@gentoo.org> xfburn-9999.ebuild:
+  Fixed workaround for libburn-0.4
+
+  05 Jan 2008; Christoph Mende <angelos@gentoo.org> xfburn-9999.ebuild:
+  Fix building against libburn-0.4.0
+
+  23 Dec 2007; Christoph Mende <angelos@gentoo.org> xfburn-9999.ebuild:
+  Explicitly depend on libburn-0.3 for now
+
+  03 Dec 2007; Christoph Mende <angelos@gentoo.org> xfburn-9999.ebuild:
+  Sync keywords with the main tree
+
+  25 Aug 2007; Christoph Mende <angelos@gentoo.org> xfburn-9999.ebuild:
+  Raised libisofs dependency to 0.2.8
+
+  23 Aug 2007; Christoph Mende <angelos@gentoo.org> xfburn-9999.ebuild:
+  Changed USE=minimal to USE=xfce
+
+  21 Aug 2007; Christoph Mende <angelos@gentoo.org> xfburn-9999.ebuild:
+  Sync with the tree
+
+  13 Aug 2007; Christoph Mende <angelos@gentoo.org> xfburn-9999.ebuild:
+  Added ~x86
+
+  06 Jun 2007; Christoph Mende <angelos@gentoo.org> ChangeLog:
+  Initial ChangeLog
+

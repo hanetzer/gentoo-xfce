@@ -1,0 +1,39 @@
+Index: panel/window.c
+===================================================================
+--- panel/window.c	(revision 25931)
++++ panel/window.c	(working copy)
+@@ -8,7 +8,7 @@
+ #include "pygobject.h"
+ #include <gtk/gtk.h>
+ #include <libxfce4panel/xfce-panel-window.h>
+-#include <libxfce4panel/xfce-panel-enum-types.h>
++#include <libxfce4panel/libxfce4panel-enum-types.h>
+ 
+ extern PyTypeObject PyGtkWidget_Type;
+ 
+Index: panel/plugin_iface.c
+===================================================================
+--- panel/plugin_iface.c	(revision 25931)
++++ panel/plugin_iface.c	(working copy)
+@@ -8,7 +8,7 @@
+ #include "pygobject.h"
+ #include <gtk/gtk.h>
+ #include <libxfce4panel/xfce-panel-plugin-iface.h>
+-#include <libxfce4panel/xfce-panel-enum-types.h>
++#include <libxfce4panel/libxfce4panel-enum-types.h>
+ 
+ extern PyTypeObject PyGtkWidget_Type;
+ 
+Index: panel/enums.c
+===================================================================
+--- panel/enums.c	(revision 25931)
++++ panel/enums.c	(working copy)
+@@ -8,7 +8,7 @@
+ #include "pygobject.h"
+ #include <gtk/gtk.h>
+ #include <libxfce4panel/xfce-panel-enums.h>
+-#include <libxfce4panel/xfce-panel-enum-types.h>
++#include <libxfce4panel/libxfce4panel-enum-types.h>
+ 
+ extern PyTypeObject PyGtkWidget_Type;
+ 
