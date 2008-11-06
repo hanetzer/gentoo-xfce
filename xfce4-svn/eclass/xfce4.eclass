@@ -11,7 +11,7 @@
 # minimum of duplication in ebuilds
 
 inherit fdo-mime gnome2-utils
-[[ ${PV} = 9999* ]] && inherit subversion
+[[ ${PV} = 9999* ]] && inherit subversion multilib
 
 LICENSE="GPL-2"
 SLOT="0"
