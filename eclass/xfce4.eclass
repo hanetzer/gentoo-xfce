@@ -49,10 +49,11 @@ xfce4_plugin() {
 # Change SRC_URI (or ESVN_REPO_URI for live ebuilds) to the goodies path
 # and set HOMEPAGE to goodies.xfce.org
 xfce4_goodies() {
+	MY_P=${MY_PN:-${PN}}-${MY_PV:-${PV}}
 	if [[ ${PV} = 9999* ]]; then
 		ESVN_REPO_URI="http://svn.xfce.org/svn/goodies/${MY_PN:-${PN}}/trunk"
 	else
-		SRC_URI="http://goodies.xfce.org/releases/${MY_PN:-${PN}}/${MY_P:-${P}}${COMPRESS}"
+		SRC_URI="http://goodies.xfce.org/releases/${MY_PN:-${PN}}/${MY_P}${COMPRESS}"
 	fi
 	HOMEPAGE="http://goodies.xfce.org/"
 }
