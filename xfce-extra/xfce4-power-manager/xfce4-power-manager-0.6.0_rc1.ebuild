@@ -24,6 +24,4 @@ RDEPEND=">=dev-libs/dbus-glib-0.70
 DEPEND="${RDEPEND}
 	dev-util/intltool"
 
-S="${WORKDIR}/${PN}-${MY_PV}"
-
 XFCE_CONFIG+=" $(use_enable libnotify)"
