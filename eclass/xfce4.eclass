@@ -24,6 +24,8 @@ if [[ ${PV} = 9999* ]]; then
 	[[ ${PN} != xfce4-dev-tools ]] && DEPEND+=" >=dev-util/xfce4-dev-tools-9999"
 fi
 
+S="${WORKDIR}/${MY_PN:-${PN}}-${MY_PV:-${PV}}"
+
 COMPRESS=".tar.bz2"
 
 [[ -z ${XFCE_VERSION} ]] && XFCE_VERSION=${PV}
@@ -41,7 +43,6 @@ xfce4_gzipped() {
 xfce4_plugin() {
 	[[ -z ${MY_PN} ]] && MY_PN="${PN}-plugin"
 	[[ -z ${MY_P} ]] && MY_P="${MY_PN}-${PV}"
-	S="${WORKDIR}/${MY_P}"
 }
 
 # @FUNCTION: xfce4_goodies
