@@ -4,7 +4,7 @@
 
   07 Nov 2008; Christoph Mende <angelos@gentoo.org>
   xfce4-power-manager-0.6.0_rc1.ebuild:
-  Remove S as it's not set in the eclass
+  Remove S as it's now set in the eclass
 
   06 Nov 2008; Christoph Mende <angelos@gentoo.org>
   +xfce4-power-manager-0.6.0_rc1.ebuild:
