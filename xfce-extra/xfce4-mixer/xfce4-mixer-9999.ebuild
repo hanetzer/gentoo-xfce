@@ -20,6 +20,7 @@ RDEPEND=">=dev-libs/glib-2.12:2
 	>=xfce-base/libxfce4util-${XFCE_VERSION}
 	>=xfce-base/libxfcegui4-${XFCE_VERSION}
 	>=xfce-base/xfce4-panel-${XFCE_VERSION}
+	>=xfce-base/xfconf-${XFCE_VERSION}
 	alsa? ( media-plugins/gst-plugins-alsa )
 	oss? ( media-plugins/gst-plugins-oss )"
 DEPEND="${RDEPEND}
