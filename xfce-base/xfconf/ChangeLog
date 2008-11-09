@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Nov 2008; Christoph Mende <angelos@gentoo.org> xfconf-9999.ebuild:
+  Remove unneeded inherit flag-o-matic
+
   16 Sep 2008; Christoph Mende <angelos@gentoo.org> xfconf-9999.ebuild:
   Removed gtk+ dependency and --enable-xkb
 
