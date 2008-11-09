@@ -7,6 +7,8 @@ EAPI=1
 MY_PV=${PV/_rc/RC}
 inherit xfce4
 
+XFCE_VERSION=4.5.90
+
 xfce4_goodies
 
 DESCRIPTION="Xfce4 power manager"
