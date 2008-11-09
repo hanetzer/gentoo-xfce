@@ -6,6 +6,8 @@ EAPI=2
 
 inherit xfce4
 
+XFCE_VERSION=4.5.90
+
 xfce4_goodies
 
 DESCRIPTION="Thunar volume management"
