@@ -24,11 +24,8 @@ RDEPEND=">=dev-lang/perl-5.6
 DEPEND="${RDEPEND}
 	dev-util/intltool"
 
-XFCE_CONFIG="${XFCE_CONFIG}	$(use_enable python) \
-	$(use_enable libnotify notifications) \
+XFCE_CONFIG+=" $(use_enable python) $(use_enable libnotify notifications)
 	$(use_enable hal)"
-
-DOCS="AUTHORS ChangeLog HACKING NEWS README THANKS TODO"
 
 # See bug 166568 for reference
 src_unpack() {
@@ -52,3 +49,5 @@ pkg_postrm() {
 	xfce4_pkg_postrm
 	python_mod_cleanup /usr/lib*/python*/site-packages
 }
+
+DOCS="AUTHORS ChangeLog HACKING NEWS README THANKS TODO"
