@@ -12,21 +12,21 @@ DESCRIPTION="Xfce4 settings"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="debug libnotify"
 
-RDEPEND=">=dev-libs/glib-2.12.0:2
+RDEPEND=">=dev-libs/glib-2.12:2
 	dev-libs/dbus-glib
 	gnome-base/libglade
-	>=x11-libs/gtk+-2.10.0:2
+	>=x11-libs/gtk+-2.10:2
 	x11-libs/libX11
 	x11-libs/libXcursor
 	x11-libs/libXi
 	x11-libs/libXrandr
 	x11-libs/libwnck
-	>=xfce-base/libxfce4util-4.5.90
-	>=xfce-base/libxfcegui4-4.5.90
-	>=xfce-base/xfconf-0.1.0
+	>=xfce-base/libxfce4util-${XFCE_VERSION}
+	>=xfce-base/libxfcegui4-${XFCE_VERSION}
+	>=xfce-base/xfconf-${XFCE_VERSION}
 	!xfce-base/xfce-mcs-manager
 	!xfce-base/xfce-mcs-plugins
-	>=xfce-extra/exo-0.3.7.1
+	>=xfce-extra/exo-0.3.91
 	libnotify? ( x11-libs/libnotify )"
 DEPEND="${RDEPEND}
 	dev-util/intltool
