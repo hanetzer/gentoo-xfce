@@ -3,6 +3,9 @@
 # $Header: $
 
   09 Nov 2008; Christoph Mende <angelos@gentoo.org> exo-9999.ebuild:
+  Removed unneeded workarounds, those bugs have been fixed upstream
+
+  09 Nov 2008; Christoph Mende <angelos@gentoo.org> exo-9999.ebuild:
   Cleanup
 
   23 Jun 2008; Christoph Mende <angelos@gentoo.org> exo-9999.ebuild:

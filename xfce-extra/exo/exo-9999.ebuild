@@ -27,19 +27,6 @@ DEPEND="${RDEPEND}
 XFCE_CONFIG+=" $(use_enable python) $(use_enable libnotify notifications)
 	$(use_enable hal)"
 
-# See bug 166568 for reference
-src_unpack() {
-	subversion_src_unpack
-	sed -i -e 's:-Werror::g' "${S}"/configure
-}
-
-# See bug 164780 for reference
-src_install() {
-	xfce4_src_install
-	rm -f "${D}"/usr/lib*/python*/site-packages/pyexo.py[co]
-	rm -f "${D}"/usr/lib*/python*/site-packages/${PN}-0.3/${PN}/__init__.py[co]
-}
-
 pkg_postinst() {
 	xfce4_pkg_postinst
 	python_mod_optimize /usr/lib*/python*/site-packages
