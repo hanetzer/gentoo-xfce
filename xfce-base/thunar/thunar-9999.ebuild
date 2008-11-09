@@ -9,12 +9,11 @@ inherit virtualx xfce4
 xfce4_core
 
 MY_P=${P/t/T}
-S="${WORKDIR}/${MY_P}"
 
 DESCRIPTION="File manager"
 HOMEPAGE="http://thunar.xfce.org"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-IUSE="+trash-plugin dbus doc debug exif gnome hal pcre startup-notification"
+IUSE="+trash-plugin dbus debug exif gnome hal pcre startup-notification"
 
 RDEPEND=">=dev-lang/perl-5.6
 	>=dev-libs/glib-2.6:2
@@ -41,7 +40,7 @@ DEPEND="${RDEPEND}
 	dev-util/intltool"
 
 XFCE_CONFIG+=" $(use_enable exif) $(use_enable gnome gnome-thumbnailers) \
-	$(use_enable dbus) $(use_enable pcre) $(use_enable doc gtk-doc)"
+	$(use_enable dbus) $(use_enable pcre)"
 
 pkg_setup() {
 	if use hal && ! use dbus; then
