@@ -4,7 +4,6 @@
 
 EAPI=1
 MY_PN="gtk-xfce-engine-2"
-S="${WORKDIR}/${MY_P}"
 
 inherit xfce4
 
