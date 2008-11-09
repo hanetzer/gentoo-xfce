@@ -14,8 +14,8 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="cups debug"
 
 RDEPEND="app-text/a2ps
-	>=dev-libs/glib-2.6
-	>=x11-libs/gtk+-2.6
+	>=dev-libs/glib-2.6:2
+	>=x11-libs/gtk+-2.6:2
 	>=xfce-base/libxfce4util-${XFCE_VERSION}
 	>=xfce-base/libxfcegui4-${XFCE_VERSION}
 	>=xfce-base/xfconf-${XFCE_VERSION}
