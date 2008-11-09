@@ -35,7 +35,7 @@ RDEPEND=">=dev-libs/glib-2.6:2
 DEPEND="${RDEPEND}
 	dev-util/intltool"
 
-XFCE_CONFIG="${XFCE_CONFIG} --enable-xsync --enable-render --enable-randr \
+XFCE_CONFIG+=" --enable-xsync --enable-render --enable-randr \
 	$(use_enable xcomposite compositor)"
 
 DOCS="AUTHORS ChangeLog COMPOSITOR NEWS README TODO"
