@@ -10,7 +10,7 @@ xfce4_core
 
 DESCRIPTION="Xfce4 settings"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-IUSE="debug libnotify nls sound"
+IUSE="debug keyboard libnotify nls sound"
 
 RDEPEND=">=dev-libs/glib-2.12:2
 	dev-libs/dbus-glib
@@ -28,6 +28,7 @@ RDEPEND=">=dev-libs/glib-2.12:2
 	!xfce-base/xfce-mcs-plugins
 	>=xfce-extra/exo-${XFCE_VERSION}
 	libnotify? ( x11-libs/libnotify )
+	keyboard? ( x11-libs/libxklavier )
 	sound? ( media-libs/libcanberra )"
 DEPEND="${RDEPEND}
 	dev-util/intltool
