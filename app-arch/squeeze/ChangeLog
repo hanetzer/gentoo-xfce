@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Nov 2008; Christoph Mende <angelos@gentoo.org> squeeze-9999.ebuild:
+  Removed --disable-gtk-doc and added README to DOCS
+
   28 Jun 2008; Christoph Mende <angelos@gentoo.org> squeeze-9999.ebuild:
   Ebuild cleanup, removed stuff done by the eclass
 
