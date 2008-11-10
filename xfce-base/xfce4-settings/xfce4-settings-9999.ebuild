@@ -10,7 +10,7 @@ xfce4_core
 
 DESCRIPTION="Xfce4 settings"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-IUSE="debug libnotify"
+IUSE="debug libnotify nls sound"
 
 RDEPEND=">=dev-libs/glib-2.12:2
 	dev-libs/dbus-glib
@@ -26,13 +26,15 @@ RDEPEND=">=dev-libs/glib-2.12:2
 	>=xfce-base/xfconf-${XFCE_VERSION}
 	!xfce-base/xfce-mcs-manager
 	!xfce-base/xfce-mcs-plugins
-	>=xfce-extra/exo-0.3.91
-	libnotify? ( x11-libs/libnotify )"
+	>=xfce-extra/exo-${XFCE_VERSION}
+	libnotify? ( x11-libs/libnotify )
+	sound? ( media-libs/libcanberra )"
 DEPEND="${RDEPEND}
 	dev-util/intltool
 	x11-proto/inputproto
 	x11-proto/xf86vidmodeproto"
 
-XFCE_CONFIG+=" $(use_enable libnotify) --enable-xcursor"
+XFCE_CONFIG+=" $(use_enable libnotify) $(use_enable nls)
+	$(use_enable sound sound-settings) --enable-xcursor"
 
 DOCS="AUTHORS ChangeLog NEWS README TODO"
