@@ -16,6 +16,7 @@ IUSE="debug hal libnotify python"
 RDEPEND=">=dev-lang/perl-5.6
 	dev-perl/URI
 	>=dev-libs/glib-2.6:2
+	net-libs/libwww
 	>=x11-libs/gtk+-2.6:2
 	>=xfce-base/libxfce4util-${XFCE_VERSION}
 	libnotify? ( x11-libs/libnotify )

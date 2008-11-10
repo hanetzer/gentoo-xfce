@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Nov 2008; Christoph Mende <angelos@gentoo.org> exo-9999.ebuild:
+  Added libwww dependency, bug 234142
+
   09 Nov 2008; Christoph Mende <angelos@gentoo.org> exo-9999.ebuild:
   Removed unneeded workarounds, those bugs have been fixed upstream
 
