@@ -101,6 +101,21 @@ xfce4_single_make() {
 	JOBS="-j1"
 }
 
+# @FUNCTION: xfce4_src_unpack
+# @DESCRIPTION:
+# Only used for live ebuilds. Patch autogen.sh to inject the correct revision
+# into configure.ac
+xfce4_src_unpack() {
+	if [[ ${PV} = 9999* ]]; then
+		subversion_src_unpack
+		einfo "Patching autogen.sh"
+		sed -i \
+			-e "s:\.svn:${ESVN_STORE_DIR}/${ESVN_PROJECT}/${ESVN_REPO_URI##*/}/.svn:" \
+			-e "s:svn info \$0:svn info ${ESVN_STORE_DIR}/${ESVN_PROJECT}/${ESVN_REPO_URI##*/}:" autogen.sh \
+			|| die "sed failed"
+	fi
+}
+
 # @FUNCTION: xfce4_src_compile
 # @DESCRIPTION:
 # Package compilation
@@ -108,12 +123,6 @@ xfce4_single_make() {
 # startup-notification and debug are automatically added when they are found in
 # IUSE, gtk-doc is added when doc is found in IUSE
 xfce4_src_compile() {
-	if [[ ${PV} = 9999* ]]; then
-		einfo "Patching autogen.sh"
-		sed -i -e "s:svn info \$0:svn info ${ESVN_STORE_DIR}/${ESVN_PROJECT}/${ESVN_REPO_URI##*/}:" autogen.sh \
-			|| die "sed failed"
-	fi
-
 	if has doc ${IUSE}; then
 		XFCE_CONFIG+=" $(use_enable doc gtk-doc)"
 	fi
@@ -179,4 +188,4 @@ xfce4_pkg_postrm() {
 	gnome2_icon_cache_update
 }
 
-EXPORT_FUNCTIONS src_compile src_install pkg_preinst pkg_postinst pkg_postrm
+EXPORT_FUNCTIONS src_unpack src_compile src_install pkg_preinst pkg_postinst pkg_postrm
