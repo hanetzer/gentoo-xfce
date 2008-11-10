@@ -25,6 +25,4 @@ RDEPEND=">=dev-libs/glib-2.8:2
 	>=xfce-extra/exo-${XFCE_VERSION}
 	startup-notification? ( x11-libs/startup-notification )"
 
-XFCE_CONFIG+=" --disable-mcs-plugin"
-
 DOCS="AUTHORS ChangeLog HACKING NEWS README README.Plugins"
