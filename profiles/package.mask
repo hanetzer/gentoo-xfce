@@ -7,7 +7,6 @@
 =app-office/orage-9999
 =app-text/xfbib-9999
 =dev-libs/ghal-9999
-=dev-python/pyxfce-9999
 =dev-util/xfce4-dev-tools-9999
 =media-gfx/ristretto-9999
 =media-sound/xfmpc-9999
@@ -18,12 +17,9 @@
 =x11-themes/gtk-engines-xfce-9999
 =x11-themes/xfce4-icon-theme-9999
 =x11-themes/xfwm4-themes-9999
-=xfce-base/libxfce4mcs-9999
 =xfce-base/libxfce4util-9999
 =xfce-base/libxfcegui4-9999
 =xfce-base/thunar-9999
-=xfce-base/xfce-mcs-manager-9999
-=xfce-base/xfce-mcs-plugins-9999
 =xfce-base/xfce-utils-9999
 =xfce-base/xfce4-9999
 =xfce-base/xfce4-extras-9999
