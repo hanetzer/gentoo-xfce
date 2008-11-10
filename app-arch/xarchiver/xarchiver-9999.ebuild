@@ -21,14 +21,14 @@ DEPEND="${RDEPEND}
 pkg_postinst() {
 	xfce4_pkg_postinst
 
-	elog
 	elog "You need external programs for some formats, including"
-	elog "arj - app-arch/unarj app-arch/arj"
-	elog "zip - app-arch/unzip app-arch/zip"
-	elog "rar - app-arch/unrar app-arch/rar"
 	elog "7zip - app-arch/p7zip"
+	elog "arj - app-arch/unarj app-arch/arj"
 	elog "lha - app-arch/lha"
-	elog
+	elog "lzop - app-arch/lzop"
+	elog "rar - app-arch/unrar app-arch/rar"
+	elog "zip - app-arch/unzip app-arch/zip"
+	elog "Make sure to install the xfce-thunar-archive plugin"
 }
 
 DOCS="AUTHORS ChangeLog NEWS README TODO"
