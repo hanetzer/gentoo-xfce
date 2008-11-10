@@ -19,8 +19,8 @@ RDEPEND="gnome-base/libglade
 	x11-libs/libX11
 	x11-libs/libSM
 	>=x11-libs/libwnck-2.12
-	>=dev-libs/glib-2.6:2
-	>=x11-libs/gtk+-2.6:2
+	>=dev-libs/glib-2.10:2
+	>=x11-libs/gtk+-2.10:2
 	>=xfce-base/libxfce4util-${XFCE_VERSION}
 	>=xfce-base/libxfcegui4-${XFCE_VERSION}
 	>=xfce-base/libxfce4menu-${XFCE_VERSION}
