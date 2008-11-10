@@ -9,7 +9,7 @@ inherit xfce4
 xfce4_goodies
 
 DESCRIPTION="a lightweight BibTeX editor"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
 RDEPEND=">=dev-libs/glib-2.12.0:2
