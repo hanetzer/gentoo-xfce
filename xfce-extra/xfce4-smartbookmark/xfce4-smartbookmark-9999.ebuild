@@ -14,7 +14,7 @@ IUSE=""
 RDEPEND=">=xfce-base/xfce-utils-${XFCE_VERSION}"
 
 src_unpack() {
-	subversion_src_unpack
+	xfce4_src_unpack
 	sed -i -e 's:bugs.debian:bugs.gentoo:g' "${S}"/src/smartbookmark.c
 }
 

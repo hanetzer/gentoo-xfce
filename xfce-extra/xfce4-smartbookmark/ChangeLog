@@ -1,6 +1,10 @@
 # ChangeLog for xfce-extra/xfce4-smartbookmark
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+  10 Nov 2008; Christoph Mende <angelos@gentoo.org>
+  xfce4-smartbookmark-9999.ebuild:
+  Use the src_unpack from the eclass
 
   04 Dec 2007; Christoph Mende <angelos@gentoo.org>
   xfce4-smartbookmark-9999.ebuild:
