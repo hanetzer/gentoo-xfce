@@ -10,7 +10,7 @@ xfce4_goodies
 
 DESCRIPTION="a graphical GTK+ MPD client focusing on low footprint"
 HOMEPAGE="http://goodies.xfce.org/projects/applications/xfmpc"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~sparc ~x86"
 IUSE=""
 
 RDEPEND=">=media-libs/libmpd-0.15.0

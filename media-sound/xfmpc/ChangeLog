@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Nov 2008; Christoph Mende <angelos@gentoo.org> xfmpc-9999.ebuild:
+  Added ~sparc ~x86
+
   19 Jan 2008; Christoph Mende <angelos@gentoo.org> +xfmpc-9999.ebuild:
   Initial import
 
