@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+EAPI=2
 ESVN_REPO_URI="http://svn.xfce.org/svn/kelnos/${PN}/trunk"
 
 inherit xfce4
@@ -14,6 +15,6 @@ IUSE="debug"
 RDEPEND=">=dev-libs/glib-2.6.0
 	>=dev-libs/dbus-glib-0.7.0
 	>=sys-apps/hal-0.5.7.1
-	>=xfce-extra/exo-${XFCE_VERSION}"
+	>=xfce-extra/exo-${XFCE_VERSION}[hal]"
 
 DOCS="AUTHORS ChangeLog NEWS README"
