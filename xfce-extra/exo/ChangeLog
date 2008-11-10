@@ -3,6 +3,9 @@
 # $Header: $
 
   10 Nov 2008; Christoph Mende <angelos@gentoo.org> exo-9999.ebuild:
+  Removed libwww dependency, this has been fixed in trunk
+
+  10 Nov 2008; Christoph Mende <angelos@gentoo.org> exo-9999.ebuild:
   Added libwww dependency, bug 234142
 
   09 Nov 2008; Christoph Mende <angelos@gentoo.org> exo-9999.ebuild:
