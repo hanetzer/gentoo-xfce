@@ -1,6 +1,12 @@
 # ChangeLog for xfce-base/libxfcegui4
-# Copyright 1999-2007 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*libxfcegui4-4.5.92 (14 Nov 2008)
+
+  14 Nov 2008; Christoph Mende <angelos@gentoo.org>
+  +libxfcegui4-4.5.92.ebuild:
+  Xfce-4.6 Beta 2 bump
 
   02 Dec 2007; Christoph Mende <angelos@gentoo.org> libxfcegui4-9999.ebuild:
   Sync dependencies with the main tree
