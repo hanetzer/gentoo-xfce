@@ -113,6 +113,8 @@ xfce4_src_unpack() {
 			-e "s:\.svn:${ESVN_STORE_DIR}/${ESVN_PROJECT}/${ESVN_REPO_URI##*/}/.svn:" \
 			-e "s:svn info \$0:svn info ${ESVN_STORE_DIR}/${ESVN_PROJECT}/${ESVN_REPO_URI##*/}:" autogen.sh \
 			|| die "sed failed"
+	else
+		unpack ${A}
 	fi
 }
 
