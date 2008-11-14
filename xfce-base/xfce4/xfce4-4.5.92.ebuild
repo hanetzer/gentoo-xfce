@@ -11,9 +11,9 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="alsa cups minimal oss xscreensaver"
 
-RDEPEND=">=x11-themes/gtk-engines-xfce-${XFCE_VERSION}
-	>=x11-themes/xfce4-icon-theme-${XFCE_VERSION}
-	>=xfce-base/thunar-${XFCE_VERSION}
+RDEPEND=">=x11-themes/gtk-engines-xfce-2.5.92
+	x11-themes/xfce4-icon-theme
+	>=xfce-base/thunar-0.9.92
 	>=xfce-base/xfce4-panel-${XFCE_VERSION}
 	>=xfce-base/xfwm4-${XFCE_VERSION}
 	>=xfce-base/xfce-utils-${XFCE_VERSION}
@@ -24,8 +24,8 @@ RDEPEND=">=x11-themes/gtk-engines-xfce-${XFCE_VERSION}
 	oss? ( >=xfce-extra/xfce4-mixer-${XFCE_VERSION} )
 	cups? ( >=net-print/xfprint-${XFCE_VERSION} )
 	!minimal? ( >=app-office/orage-${XFCE_VERSION}
-		>=app-editors/mousepad-${XFCE_VERSION}
-		>=x11-terms/terminal-${XFCE_VERSION}
+		app-editors/mousepad
+		x11-terms/terminal
 		>=x11-themes/xfwm4-themes-${XFCE_VERSION}
 		>=xfce-extra/xfce4-appfinder-${XFCE_VERSION} )
 	xscreensaver? ( || ( >=x11-misc/xscreensaver-5.03
