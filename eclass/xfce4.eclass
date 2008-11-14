@@ -24,7 +24,8 @@ if [[ ${PV} = 9999* ]]; then
 	[[ ${PN} != xfce4-dev-tools ]] && DEPEND+=" >=dev-util/xfce4-dev-tools-9999"
 fi
 
-S="${WORKDIR}/${MY_PN:-${PN}}-${MY_PV:-${PV}}"
+MY_P=${MY_PN:-${PN}}-${MY_PV:-${PV}}
+S="${WORKDIR}/${MY_P}"
 
 COMPRESS=".tar.bz2"
 
@@ -39,10 +40,10 @@ xfce4_gzipped() {
 
 # @FUNCTION: xfce4_plugin
 # @DESCRIPTION:
-# Append -plugin to the package name and change the build directory accordingly
+# Append -plugin to the package name
 xfce4_plugin() {
-	[[ -z ${MY_PN} ]] && MY_PN="${PN}-plugin"
-	[[ -z ${MY_P} ]] && MY_P="${MY_PN}-${PV}"
+	MY_PN="${MY_PN:-${PN}}-plugin"
+	MY_P="${MY_PN}-${MY_PV:-${PV}}"
 }
 
 # @FUNCTION: xfce4_goodies
@@ -50,7 +51,6 @@ xfce4_plugin() {
 # Change SRC_URI (or ESVN_REPO_URI for live ebuilds) to the goodies path
 # and set HOMEPAGE to goodies.xfce.org
 xfce4_goodies() {
-	MY_P=${MY_PN:-${PN}}-${MY_PV:-${PV}}
 	if [[ ${PV} = 9999* ]]; then
 		ESVN_REPO_URI="http://svn.xfce.org/svn/goodies/${MY_PN:-${PN}}/trunk"
 	else
@@ -89,7 +89,7 @@ xfce4_core() {
 	if [[ ${PV} = 9999* ]]; then
 		ESVN_REPO_URI="http://svn.xfce.org/svn/xfce/${MY_PN:-${PN}}/trunk"
 	else
-		SRC_URI="mirror://xfce/xfce-${XFCE_VERSION}/src/${MY_P:-${P}}${COMPRESS}"
+		SRC_URI="mirror://xfce/xfce-${XFCE_VERSION}/src/${MY_P}${COMPRESS}"
 	fi
 	HOMEPAGE="http://www.xfce.org/"
 }
