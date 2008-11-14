@@ -2,6 +2,11 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+*thunar-0.9.92 (14 Nov 2008)
+
+  14 Nov 2008; Christoph Mende <angelos@gentoo.org> +thunar-0.9.92.ebuild:
+  Xfce-4.6 Beta 2 bump
+
   09 Nov 2008; Christoph Mende <angelos@gentoo.org> thunar-9999.ebuild:
   Remove USE=doc
 
