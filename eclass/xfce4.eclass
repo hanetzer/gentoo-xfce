@@ -24,7 +24,7 @@ if [[ ${PV} = 9999* ]]; then
 	[[ ${PN} != xfce4-dev-tools ]] && DEPEND+=" >=dev-util/xfce4-dev-tools-9999"
 fi
 
-MY_P=${MY_PN:-${PN}}-${MY_PV:-${PV}}
+[[ -z ${MY_P} ]] && MY_P=${MY_PN:-${PN}}-${MY_PV:-${PV}}
 S="${WORKDIR}/${MY_P}"
 
 COMPRESS=".tar.bz2"
