@@ -36,6 +36,7 @@ DEPEND="${RDEPEND}
 	x11-proto/xf86vidmodeproto"
 
 XFCE_CONFIG+=" $(use_enable libnotify) $(use_enable nls)
-	$(use_enable sound sound-settings) --enable-xcursor"
+	$(use_enable keyboard libxklavier) $(use_enable sound sound-settings)
+	--enable-xcursor"
 
 DOCS="AUTHORS ChangeLog NEWS README TODO"
