@@ -42,10 +42,10 @@ pkg_setup() {
 	XFCE_CONFIG+=" $(use_enable doc xsltproc) $(use_enable menu-plugin panel-plugin)"
 
 	if use file-icons; then
-		XFCE_CONFIG+=" --enable-thunarx --enable-file-icons --enable-exo \
+		XFCE_CONFIG+=" --enable-thunarx --enable-file-icons --enable-exo
 		--enable-desktop-icons"
 	else
-		XFCE_CONFIG+=" --disable-thunarx --disable-file-icons --disable-exo \
+		XFCE_CONFIG+=" --disable-thunarx --disable-file-icons --disable-exo
 		--disable-desktop-icons"
 	fi
 }

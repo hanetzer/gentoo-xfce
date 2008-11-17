@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Nov 2008; Christoph Mende <angelos@gentoo.org> xfdesktop-4.5.92.ebuild,
+  xfdesktop-9999.ebuild:
+  Removed backslashes from XFCE_CONFIG
+
 *xfdesktop-4.5.92 (14 Nov 2008)
 
   14 Nov 2008; Christoph Mende <angelos@gentoo.org>
