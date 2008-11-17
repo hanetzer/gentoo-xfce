@@ -24,8 +24,10 @@ RDEPEND=">=dev-lang/perl-5.6
 DEPEND="${RDEPEND}
 	dev-util/intltool"
 
-XFCE_CONFIG+=" $(use_enable python) $(use_enable libnotify notifications)
+pkg_setup() {
+	XFCE_CONFIG+=" $(use_enable python) $(use_enable libnotify notifications)
 	$(use_enable hal)"
+}
 
 pkg_postinst() {
 	xfce4_pkg_postinst

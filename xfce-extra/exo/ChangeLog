@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Nov 2008; Christoph Mende <angelos@gentoo.org> exo-0.3.92.ebuild,
+  exo-9999.ebuild:
+  Moved XFCE_CONFIG to pkg_setup
+
 *exo-0.3.92 (14 Nov 2008)
 
   14 Nov 2008; Christoph Mende <angelos@gentoo.org> +exo-0.3.92.ebuild:
