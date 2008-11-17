@@ -40,10 +40,10 @@ RDEPEND=">=dev-lang/perl-5.6
 DEPEND="${RDEPEND}
 	dev-util/intltool"
 
-XFCE_CONFIG+=" $(use_enable exif) $(use_enable gnome gnome-thumbnailers) \
+pkg_setup() {
+	XFCE_CONFIG+=" $(use_enable exif) $(use_enable gnome gnome-thumbnailers)
 	$(use_enable dbus) $(use_enable pcre)"
 
-pkg_setup() {
 	if use hal && ! use dbus; then
 		ewarn "USE hal detected, enabling dbus."
 	fi
