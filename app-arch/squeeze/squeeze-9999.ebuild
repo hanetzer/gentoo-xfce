@@ -21,6 +21,8 @@ DEPEND="${RDEPEND}
 	dev-util/intltool
 	sys-devel/gettext"
 
-XFCE_CONFIG+=" $(use_enable pathbar) $(use_enable toolbar) $(use_enable debug)"
+pkg_setup() {
+	XFCE_CONFIG+=" $(use_enable pathbar) $(use_enable toolbar) $(use_enable debug)"
+}
 
 DOCS="AUTHORS ChangeLog NEWS README TODO"
