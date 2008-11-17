@@ -24,8 +24,10 @@ RDEPEND=">=dev-libs/glib-2.6:2
 DEPEND="${RDEPEND}
 	dev-util/intltool"
 
-XFCE_CONFIG+="$(use_enable dbus) $(use_enable libnotify)
+pkg_setup() {
+	XFCE_CONFIG+=" $(use_enable dbus) $(use_enable libnotify)
 	$(use_with berkdb bdb4) --disable-libxfce4mcs"
+}
 
 pkg_postinst() {
 	xfce4_pkg_postinst
