@@ -32,6 +32,8 @@ DEPEND="${RDEPEND}
 	dev-util/intltool
 	doc? ( dev-libs/libxslt )"
 
-XFCE_CONFIG+=" $(use_enable dbus) $(use_enable doc xsltproc)"
+pkg_setup() {
+	XFCE_CONFIG+=" $(use_enable dbus) $(use_enable doc xsltproc)"
+}
 
 DOCS="AUTHORS ChangeLog HACKING NEWS README THANKS TODO"
