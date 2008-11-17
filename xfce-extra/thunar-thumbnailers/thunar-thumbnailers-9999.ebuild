@@ -20,8 +20,10 @@ RDEPEND=">=xfce-base/thunar-${XFCE_VERSION}
 	latex? ( virtual/latex-base )
 	ffmpeg? ( media-video/ffmpegthumbnailer )"
 
-XFCE_CONFIG="${XFCE_CONFIG} $(use_enable latex tex) $(use_enable raw) \
-	$(use_enable grace) $(use_enable ffmpeg) --disable-update-mime-database"
+pkg_setup() {
+	XFCE_CONFIG+=" $(use_enable latex tex) $(use_enable raw) $(use_enable grace)
+	$(use_enable ffmpeg) --disable-update-mime-database"
+}
 
 DOCS="AUTHORS ChangeLog NEWS README"
 
