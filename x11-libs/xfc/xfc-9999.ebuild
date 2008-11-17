@@ -26,6 +26,8 @@ RDEPEND="dev-lang/perl
 DEPEND="${RDEPEND}
 	doc? ( >=app-doc/doxygen-1.3.2 )"
 
-XFCE_CONFIG+=" $(use_enable debug tests) $(use_enable examples) $(use_enable examples demos)"
+pkg_setup() {
+	XFCE_CONFIG+=" $(use_enable debug tests) $(use_enable examples) $(use_enable examples demos)"
+}
 
 DOCS="AUTHORS ChangeLog NEWS README TODO"
