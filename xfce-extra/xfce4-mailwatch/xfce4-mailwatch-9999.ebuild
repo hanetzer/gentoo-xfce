@@ -15,6 +15,8 @@ IUSE="ssl"
 RDEPEND="ssl? ( >=net-libs/gnutls-1.2 )"
 DEPEND="dev-util/intltool"
 
-XFCE_CONFIG="${XFCE_CONFIG} $(use_enable ssl)"
+pkg_setup() {
+	XFCE_CONFIG+=" $(use_enable ssl)"
+}
 
 DOCS="AUTHORS ChangeLog NEWS README"
