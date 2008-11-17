@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Nov 2008; Christoph Mende <angelos@gentoo.org>
+  xfce4-smartbookmark-9999.ebuild:
+  Added die to sed
+
   10 Nov 2008; Christoph Mende <angelos@gentoo.org>
   xfce4-smartbookmark-9999.ebuild:
   Use the src_unpack from the eclass

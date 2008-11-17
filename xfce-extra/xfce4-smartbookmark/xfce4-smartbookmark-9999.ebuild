@@ -15,7 +15,8 @@ RDEPEND=">=xfce-base/xfce-utils-${XFCE_VERSION}"
 
 src_unpack() {
 	xfce4_src_unpack
-	sed -i -e 's:bugs.debian:bugs.gentoo:g' "${S}"/src/smartbookmark.c
+	sed -i -e 's:bugs.debian:bugs.gentoo:g' "${S}"/src/smartbookmark.c \
+	|| die "sed failed"
 }
 
 DOCS="AUTHORS ChangeLog NEWS README"
