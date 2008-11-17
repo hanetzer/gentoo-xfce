@@ -24,6 +24,8 @@ DEPEND="${RDEPEND}
 	sys-devel/gettext
 	!x11-misc/notification-daemon"
 
-XFCE_CONFIG+=" --enable-gradient-look --disable-mcs-plugin"
+pkg_setup() {
+	XFCE_CONFIG+=" --enable-gradient-look --disable-mcs-plugin"
+}
 
 DOCS="AUTHORS ChangeLog NEWS README"
