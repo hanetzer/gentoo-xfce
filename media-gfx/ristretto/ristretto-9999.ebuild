@@ -26,6 +26,8 @@ RDEPEND=">=x11-libs/gtk+-2.10:2
 DEPEND="${RDEPEND}
 	dev-util/intltool"
 
-XFCE_CONFIG+="$(use_enable xfce xfce-desktop)"
+pkg_setup() {
+	XFCE_CONFIG+=" $(use_enable xfce xfce-desktop)"
+}
 
 DOCS="AUTHORS ChangeLog NEWS README TODO"
