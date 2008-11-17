@@ -26,7 +26,9 @@ DEPEND="${RDEPEND}
 	dev-util/intltool
 	sys-devel/gettext"
 
-XFCE_CONFIG+="$(use_enable xfce thunar-vfs) $(use_enable dbus)
+pkg_setup() {
+	XFCE_CONFIG+=" $(use_enable xfce thunar-vfs) $(use_enable dbus)
 	$(use_enable hal) $(use_enable gstreamer) --enable-final"
+}
 
 DOCS="AUTHORS ChangeLog CONTRIBUTORS NEWS README TODO"
