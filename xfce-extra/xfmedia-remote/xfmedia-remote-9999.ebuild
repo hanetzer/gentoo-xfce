@@ -16,6 +16,8 @@ RDEPEND="media-video/xfmedia
 DEPEND="${RDEPEND}
 	dev-util/intltool"
 
-XFCE_CONFIG="${XFCE_CONFIG} $(use_enable dbus) --enable-final"
+pkg_setup() {
+	XFCE_CONFIG+=" $(use_enable dbus) --enable-final"
+}
 
 DOCS="AUTHORS ChangeLog NEWS README TODO"
