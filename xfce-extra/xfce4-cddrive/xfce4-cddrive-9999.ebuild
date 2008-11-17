@@ -18,6 +18,8 @@ DEPEND=">=sys-apps/hal-0.5.8.1
 	>=dev-libs/libcdio-0.76
 	cddb? ( >=media-libs/libcddb-1.2.1 )"
 
-XFCE_CONFIG="$(use_enable cddb) $(use_enable !debug final)"
+pkg_setup() {
+	XFCE_CONFIG+=" $(use_enable cddb) $(use_enable !debug final)"
+}
 
 DOCS="AUTHORS ChangeLog README THANKS TODO"
