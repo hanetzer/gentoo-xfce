@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  17 Nov 2008; Christoph Mende <angelos@gentoo.org>
+  xfce4-power-manager-0.6.0_rc1.ebuild, xfce4-power-manager-9999.ebuild:
+  Moved XFCE_CONFIG to pkg_setup
+
   09 Nov 2008; Christoph Mende <angelos@gentoo.org>
   xfce4-power-manager-0.6.0_rc1.ebuild:
   Set XFCE_VERSION for proper dependencies

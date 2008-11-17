@@ -26,4 +26,6 @@ RDEPEND=">=dev-libs/dbus-glib-0.70
 DEPEND="${RDEPEND}
 	dev-util/intltool"
 
-XFCE_CONFIG+=" $(use_enable libnotify)"
+pkg_setup() {
+	XFCE_CONFIG+=" $(use_enable libnotify)"
+}
