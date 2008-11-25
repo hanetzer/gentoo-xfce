@@ -11,7 +11,10 @@
 # minimum of duplication in ebuilds
 
 inherit fdo-mime gnome2-utils
-[[ ${PV} = 9999* ]] && inherit subversion multilib
+if [[ ${PV} = 9999* ]]; then
+	inherit multilib
+	[[ ${XFCE_VCS} = "git" ]] && inherit git || inherit subversion
+fi
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -52,7 +55,9 @@ xfce4_plugin() {
 # and set HOMEPAGE to goodies.xfce.org
 xfce4_goodies() {
 	if [[ ${PV} = 9999* ]]; then
-		ESVN_REPO_URI="http://svn.xfce.org/svn/goodies/${MY_PN:-${PN}}/trunk"
+		[[ ${XFCE_VCS} = "git" ]] \
+		&& EGIT_REPO_URI="git://git.xfce.org/${XFCE_PROJ}/${MY_PN:-${PN}}" \
+		|| ESVN_REPO_URI="http://svn.xfce.org/svn/goodies/${MY_PN:-${PN}}/trunk"
 	else
 		SRC_URI="http://goodies.xfce.org/releases/${MY_PN:-${PN}}/${MY_P}${COMPRESS}"
 	fi
@@ -107,12 +112,16 @@ xfce4_single_make() {
 # into configure.ac
 xfce4_src_unpack() {
 	if [[ ${PV} = 9999* ]]; then
-		subversion_src_unpack
-		einfo "Patching autogen.sh"
-		sed -i \
-			-e "s:\.svn:${ESVN_STORE_DIR}/${ESVN_PROJECT}/${ESVN_REPO_URI##*/}/.svn:" \
-			-e "s:svn info \$0:svn info ${ESVN_STORE_DIR}/${ESVN_PROJECT}/${ESVN_REPO_URI##*/}:" autogen.sh \
-			|| die "sed failed"
+		if [[ ${XFCE_VCS} = "git" ]]; then
+			git_src_unpack
+		else
+			subversion_src_unpack
+			einfo "Patching autogen.sh"
+			sed -i \
+				-e "s:\.svn:${ESVN_STORE_DIR}/${ESVN_PROJECT}/${ESVN_REPO_URI##*/}/.svn:" \
+				-e "s:svn info \$0:svn info ${ESVN_STORE_DIR}/${ESVN_PROJECT}/${ESVN_REPO_URI##*/}:" autogen.sh \
+				|| die "sed failed"
+		fi
 	else
 		unpack ${A}
 	fi
