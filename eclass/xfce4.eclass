@@ -51,8 +51,10 @@ xfce4_plugin() {
 
 # @FUNCTION: xfce4_goodies
 # @DESCRIPTION:
-# Change SRC_URI (or ESVN_REPO_URI for live ebuilds) to the goodies path
+# Change SRC_URI (or E{SVN,GIT}_REPO_URI for live ebuilds) to the goodies path
 # and set HOMEPAGE to goodies.xfce.org
+# Note: git ebuilds usually require XFCE_PROJ (for example kelnos for
+# xfce4-notifyd)
 xfce4_goodies() {
 	if [[ ${PV} = 9999* ]]; then
 		[[ ${XFCE_VCS} = "git" ]] \
