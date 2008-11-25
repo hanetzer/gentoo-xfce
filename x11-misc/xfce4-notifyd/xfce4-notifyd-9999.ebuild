@@ -4,7 +4,7 @@
 
 EAPI=1
 XFCE_VCS="git"
-XFCE_PROJ="kelnos"
+XFCE_CAT="kelnos"
 
 inherit xfce4
 
