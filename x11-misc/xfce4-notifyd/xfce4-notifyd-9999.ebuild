@@ -12,7 +12,7 @@ xfce4_goodies
 
 DESCRIPTION="Xfce4 notification daemon"
 HOMEPAGE="http://spuriousinterrupt.org/projects/xfce4-notifyd"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE="debug libsexy"
 
 RDEPEND="dev-libs/dbus-glib
