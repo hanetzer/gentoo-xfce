@@ -53,12 +53,12 @@ xfce4_plugin() {
 # @DESCRIPTION:
 # Change SRC_URI (or E{SVN,GIT}_REPO_URI for live ebuilds) to the goodies path
 # and set HOMEPAGE to goodies.xfce.org
-# Note: git ebuilds usually require XFCE_PROJ (for example kelnos for
+# Note: git ebuilds usually require XFCE_CAT (for example kelnos for
 # xfce4-notifyd)
 xfce4_goodies() {
 	if [[ ${PV} = 9999* ]]; then
 		[[ ${XFCE_VCS} = "git" ]] \
-		&& EGIT_REPO_URI="git://git.xfce.org/${XFCE_PROJ}/${MY_PN:-${PN}}" \
+		&& EGIT_REPO_URI="git://git.xfce.org/${XFCE_CAT}/${MY_PN:-${PN}}" \
 		|| ESVN_REPO_URI="http://svn.xfce.org/svn/goodies/${MY_PN:-${PN}}/trunk"
 	else
 		SRC_URI="http://goodies.xfce.org/releases/${MY_PN:-${PN}}/${MY_P}${COMPRESS}"
