@@ -4,9 +4,7 @@
 
 inherit xfce4
 
-ESVN_PROJECT=${PN}
-
-xfce4_goodies
+xfce4_thunar_plugin
 
 DESCRIPTION="Thunar subversion plugin"
 DEPEND=">=dev-util/subversion-1.4"
