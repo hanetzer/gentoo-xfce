@@ -33,6 +33,7 @@ S="${WORKDIR}/${MY_P}"
 COMPRESS=".tar.bz2"
 
 [[ -z ${XFCE_VERSION} ]] && XFCE_VERSION=${PV}
+[[ -z ${THUNAR_VERSION} ]] && THUNAR_VERSION="0.9"
 
 # @FUNCTION: xfce4_gzipped
 # @DESCRIPTION:
