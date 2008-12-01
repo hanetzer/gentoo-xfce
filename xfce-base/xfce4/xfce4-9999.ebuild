@@ -12,7 +12,6 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="alsa cups minimal oss xscreensaver"
 
 RDEPEND=">=x11-themes/gtk-engines-xfce-${XFCE_VERSION}
-	>=x11-themes/xfce4-icon-theme-${XFCE_VERSION}
 	>=xfce-base/thunar-${XFCE_VERSION}
 	>=xfce-base/xfce4-panel-${XFCE_VERSION}
 	>=xfce-base/xfwm4-${XFCE_VERSION}
@@ -26,8 +25,10 @@ RDEPEND=">=x11-themes/gtk-engines-xfce-${XFCE_VERSION}
 	!minimal? ( >=app-office/orage-${XFCE_VERSION}
 		>=app-editors/mousepad-${XFCE_VERSION}
 		>=x11-terms/terminal-${XFCE_VERSION}
+		>=x11-themes/xfce4-icon-theme-${XFCE_VERSION}
 		>=x11-themes/xfwm4-themes-${XFCE_VERSION}
 		>=xfce-extra/xfce4-appfinder-${XFCE_VERSION} )
+	minimal? ( x11-themes/hicolor-icon-theme )
 	xscreensaver? ( || ( >=x11-misc/xscreensaver-5.03
 		gnome-extra/gnome-screensaver ) )"
 DEPEND="${RDEPEND}"
