@@ -35,6 +35,7 @@
 =xfce-extra/thunar-archive-9999
 =xfce-extra/thunar-media-tags-9999
 =xfce-extra/thunar-shares-9999
+=xfce-extra/thunar-svn-9999
 =xfce-extra/thunar-svn-plugin-9999
 =xfce-extra/thunar-thumbnailers-9999
 =xfce-extra/thunar-volman-9999
