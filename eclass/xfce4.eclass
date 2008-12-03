@@ -13,7 +13,7 @@
 inherit fdo-mime gnome2-utils
 if [[ ${PV} = 9999* ]]; then
 	inherit multilib
-	[[ ${XFCE_VCS} = "git" ]] && inherit git || inherit subversion
+	[[ "${XFCE_VCS}" = "git" ]] && inherit git || inherit subversion
 fi
 
 LICENSE="GPL-2"
@@ -32,6 +32,7 @@ S="${WORKDIR}/${MY_P}"
 
 COMPRESS=".tar.bz2"
 
+[[ ${PV} = 9999* && -z "${XFCE_VERSION}" ]] && XFCE_VERSION="4.5.92"
 [[ -z ${XFCE_VERSION} ]] && XFCE_VERSION=${PV}
 [[ -z ${THUNAR_VERSION} ]] && THUNAR_VERSION="0.9"
 
@@ -58,7 +59,7 @@ xfce4_plugin() {
 # xfce4-notifyd)
 xfce4_goodies() {
 	if [[ ${PV} = 9999* ]]; then
-		[[ ${XFCE_VCS} = "git" ]] \
+		[[ "${XFCE_VCS}" = "git" ]] \
 		&& EGIT_REPO_URI="git://git.xfce.org/${XFCE_CAT}/${MY_PN:-${PN}}" \
 		|| ESVN_REPO_URI="http://svn.xfce.org/svn/goodies/${MY_PN:-${PN}}/trunk"
 	else
@@ -115,7 +116,7 @@ xfce4_single_make() {
 # into configure.ac
 xfce4_src_unpack() {
 	if [[ ${PV} = 9999* ]]; then
-		if [[ ${XFCE_VCS} = "git" ]]; then
+		if [[ "${XFCE_VCS}" = "git" ]]; then
 			git_src_unpack
 		else
 			subversion_src_unpack
