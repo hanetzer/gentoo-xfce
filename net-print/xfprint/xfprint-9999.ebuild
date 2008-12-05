@@ -29,4 +29,9 @@ pkg_setup() {
 	use cups && XFCE_CONFIG+=" --enable-cups"
 }
 
+src_unpack() {
+	xfce4_src_unpack
+	sed -i -e "/24x24/d" "${S}"/icons/Makefile.in
+}
+
 DOCS="AUTHORS ChangeLog NEWS README TODO"
