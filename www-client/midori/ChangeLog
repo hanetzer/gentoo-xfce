@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Dec 2008; Christoph Mende <angelos@gentoo.org> midori-9999.ebuild:
+  Added USE=doc for user/API docs
+
   07 Dec 2008; Christoph Mende <angelos@gentoo.org> midori-0.1.1.ebuild,
   midori-9999.ebuild:
   Use SLOT dependencies for libsoup

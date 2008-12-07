@@ -13,7 +13,7 @@ EGIT_REPO_URI="git://git.xfce.org/kalikiana/${PN}"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="nls soup sqlite"
+IUSE="doc nls soup sqlite"
 
 RDEPEND=">=dev-libs/glib-2.16:2
 	dev-libs/libxml2
@@ -23,6 +23,8 @@ RDEPEND=">=dev-libs/glib-2.16:2
 	soup? ( net-libs/libsoup:2.4 )
 	sqlite? ( dev-db/sqlite )"
 DEPEND="${RDEPEND}
+	doc? ( dev-python/docutils
+		dev-util/gtk-doc )
 	nls? ( sys-devel/gettext )"
 
 pkg_setup() {
@@ -36,9 +38,12 @@ src_compile() {
 	./waf \
 		--prefix="/usr/" \
 		--libdir="/usr/$(get_libdir)/" \
+		--docdir="/usr/share/doc/${PF}/" \
 		$(use_enable nls) \
 		$(use_enable soup libsoup) \
 		$(use_enable sqlite) \
+		$(use_enable doc userdocs) \
+		$(use_enable doc apidocs) \
 		configure || die "waf configure failed."
 	./waf build -j ${JOBS} || die "waf build failed."
 }
