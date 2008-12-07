@@ -17,13 +17,14 @@ IUSE="nls soup sqlite"
 
 RDEPEND=">=dev-libs/glib-2.16:2
 	dev-libs/libxml2
-	gnome-base/librsvg
 	net-libs/webkit-gtk
 	>=x11-libs/gtk+-2.10:2
 	soup? ( net-libs/libsoup:2.4 )
 	sqlite? ( dev-db/sqlite )"
 DEPEND="${RDEPEND}
-	nls? ( sys-devel/gettext )"
+	gnome-base/librsvg
+	nls? ( sys-devel/gettext
+		dev-util/intltool )"
 
 pkg_setup() {
 	ewarn "Midori is not yet in a too mature status, so expect some minor things to break"
