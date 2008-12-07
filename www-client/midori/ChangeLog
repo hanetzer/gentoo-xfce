@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  07 Dec 2008; Christoph Mende <angelos@gentoo.org> midori-9999.ebuild:
+  Converted myconf to use_enable and use --disable-docs instead of rm -rf
+
 *midori-9999 (07 Dec 2008)
 *midori-0.1.1 (07 Dec 2008)
 

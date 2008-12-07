@@ -33,15 +33,12 @@ src_compile() {
 	# borrowed from openoffice
 	JOBS=`echo "${MAKEOPTS}" | sed -e "s/.*-j\([0-9]\+\).*/\1/"`
 
-	local myconf
-	use nls || myconf="--disable-nls"
-	use soup || myconf+=" --disable-libsoup"
-	use sqlite || myconf+=" --disable-sqlite"
-
 	./waf \
 		--prefix="/usr/" \
 		--libdir="/usr/$(get_libdir)/" \
-		${myconf} \
+		$(use_enable nls) \
+		$(use_enable soup libsoup) \
+		$(use_enable sqlite) \
 		configure || die "waf configure failed."
 	./waf build -j ${JOBS} || die "waf build failed."
 }
@@ -49,8 +46,8 @@ src_compile() {
 src_install() {
 	./waf \
 		--destdir="${D}" \
+		--disable-docs \
 		install || die "waf install failed."
-	rm -rf "${D}"/usr/share/doc/${PN}/
 	dodoc AUTHORS ChangeLog HACKING README TODO TRANSLATE
 }
 
