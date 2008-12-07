@@ -4,7 +4,7 @@
 
 EAPI=1
 
-inherit gnome2-utils eutils multilib
+inherit eutils gnome2-utils multilib toolchain-funcs
 
 DESCRIPTION="A lightweight web browser based on webkit-gtk"
 HOMEPAGE="http://www.twotoasts.de/index.php?/pages/midori_summary.html"
@@ -33,6 +33,10 @@ pkg_setup() {
 src_compile() {
 	# borrowed from openoffice
 	JOBS=`echo "${MAKEOPTS}" | sed -e "s/.*-j\([0-9]\+\).*/\1/"`
+
+	export LINKFLAGS="${LDFLAGS}"
+	export CC=$(tc-getCC)
+	export AR=$(tc-getAR)
 
 	local myconf
 	use nls || myconf="--disable-nls"

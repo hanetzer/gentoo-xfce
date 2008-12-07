@@ -4,7 +4,7 @@
 
 EAPI=1
 
-inherit git gnome2-utils eutils multilib
+inherit eutils git gnome2-utils multilib toolchain-funcs
 
 DESCRIPTION="A lightweight web browser based on webkit-gtk"
 HOMEPAGE="http://www.twotoasts.de/index.php?/pages/midori_summary.html"
@@ -13,7 +13,7 @@ EGIT_REPO_URI="git://git.xfce.org/kalikiana/${PN}"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc nls soup sqlite"
+IUSE="doc minimal nls soup sqlite"
 
 RDEPEND=">=dev-libs/glib-2.16:2
 	dev-libs/libxml2
@@ -36,6 +36,10 @@ src_compile() {
 	# borrowed from openoffice
 	JOBS=`echo "${MAKEOPTS}" | sed -e "s/.*-j\([0-9]\+\).*/\1/"`
 
+	export LINKFLAGS="${LDFLAGS}"
+	export CC=$(tc-getCC)
+	export AR=$(tc-getAR)
+
 	./waf \
 		--prefix="/usr/" \
 		--libdir="/usr/$(get_libdir)/" \
@@ -45,6 +49,7 @@ src_compile() {
 		$(use_enable sqlite) \
 		$(use_enable doc userdocs) \
 		$(use_enable doc apidocs) \
+		$(use_enable !minimal addons) \
 		configure || die "waf configure failed."
 	./waf build -j ${JOBS} || die "waf build failed."
 }

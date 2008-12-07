@@ -4,6 +4,10 @@
 
   07 Dec 2008; Christoph Mende <angelos@gentoo.org> midori-0.1.1.ebuild,
   midori-9999.ebuild:
+  Honor LDFLAGS and use the correct CC/AR
+
+  07 Dec 2008; Christoph Mende <angelos@gentoo.org> midori-0.1.1.ebuild,
+  midori-9999.ebuild:
   Moved librsvg dependency out of RDEPEND as it's only needed during
   build-time and added missing intltool dependency
 
