@@ -1,0 +1,11 @@
+# ChangeLog for www-client/midori
+# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*midori-9999 (07 Dec 2008)
+*midori-0.1.1 (07 Dec 2008)
+
+  07 Dec 2008; Christoph Mende <angelos@gentoo.org> +midori-0.1.1.ebuild,
+  +midori-9999.ebuild:
+  Initial import
+
