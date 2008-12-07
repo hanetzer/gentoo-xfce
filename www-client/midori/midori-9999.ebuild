@@ -20,7 +20,7 @@ RDEPEND=">=dev-libs/glib-2.16:2
 	gnome-base/librsvg
 	net-libs/webkit-gtk
 	>=x11-libs/gtk+-2.10:2
-	soup? ( net-libs/libsoup )
+	soup? ( net-libs/libsoup:2.4 )
 	sqlite? ( dev-db/sqlite )"
 DEPEND="${RDEPEND}
 	nls? ( sys-devel/gettext )"
