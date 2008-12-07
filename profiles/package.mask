@@ -11,6 +11,7 @@
 =media-gfx/ristretto-9999
 =media-sound/xfmpc-9999
 =net-print/xfprint-9999
+=www-client/midori-9999
 =x11-libs/xfc-9999
 =x11-misc/notification-daemon-xfce-9999
 =x11-misc/xfce4-notifyd-9999
