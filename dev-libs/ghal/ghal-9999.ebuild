@@ -3,9 +3,12 @@
 # $Header: $
 
 EAPI=2
-ESVN_REPO_URI="http://svn.xfce.org/svn/kelnos/${PN}/trunk"
+XFCE_VCS="git"
+XFCE_CAT="kelnos"
 
 inherit xfce4
+
+xfce4_goodies
 
 DESCRIPTION="a gobject-based wrapper for libhal and libhal-storage"
 HOMEPAGE="http://www.xfce.org/"
