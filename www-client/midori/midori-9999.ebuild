@@ -4,7 +4,7 @@
 
 EAPI=1
 
-inherit eutils flag-o-matic git gnome2-utils multilib toolchain-funcs
+inherit flag-o-matic git gnome2-utils multilib toolchain-funcs
 
 DESCRIPTION="A lightweight web browser based on webkit-gtk"
 HOMEPAGE="http://www.twotoasts.de/index.php?/pages/midori_summary.html"
