@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-MY_PN=${PN/-freq/freq-plugin}
+MY_PN=${PN/-freq/freq}
 
 inherit xfce4
 
