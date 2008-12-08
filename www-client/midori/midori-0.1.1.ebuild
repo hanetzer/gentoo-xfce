@@ -60,6 +60,7 @@ src_install() {
 		install || die "waf install failed."
 	rm -rf "${D}"/usr/share/doc/${PN}/
 	dodoc AUTHORS ChangeLog HACKING README TODO TRANSLATE
+	make_desktop_entry ${PN} Midori ${PN} Network
 }
 
 pkg_preinst() {
