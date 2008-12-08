@@ -22,7 +22,10 @@ SLOT="0"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
-[[ ${PV} = 9999* && ${PN} != xfce4-dev-tools ]] && DEPEND+=" >=dev-util/xfce4-dev-tools-9999"
+if [[ ${PV} = 9999* ]]; then
+	DEPEND+=" dev-util/gtk-doc"
+	[[ ${PN} != xfce4-dev-tools ]] && DEPEND+=" >=dev-util/xfce4-dev-tools-9999"
+fi
 
 [[ -z ${MY_P} ]] && MY_P=${MY_PN:-${PN}}-${MY_PV:-${PV}}
 S="${WORKDIR}/${MY_P}"

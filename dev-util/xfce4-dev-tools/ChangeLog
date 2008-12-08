@@ -2,10 +2,6 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-  08 Dec 2008; Christoph Mende <angelos@gentoo.org>
-  xfce4-dev-tools-4.5.92.ebuild, xfce4-dev-tools-9999.ebuild:
-  Depend on gtk-doc here instead of the eclass
-
 *xfce4-dev-tools-4.5.92 (14 Nov 2008)
 
   14 Nov 2008; Christoph Mende <angelos@gentoo.org>
