@@ -3,6 +3,9 @@
 # $Header: $
 
   08 Dec 2008; Christoph Mende <angelos@gentoo.org> midori-9999.ebuild:
+  Removed ugly hack for -lgthread-2.0, this was fixed upstream
+
+  08 Dec 2008; Christoph Mende <angelos@gentoo.org> midori-9999.ebuild:
   Don't need eutils here
 
   08 Dec 2008; Christoph Mende <angelos@gentoo.org> midori-0.1.1.ebuild,
