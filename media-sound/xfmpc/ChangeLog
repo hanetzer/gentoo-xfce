@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  08 Dec 2008; Christoph Mende <angelos@gentoo.org>
+  +files/xfmpc-9999-libtool.patch, xfmpc-9999.ebuild:
+  Fixed libtool-2.2 borkage
+
   10 Nov 2008; Christoph Mende <angelos@gentoo.org> xfmpc-9999.ebuild:
   Added ~sparc ~x86
 

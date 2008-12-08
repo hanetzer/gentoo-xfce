@@ -21,4 +21,9 @@ RDEPEND=">=media-libs/libmpd-0.15.0
 DEPEND="${RDEPEND}
 	dev-util/intltool"
 
+src_unpack() {
+	xfce4_src_unpack
+	epatch "${FILESDIR}"/${P}-libtool.patch
+}
+
 DOCS="AUTHORS ChangeLog NEWS README THANKS"
