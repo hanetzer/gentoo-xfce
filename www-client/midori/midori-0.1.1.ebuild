@@ -4,7 +4,7 @@
 
 EAPI=1
 
-inherit eutils gnome2-utils multilib toolchain-funcs
+inherit eutils flag-o-matic gnome2-utils multilib toolchain-funcs
 
 DESCRIPTION="A lightweight web browser based on webkit-gtk"
 HOMEPAGE="http://www.twotoasts.de/index.php?/pages/midori_summary.html"
@@ -33,6 +33,9 @@ pkg_setup() {
 src_compile() {
 	# borrowed from openoffice
 	JOBS=`echo "${MAKEOPTS}" | sed -e "s/.*-j\([0-9]\+\).*/\1/"`
+
+	# needed for force --as-needed, feel free to fix the build system
+	append-ldflags -lgthread-2.0
 
 	export LINKFLAGS="${LDFLAGS}"
 	export CC=$(tc-getCC)
