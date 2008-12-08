@@ -36,6 +36,7 @@ src_compile() {
 	# borrowed from openoffice
 	JOBS=`echo "${MAKEOPTS}" | sed -e "s/.*-j\([0-9]\+\).*/\1/"`
 
+	# needed for force --as-needed, feel free to fix the build system
 	append-ldflags -lgthread-2.0
 
 	export LINKFLAGS="${LDFLAGS}"
@@ -62,6 +63,13 @@ src_install() {
 		--disable-docs \
 		install || die "waf install failed."
 	dodoc AUTHORS ChangeLog HACKING README TODO TRANSLATE
+
+	if use doc; then
+		mv "${D}"/usr/share/doc/${PF}/midori/user "${D}"/usr/share/doc/${PF}/
+		rmdir "${D}"/usr/share/doc/${PF}/midori/
+		insinto /usr/share/doc/${PF}/
+		doins -r _build_/docs/api
+	fi
 }
 
 pkg_preinst() {

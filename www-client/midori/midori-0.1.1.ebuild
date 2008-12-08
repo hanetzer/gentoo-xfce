@@ -13,7 +13,7 @@ SRC_URI="http://goodies.xfce.org/releases/${PN}/${P}.tar.bz2"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="nls soup sqlite"
+IUSE="doc nls soup sqlite"
 
 RDEPEND=">=dev-libs/glib-2.16:2
 	dev-libs/libxml2
@@ -23,6 +23,8 @@ RDEPEND=">=dev-libs/glib-2.16:2
 	sqlite? ( dev-db/sqlite )"
 DEPEND="${RDEPEND}
 	gnome-base/librsvg
+	doc? ( dev-python/docutils
+		dev-util/gtk-doc )
 	nls? ( sys-devel/gettext
 		dev-util/intltool )"
 
@@ -45,10 +47,13 @@ src_compile() {
 	use nls || myconf="--disable-nls"
 	use soup || myconf+=" --disable-libsoup"
 	use sqlite || myconf+=" --disable-sqlite"
+	use doc && myconf+=" --enable-api-docs"
+	use doc || myconf+=" --disable-docs"
 
 	./waf \
 		--prefix="/usr/" \
 		--libdir="/usr/$(get_libdir)/" \
+		--docdir="/usr/share/doc/${PF}/" \
 		${myconf} \
 		configure || die "waf configure failed."
 	./waf build -j ${JOBS} || die "waf build failed."
@@ -58,8 +63,15 @@ src_install() {
 	./waf \
 		--destdir="${D}" \
 		install || die "waf install failed."
-	rm -rf "${D}"/usr/share/doc/${PN}/
 	dodoc AUTHORS ChangeLog HACKING README TODO TRANSLATE
+
+	if use doc; then
+		mv "${D}"/usr/share/doc/${PF}/midori/user "${D}"/usr/share/doc/${PF}/
+		insinto /usr/share/doc/${PF}/
+		doins -r _build_/docs/api
+	fi
+	rm -rf "${D}"/usr/share/doc/${PF}/${PN}/
+
 	make_desktop_entry ${PN} Midori ${PN} Network
 }
 

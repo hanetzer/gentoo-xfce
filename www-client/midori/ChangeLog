@@ -4,6 +4,10 @@
 
   08 Dec 2008; Christoph Mende <angelos@gentoo.org> midori-0.1.1.ebuild,
   midori-9999.ebuild:
+  Make midori-9999 install API docs and add USE=doc to 0.1.1
+
+  08 Dec 2008; Christoph Mende <angelos@gentoo.org> midori-0.1.1.ebuild,
+  midori-9999.ebuild:
   Added desktop file for 0.1.1 and added -lgthread-2.0 hack for 9999
 
   08 Dec 2008; Christoph Mende <angelos@gentoo.org> midori-0.1.1.ebuild:
