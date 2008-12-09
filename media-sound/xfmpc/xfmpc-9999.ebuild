@@ -24,6 +24,7 @@ DEPEND="${RDEPEND}
 src_unpack() {
 	xfce4_src_unpack
 	epatch "${FILESDIR}"/${P}-libtool.patch
+	echo "src/dbbrowser.c" >> "${S}"/po/POTFILES.in
 }
 
 DOCS="AUTHORS ChangeLog NEWS README THANKS"
