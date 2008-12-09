@@ -12,4 +12,9 @@ IUSE="debug"
 
 DEPEND="dev-util/intltool"
 
+src_unpack() {
+	xfce4_src_unpack
+	echo "panel-plugin/radio.desktop.in.in" >> "${S}"/po/POTFILES.in
+}
+
 DOCS="AUTHORS ChangeLog NEWS README"
