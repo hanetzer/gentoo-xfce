@@ -2,9 +2,6 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-  09 Dec 2008; Christoph Mende <angelos@gentoo.org> thunar-9999.ebuild:
-  Fixed make check
-
   17 Nov 2008; Christoph Mende <angelos@gentoo.org> thunar-0.9.92.ebuild,
   thunar-9999.ebuild:
   Moved XFCE_CONFIG to pkg_setup
