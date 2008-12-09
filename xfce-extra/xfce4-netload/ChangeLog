@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Dec 2008; Christoph Mende <angelos@gentoo.org>
+  +files/xfce4-netload-0.4.0-asneeded.patch, xfce4-netload-9999.ebuild:
+  Imported --as-needed fix from the main tree
+
   05 Jan 2008; Christoph Mende <angelos@gentoo.org>
   xfce4-netload-9999.ebuild:
   Add missing intltool dependency
