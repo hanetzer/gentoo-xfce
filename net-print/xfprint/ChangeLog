@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Dec 2008; Christoph Mende <angelos@gentoo.org> xfprint-9999.ebuild:
+  Fixed make check
+
   05 Dec 2008; Christoph Mende <angelos@gentoo.org> xfprint-4.5.92.ebuild,
   xfprint-9999.ebuild:
   Removed unused icon that would collide with vmware-workstation

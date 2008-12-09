@@ -32,6 +32,7 @@ pkg_setup() {
 src_unpack() {
 	xfce4_src_unpack
 	sed -i -e "/24x24/d" "${S}"/icons/Makefile.in
+	echo "printing-systems/lprng/lprng.c" >> "${S}"/po/POTFILES.in
 }
 
 DOCS="AUTHORS ChangeLog NEWS README TODO"
