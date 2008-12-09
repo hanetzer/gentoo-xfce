@@ -29,6 +29,11 @@ pkg_setup() {
 	$(use_enable hal)"
 }
 
+src_unpack() {
+	xfce4_src_unpack
+	chmod +x "${S}"/{python,exo}/abicheck.sh
+}
+
 pkg_postinst() {
 	xfce4_pkg_postinst
 	python_mod_optimize /usr/lib*/python*/site-packages
