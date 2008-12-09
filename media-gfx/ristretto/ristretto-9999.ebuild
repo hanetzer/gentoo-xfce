@@ -30,4 +30,9 @@ pkg_setup() {
 	XFCE_CONFIG+=" $(use_enable xfce xfce-desktop)"
 }
 
+src_unpack() {
+	xfce4_src_unpack
+	echo "src/save_dialog.c" >> "${S}"/po/POTFILES.in
+}
+
 DOCS="AUTHORS ChangeLog NEWS README TODO"
