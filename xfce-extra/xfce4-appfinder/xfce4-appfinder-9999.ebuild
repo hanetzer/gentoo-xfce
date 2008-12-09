@@ -21,4 +21,9 @@ RDEPEND=">=dev-libs/glib-2.6:2
 DEPEND="${RDEPEND}
 	dev-util/intltool"
 
+src_unpack() {
+	xfce4_src_unpack
+	echo "src/appfinder.c" >> "${S}"/po/POTFILES.in
+}
+
 DOCS="AUTHORS BUGS ChangeLog NEWS README TODO"
