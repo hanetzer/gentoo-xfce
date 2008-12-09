@@ -22,5 +22,7 @@ RDEPEND="dev-libs/dbus-glib
 	>=xfce-base/libxfcegui4-${XFCE_VERSION}
 	>=xfce-base/xfconf-${XFCE_VERSION}
 	libsexy? ( x11-libs/libsexy )"
+DEPEND="${RDEPEND}
+	dev-util/intltool"
 
 DOCS="AUTHORS ChangeLog NEWS README TODO"
