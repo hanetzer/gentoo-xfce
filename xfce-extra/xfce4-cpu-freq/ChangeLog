@@ -3,6 +3,10 @@
 # $Header: $
 
   09 Dec 2008; Christoph Mende <angelos@gentoo.org>
+  xfce4-cpu-freq-9999.ebuild:
+  Fixed make check
+
+  09 Dec 2008; Christoph Mende <angelos@gentoo.org>
   +files/xfce4-cpu-freq-compile-fix.patch, xfce4-cpu-freq-9999.ebuild:
   Add patch from upstream bug 3357 to fix compilation
 

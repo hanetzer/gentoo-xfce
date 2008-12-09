@@ -15,6 +15,9 @@ IUSE=""
 src_unpack() {
 	xfce4_src_unpack
 	epatch "${FILESDIR}"/${PN}-compile-fix.patch
+	echo "panel-plugin/xfce4-cpufreq-configure.c" >> "${S}"/po/POTFILES.in
+	echo "panel-plugin/xfce4-cpufreq-linux.c" >> "${S}"/po/POTFILES.in
+	echo "panel-plugin/xfce4-cpufreq-overview.c" >> "${S}"/po/POTFILES.in
 }
 
 DOCS="AUTHORS ChangeLog NEWS README"
