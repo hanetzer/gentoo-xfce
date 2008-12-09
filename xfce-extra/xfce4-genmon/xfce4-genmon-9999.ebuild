@@ -12,4 +12,9 @@ IUSE=""
 
 DEPEND="dev-util/intltool"
 
+src_unpack() {
+	xfce4_src_unpack
+	echo "glade/config_gui.glade" >> "${S}"/po/POTFILES.in
+}
+
 DOCS="AUTHORS ChangeLog NEWS README"
