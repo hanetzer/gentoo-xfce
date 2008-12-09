@@ -35,7 +35,23 @@ RDEPEND=">=dev-libs/glib-2.10:2
 DEPEND="${RDEPEND}
 	dev-util/intltool"
 
-XFCE_CONFIG+=" --enable-xsync --enable-render --enable-randr
+pkg_setup() {
+	XFCE_CONFIG+=" --enable-xsync --enable-render --enable-randr
 	$(use_enable xcomposite compositor) $(use_enable nls)"
+}
+
+src_unpack() {
+	xfce4_src_unpack
+
+	echo "mcs-plugin/margins.c" >> "${S}"/po/POTFILES.skip
+	echo "mcs-plugin/wmtweaks_plugin.c" >> "${S}"/po/POTFILES.skip
+	echo "mcs-plugin/workspaces.c" >> "${S}"/po/POTFILES.skip
+	echo "mcs-plugin/workspaces_plugin.c" >> "${S}"/po/POTFILES.skip
+	echo "mcs-plugin/xfce-wm-settings.desktop.in" >> "${S}"/po/POTFILES.skip
+	echo "mcs-plugin/xfce-wmtweaks-settings.desktop.in" >> "${S}"/po/POTFILES.skip
+	echo "mcs-plugin/xfce-workspaces-settings.desktop.in" >> "${S}"/po/POTFILES.skip
+	echo "mcs-plugin/xfwm4_plugin.c" >> "${S}"/po/POTFILES.skip
+	echo "mcs-plugin/xfwm4_shortcuteditor.c" >> "${S}"/po/POTFILES.skip
+}
 
 DOCS="AUTHORS ChangeLog COMPOSITOR NEWS README TODO"
