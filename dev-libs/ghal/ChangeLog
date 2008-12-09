@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  09 Dec 2008; Christoph Mende <angelos@gentoo.org> ghal-9999.ebuild:
+  Fixed exo dependency
+
   08 Dec 2008; Christoph Mende <angelos@gentoo.org> ghal-9999.ebuild:
   ghal moved to git.xfce.org
 
