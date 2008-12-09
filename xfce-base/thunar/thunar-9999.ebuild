@@ -62,6 +62,7 @@ pkg_setup() {
 }
 
 src_test() {
+	chmod +x "${S}"/thunar{x,-vfs}/abicheck.sh
 	Xemake check || die "emake check failed."
 }
 
