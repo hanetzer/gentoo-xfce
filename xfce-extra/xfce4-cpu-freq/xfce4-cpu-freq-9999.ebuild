@@ -4,12 +4,17 @@
 
 MY_PN=${PN/-freq/freq}
 
-inherit xfce4
+inherit eutils xfce4
 
 xfce4_panel_plugin
 
 DESCRIPTION="A panel plugin for showing information about cpufreq settings"
 KEYWORDS="~amd64 ~ppc ~ppc64 ~x86"
 IUSE=""
+
+src_unpack() {
+	xfce4_src_unpack
+	epatch "${FILESDIR}"/${PN}-compile-fix.patch
+}
 
 DOCS="AUTHORS ChangeLog NEWS README"
