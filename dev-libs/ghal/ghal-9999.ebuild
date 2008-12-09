@@ -8,8 +8,6 @@ XFCE_CAT="kelnos"
 
 inherit xfce4
 
-xfce4_goodies
-
 DESCRIPTION="a gobject-based wrapper for libhal and libhal-storage"
 HOMEPAGE="http://www.xfce.org/"
 KEYWORDS="~amd64 ~x86"

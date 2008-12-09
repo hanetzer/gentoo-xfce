@@ -25,6 +25,8 @@ DEPEND="${RDEPEND}
 if [[ ${PV} = 9999* ]]; then
 	DEPEND+=" dev-util/gtk-doc"
 	[[ ${PN} != xfce4-dev-tools ]] && DEPEND+=" >=dev-util/xfce4-dev-tools-9999"
+	[[ "${XFCE_VCS}" = "git" ]] && \
+		EGIT_REPO_URI="git://git.xfce.org/${XFCE_CAT}/${MY_PN:-${PN}}"
 fi
 
 [[ -z ${MY_P} ]] && MY_P=${MY_PN:-${PN}}-${MY_PV:-${PV}}
@@ -59,9 +61,7 @@ xfce4_plugin() {
 # xfce4-notifyd)
 xfce4_goodies() {
 	if [[ ${PV} = 9999* ]]; then
-		[[ "${XFCE_VCS}" = "git" ]] \
-		&& EGIT_REPO_URI="git://git.xfce.org/${XFCE_CAT}/${MY_PN:-${PN}}" \
-		|| ESVN_REPO_URI="http://svn.xfce.org/svn/goodies/${MY_PN:-${PN}}/trunk"
+		ESVN_REPO_URI="http://svn.xfce.org/svn/goodies/${MY_PN:-${PN}}/trunk"
 	else
 		SRC_URI="http://goodies.xfce.org/releases/${MY_PN:-${PN}}/${MY_P}${COMPRESS}"
 	fi

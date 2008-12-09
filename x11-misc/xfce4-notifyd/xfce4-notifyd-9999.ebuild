@@ -8,8 +8,6 @@ XFCE_CAT="kelnos"
 
 inherit xfce4
 
-xfce4_goodies
-
 DESCRIPTION="Xfce4 notification daemon"
 HOMEPAGE="http://spuriousinterrupt.org/projects/xfce4-notifyd"
 KEYWORDS="~amd64 ~x86"
