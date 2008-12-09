@@ -25,4 +25,11 @@ pkg_setup() {
 	XFCE_CONFIG+=" $(use_enable pathbar) $(use_enable toolbar) $(use_enable debug)"
 }
 
+src_unpack() {
+	xfce4_src_unpack
+	echo "src/button_drag_box.c" >> "${S}"/po/POTFILES.in
+	echo "src/preferences_dialog.c" >> "${S}"/po/POTFILES.in
+	echo "src/properties_dialog.c" >> "${S}"/po/POTFILES.in
+}
+
 DOCS="AUTHORS ChangeLog NEWS README TODO"
