@@ -39,4 +39,9 @@ XFCE_CONFIG+=" $(use_enable libnotify) $(use_enable nls)
 	$(use_enable keyboard libxklavier) $(use_enable sound sound-settings)
 	--enable-xcursor"
 
+src_unpack() {
+	xfce4_src_unpack
+	echo "xfce4-settings-manager/xfce-text-renderer.c" >> "${S}"/po/POTFILES.in
+}
+
 DOCS="AUTHORS ChangeLog NEWS README TODO"
