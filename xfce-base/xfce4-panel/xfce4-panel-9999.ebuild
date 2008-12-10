@@ -22,7 +22,7 @@ RDEPEND=">=dev-libs/glib-2.8:2
 	>=x11-libs/libwnck-2.12
 	>=xfce-base/libxfce4util-${XFCE_VERSION}
 	>=xfce-base/libxfcegui4-${XFCE_VERSION}
-	>=xfce-extra/exo-${XFCE_VERSION}
+	>=xfce-extra/exo-0.3.92
 	startup-notification? ( x11-libs/startup-notification )"
 
 DOCS="AUTHORS ChangeLog HACKING NEWS README README.Plugins"
