@@ -6,6 +6,8 @@ EAPI=2
 
 inherit xfce4
 
+XFCE_VERSION=4.4
+
 xfce4_goodies
 
 DESCRIPTION="Systray status icon for safe unmount/eject of volumes"
@@ -17,9 +19,9 @@ IUSE="debug"
 RDEPEND=">=x11-libs/gtk+-2.10:2
 	>=xfce-base/libxfce4util-${XFCE_VERSION}
 	>=xfce-base/libxfcegui4-${XFCE_VERSION}
-	>=xfce-extra/exo-${XFCE_VERSION}[hal]
+	>=xfce-extra/exo-0.3.4[hal]
 	>=sys-apps/hal-0.5.9
-	>=dev-libs/ghal-${XFCE_VERSION}
+	>=dev-libs/ghal-0.1
 	dev-libs/dbus-glib"
 DEPEND="${RDEPEND}
 	dev-util/intltool"
