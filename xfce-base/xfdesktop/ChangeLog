@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Dec 2008; Christoph Mende <angelos@gentoo.org> xfdesktop-9999.ebuild:
+  Fixed exo/thunar dependencies
+
   17 Nov 2008; Christoph Mende <angelos@gentoo.org> xfdesktop-4.5.92.ebuild,
   xfdesktop-9999.ebuild:
   Removed backslashes from XFCE_CONFIG
