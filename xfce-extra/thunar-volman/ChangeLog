@@ -2,6 +2,14 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  10 Dec 2008; Christoph Mende <angelos@gentoo.org>
+  thunar-volman-0.3.80.ebuild, thunar-volman-9999.ebuild:
+  Fixed exo/thunar dependencies
+
+  10 Dec 2008; Christoph Mende <angelos@gentoo.org>
+  thunar-volman-9999.ebuild:
+  Fixed exo/thunar dependencies
+
   09 Nov 2008; Christoph Mende <angelos@gentoo.org>
   thunar-volman-0.3.80.ebuild:
   Set XFCE_VERSION for proper dependencies

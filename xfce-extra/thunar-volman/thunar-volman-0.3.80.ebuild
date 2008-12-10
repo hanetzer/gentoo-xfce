@@ -6,8 +6,6 @@ EAPI=2
 
 inherit xfce4
 
-XFCE_VERSION=4.5.90
-
 xfce4_goodies
 
 DESCRIPTION="Thunar volume management"
@@ -18,7 +16,7 @@ IUSE="debug"
 
 RDEPEND="dev-libs/dbus-glib
 	sys-apps/hal
-	>=xfce-extra/exo-0.3.80[hal]
-	>=xfce-base/thunar-0.9"
+	>=xfce-extra/exo-0.3.8[hal]
+	>=xfce-base/thunar-${THUNAR_VERSION}"
 
 DOCS="AUTHORS ChangeLog NEWS README THANKS"
