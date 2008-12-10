@@ -26,7 +26,7 @@ RDEPEND=">=dev-libs/glib-2.12:2
 	>=xfce-base/xfconf-${XFCE_VERSION}
 	!xfce-base/xfce-mcs-manager
 	!xfce-base/xfce-mcs-plugins
-	>=xfce-extra/exo-${XFCE_VERSION}
+	>=xfce-extra/exo-0.3.92
 	libnotify? ( x11-libs/libnotify )
 	keyboard? ( x11-libs/libxklavier )
 	sound? ( media-libs/libcanberra )"
