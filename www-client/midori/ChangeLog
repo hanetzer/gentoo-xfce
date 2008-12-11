@@ -4,6 +4,10 @@
 
   11 Dec 2008; Christoph Mende <angelos@gentoo.org> midori-0.1.1.ebuild,
   midori-9999.ebuild:
+  Only export JOBS if it's actually an integer
+
+  11 Dec 2008; Christoph Mende <angelos@gentoo.org> midori-0.1.1.ebuild,
+  midori-9999.ebuild:
   export JOBS instead of passing it to waf to allow empty MAKEOPTS
 
   08 Dec 2008; Christoph Mende <angelos@gentoo.org> midori-9999.ebuild:

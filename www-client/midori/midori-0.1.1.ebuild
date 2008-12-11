@@ -34,7 +34,8 @@ pkg_setup() {
 
 src_compile() {
 	# borrowed from openoffice
-	export JOBS=`echo "${MAKEOPTS}" | sed -e "s/.*-j\([0-9]\+\).*/\1/"`
+	JOBS=`echo "${MAKEOPTS}" | sed -e "s/.*-j\([0-9]\+\).*/\1/"`
+	[ $JOBS -gt 0 ] && export JOBS
 
 	# needed for force --as-needed, feel free to fix the build system
 	append-ldflags -lgthread-2.0

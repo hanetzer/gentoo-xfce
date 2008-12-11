@@ -34,7 +34,8 @@ pkg_setup() {
 
 src_compile() {
 	# borrowed from openoffice
-	export JOBS=`echo "${MAKEOPTS}" | sed -e "s/.*-j\([0-9]\+\).*/\1/"`
+	JOBS=`echo "${MAKEOPTS}" | sed -e "s/.*-j\([0-9]\+\).*/\1/"`
+	[ $JOBS -gt 0 ] && export JOBS
 
 	export LINKFLAGS="${LDFLAGS}"
 	export CC=$(tc-getCC)
