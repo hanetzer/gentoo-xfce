@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  11 Dec 2008; Christoph Mende <angelos@gentoo.org> midori-0.1.1.ebuild,
+  midori-9999.ebuild:
+  export JOBS instead of passing it to waf to allow empty MAKEOPTS
+
   08 Dec 2008; Christoph Mende <angelos@gentoo.org> midori-9999.ebuild:
   Removed ugly hack for -lgthread-2.0, this was fixed upstream
 

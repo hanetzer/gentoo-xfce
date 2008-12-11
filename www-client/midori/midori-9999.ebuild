@@ -34,7 +34,7 @@ pkg_setup() {
 
 src_compile() {
 	# borrowed from openoffice
-	JOBS=`echo "${MAKEOPTS}" | sed -e "s/.*-j\([0-9]\+\).*/\1/"`
+	export JOBS=`echo "${MAKEOPTS}" | sed -e "s/.*-j\([0-9]\+\).*/\1/"`
 
 	export LINKFLAGS="${LDFLAGS}"
 	export CC=$(tc-getCC)
@@ -51,7 +51,7 @@ src_compile() {
 		$(use_enable doc apidocs) \
 		$(use_enable !minimal addons) \
 		configure || die "waf configure failed."
-	./waf build -j ${JOBS} || die "waf build failed."
+	./waf build || die "waf build failed."
 }
 
 src_install() {

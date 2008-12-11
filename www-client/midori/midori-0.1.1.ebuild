@@ -34,7 +34,7 @@ pkg_setup() {
 
 src_compile() {
 	# borrowed from openoffice
-	JOBS=`echo "${MAKEOPTS}" | sed -e "s/.*-j\([0-9]\+\).*/\1/"`
+	export JOBS=`echo "${MAKEOPTS}" | sed -e "s/.*-j\([0-9]\+\).*/\1/"`
 
 	# needed for force --as-needed, feel free to fix the build system
 	append-ldflags -lgthread-2.0
@@ -56,7 +56,7 @@ src_compile() {
 		--docdir="/usr/share/doc/${PF}/" \
 		${myconf} \
 		configure || die "waf configure failed."
-	./waf build -j ${JOBS} || die "waf build failed."
+	./waf build || die "waf build failed."
 }
 
 src_install() {
