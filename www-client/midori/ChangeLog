@@ -4,6 +4,10 @@
 
   13 Dec 2008; Christoph Mende <angelos@gentoo.org> midori-0.1.1.ebuild,
   midori-9999.ebuild:
+  Added USE=minimal to midori-0.1.1 and quoted JOBS
+
+  13 Dec 2008; Christoph Mende <angelos@gentoo.org> midori-0.1.1.ebuild,
+  midori-9999.ebuild:
   Use tc-export rather than exporting everything one by one
 
   11 Dec 2008; Christoph Mende <angelos@gentoo.org> midori-0.1.1.ebuild,

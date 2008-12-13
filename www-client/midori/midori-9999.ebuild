@@ -35,7 +35,7 @@ pkg_setup() {
 src_compile() {
 	# borrowed from openoffice
 	JOBS=`echo "${MAKEOPTS}" | sed -e "s/.*-j\([0-9]\+\).*/\1/"`
-	[ $JOBS -gt 0 ] && export JOBS
+	[ "$JOBS" -gt 0 ] && export JOBS
 
 	export LINKFLAGS="${LDFLAGS}"
 	tc-export AR CC CPP RANLIB

@@ -13,7 +13,7 @@ SRC_URI="http://goodies.xfce.org/releases/${PN}/${P}.tar.bz2"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="doc nls soup sqlite"
+IUSE="doc minimal nls soup sqlite"
 
 RDEPEND=">=dev-libs/glib-2.16:2
 	dev-libs/libxml2
@@ -35,7 +35,7 @@ pkg_setup() {
 src_compile() {
 	# borrowed from openoffice
 	JOBS=`echo "${MAKEOPTS}" | sed -e "s/.*-j\([0-9]\+\).*/\1/"`
-	[ $JOBS -gt 0 ] && export JOBS
+	[ "$JOBS" -gt 0 ] && export JOBS
 
 	# needed for force --as-needed, feel free to fix the build system
 	append-ldflags -lgthread-2.0
@@ -43,12 +43,13 @@ src_compile() {
 	export LINKFLAGS="${LDFLAGS}"
 	tc-export AR CC CPP RANLIB
 
-	local myconf
-	use nls || myconf="--disable-nls"
-	use soup || myconf+=" --disable-libsoup"
-	use sqlite || myconf+=" --disable-sqlite"
+	local myconf=""
 	use doc && myconf+=" --enable-api-docs"
 	use doc || myconf+=" --disable-docs"
+	use minimal && myconf+=" --disable-extensions"
+	use nls || myconf+=" --disable-nls"
+	use soup || myconf+=" --disable-libsoup"
+	use sqlite || myconf+=" --disable-sqlite"
 
 	./waf \
 		--prefix="/usr/" \
