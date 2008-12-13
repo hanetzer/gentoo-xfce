@@ -41,8 +41,7 @@ src_compile() {
 	append-ldflags -lgthread-2.0
 
 	export LINKFLAGS="${LDFLAGS}"
-	export CC=$(tc-getCC)
-	export AR=$(tc-getAR)
+	tc-export AR CC CPP RANLIB
 
 	local myconf
 	use nls || myconf="--disable-nls"

@@ -38,8 +38,7 @@ src_compile() {
 	[ $JOBS -gt 0 ] && export JOBS
 
 	export LINKFLAGS="${LDFLAGS}"
-	export CC=$(tc-getCC)
-	export AR=$(tc-getAR)
+	tc-export AR CC CPP RANLIB
 
 	./waf \
 		--prefix="/usr/" \
