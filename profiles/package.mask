@@ -33,6 +33,7 @@
 =xfce-base/xfdesktop-9999
 =xfce-base/xfwm4-9999
 =xfce-extra/exo-9999
+=xfce-extra/sion-9999
 =xfce-extra/thunar-archive-9999
 =xfce-extra/thunar-media-tags-9999
 =xfce-extra/thunar-shares-9999
