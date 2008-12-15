@@ -51,6 +51,7 @@ xfce4_gzipped() {
 xfce4_plugin() {
 	MY_PN="${MY_PN:-${PN}}-plugin"
 	MY_P="${MY_PN}-${MY_PV:-${PV}}"
+	S="${WORKDIR}/${MY_P}"
 }
 
 # @FUNCTION: xfce4_goodies
@@ -136,12 +137,8 @@ xfce4_src_unpack() {
 # Package compilation
 # XFCE_CONFIG is used for additional econf/autogen.sh arguments
 # startup-notification and debug are automatically added when they are found in
-# IUSE, gtk-doc is added when doc is found in IUSE
+# IUSE
 xfce4_src_compile() {
-	if has doc ${IUSE}; then
-		XFCE_CONFIG+=" $(use_enable doc gtk-doc)"
-	fi
-
 	if has startup-notification ${IUSE}; then
 		XFCE_CONFIG+=" $(use_enable startup-notification)"
 	fi
