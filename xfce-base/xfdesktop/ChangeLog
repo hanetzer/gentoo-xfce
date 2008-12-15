@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  15 Dec 2008; Christoph Mende <angelos@gentoo.org> xfdesktop-4.5.92.ebuild,
+  xfdesktop-9999.ebuild:
+  Added libxslt dependency for USE=doc
+
   10 Dec 2008; Christoph Mende <angelos@gentoo.org> xfdesktop-9999.ebuild:
   Fixed exo/thunar dependencies
 

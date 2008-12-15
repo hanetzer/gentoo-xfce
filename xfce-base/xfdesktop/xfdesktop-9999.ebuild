@@ -29,7 +29,8 @@ RDEPEND="gnome-base/libglade
 		>=xfce-extra/exo-0.3.92 dev-libs/dbus-glib )
 	menu-plugin? ( >=xfce-base/xfce4-panel-${XFCE_VERSION} )"
 DEPEND="${RDEPEND}
-	dev-util/intltool"
+	dev-util/intltool
+	doc? ( dev-libs/libxslt )"
 
 for X in ${LINGUAS}; do
 	IUSE="${IUSE} linguas_${X}"
