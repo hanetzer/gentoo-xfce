@@ -6,14 +6,13 @@ EAPI=1
 
 inherit xfce4 python
 
-MY_PN="lib${PN}"
 XFCE_VERSION=4.5.92
 
 xfce4_core
 
 DESCRIPTION="Extensions, widgets and framework library with session management support"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-IUSE="debug hal libnotify python"
+IUSE="debug doc hal libnotify python"
 
 RDEPEND=">=dev-lang/perl-5.6
 	dev-perl/URI
@@ -24,11 +23,12 @@ RDEPEND=">=dev-lang/perl-5.6
 	hal? ( sys-apps/hal )
 	python? ( dev-python/pygtk )"
 DEPEND="${RDEPEND}
-	dev-util/intltool"
+	dev-util/intltool
+	doc? ( dev-libs/libxslt )"
 
 pkg_setup() {
-	XFCE_CONFIG+=" $(use_enable python) $(use_enable libnotify notifications)
-	$(use_enable hal)"
+	XFCE_CONFIG+=" $(use_enable doc xsltproc) $(use_enable python)
+	$(use_enable libnotify notifications) $(use_enable hal)"
 }
 
 pkg_postinst() {
