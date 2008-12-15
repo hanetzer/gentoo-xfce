@@ -132,13 +132,13 @@ xfce4_src_unpack() {
 	fi
 }
 
-# @FUNCTION: xfce4_src_compile
+# @FUNCTION: xfce4_src_configure
 # @DESCRIPTION:
 # Package compilation
 # XFCE_CONFIG is used for additional econf/autogen.sh arguments
 # startup-notification and debug are automatically added when they are found in
 # IUSE
-xfce4_src_compile() {
+xfce4_src_configure() {
 	if has startup-notification ${IUSE}; then
 		XFCE_CONFIG+=" $(use_enable startup-notification)"
 	fi
@@ -162,6 +162,14 @@ xfce4_src_compile() {
 	else
 		econf ${XFCE_CONFIG}
 	fi
+}
+
+# @FUNCTION: xfce4_src_compile
+# @DESCRIPTION:
+# Package compilation
+# Calls xfce4_src_configure for EAPI <= 1 and runs emake with ${JOBS}
+xfce4_src_compile() {
+	[[ "${EAPI}" -le 1 ]] && xfce4_src_configure
 	emake ${JOBS} || die "emake failed"
 }
 
@@ -200,4 +208,4 @@ xfce4_pkg_postrm() {
 	gnome2_icon_cache_update
 }
 
-EXPORT_FUNCTIONS src_unpack src_compile src_install pkg_preinst pkg_postinst pkg_postrm
+EXPORT_FUNCTIONS src_unpack src_configure src_compile src_install pkg_preinst pkg_postinst pkg_postrm
