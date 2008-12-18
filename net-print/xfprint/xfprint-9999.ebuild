@@ -11,7 +11,7 @@ xfce4_core
 DESCRIPTION="Frontend for printing, management and job queue."
 HOMEPAGE="http://www.xfce.org/projects/xfprint"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-IUSE="cups debug"
+IUSE="cups doc debug"
 
 RDEPEND="app-text/a2ps
 	>=dev-libs/glib-2.6:2
@@ -22,11 +22,15 @@ RDEPEND="app-text/a2ps
 	cups? ( net-print/cups )
 	!cups? ( net-print/lprng )"
 DEPEND="${RDEPEND}
-	dev-util/intltool"
+	dev-util/intltool
+	doc? ( dev-util/gtk-doc )"
+
+WANT_GTKDOCIZE="yes"
 
 pkg_setup() {
 	use cups || XFCE_CONFIG+=" --enable-bsdlpr"
 	use cups && XFCE_CONFIG+=" --enable-cups"
+	XFCE_CONFIG+=" $(use_enable doc gtk-doc)"
 }
 
 src_unpack() {
