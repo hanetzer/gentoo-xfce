@@ -23,4 +23,6 @@ RDEPEND="dev-libs/dbus-glib
 DEPEND="${RDEPEND}
 	dev-util/intltool"
 
+XFCE_CONFIG=" $(use_enable libsexy)"
+
 DOCS="AUTHORS ChangeLog NEWS README TODO"

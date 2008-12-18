@@ -24,4 +24,6 @@ RDEPEND="dev-libs/dbus-glib
 DEPEND="${RDEPEND}
 	dev-util/intltool"
 
+XFCE_CONFIG=" $(use_enable libsexy) --enable-maintainer-mode"
+
 DOCS="AUTHORS ChangeLog NEWS README TODO"

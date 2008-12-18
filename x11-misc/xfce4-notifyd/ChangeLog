@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Dec 2008; Christoph Mende <angelos@gentoo.org>
+  xfce4-notifyd-0.1.0.ebuild, xfce4-notifyd-9999.ebuild:
+  Added use_enable libsexy and added --enable-maintainer-mode to 0.1.0
+
   09 Dec 2008; Christoph Mende <angelos@gentoo.org>
   xfce4-notifyd-0.1.0.ebuild, xfce4-notifyd-9999.ebuild:
   Added intltool dependency
