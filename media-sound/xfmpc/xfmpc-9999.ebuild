@@ -21,9 +21,10 @@ RDEPEND=">=media-libs/libmpd-0.15.0
 DEPEND="${RDEPEND}
 	dev-util/intltool"
 
+XFCE4_PATCHES="${FILESDIR}/${P}-libtool.patch"
+
 src_unpack() {
 	xfce4_src_unpack
-	epatch "${FILESDIR}"/${P}-libtool.patch
 	echo "src/dbbrowser.c" >> "${S}"/po/POTFILES.in
 }
 
