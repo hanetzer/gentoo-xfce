@@ -25,8 +25,7 @@ RDEPEND=">=dev-libs/libburn-0.4.2
 	hal? ( sys-apps/hal )
 	gstreamer? ( media-libs/gstreamer )"
 DEPEND="${RDEPEND}
-	dev-util/intltool
-	sys-devel/gettext"
+	dev-util/intltool"
 
 pkg_setup() {
 	XFCE_CONFIG+=" $(use_enable xfce thunar-vfs) $(use_enable dbus)

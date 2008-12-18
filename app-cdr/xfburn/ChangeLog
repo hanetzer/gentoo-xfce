@@ -2,6 +2,9 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Dec 2008; Christoph Mende <angelos@gentoo.org> xfburn-9999.ebuild:
+  Removd gettext dependency
+
   10 Dec 2008; Christoph Mende <angelos@gentoo.org> xfburn-9999.ebuild:
   Fixed exo dependency and lowered xfce deps to 4.4
 
