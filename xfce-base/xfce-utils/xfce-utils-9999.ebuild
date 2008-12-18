@@ -24,8 +24,12 @@ RDEPEND="x11-apps/xrdb
 	lock? ( || ( x11-misc/xscreensaver
 		gnome-extra/gnome-screensaver
 		x11-misc/xlockmore ) )"
+DEPEND="${RDEPEND}
+	dev-util/intltool"
 
-XFCE_CONFIG+=" $(use_enable dbus) --with-vendor-info=Gentoo"
+pkg_setup() {
+	XFCE_CONFIG+=" $(use_enable dbus) --with-vendor-info=Gentoo"
+}
 
 src_install() {
 	xfce4_src_install
