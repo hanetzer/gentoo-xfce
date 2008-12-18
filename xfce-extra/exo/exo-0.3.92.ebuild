@@ -24,11 +24,11 @@ RDEPEND=">=dev-lang/perl-5.6
 	python? ( dev-python/pygtk )"
 DEPEND="${RDEPEND}
 	dev-util/intltool
-	doc? ( dev-libs/libxslt )"
+	doc? ( dev-util/gtk-doc )"
 
 pkg_setup() {
-	XFCE_CONFIG+=" $(use_enable doc xsltproc) $(use_enable python)
-	$(use_enable libnotify notifications) $(use_enable hal)"
+	XFCE_CONFIG+=" $(use_enable doc gtk-doc) $(use_enable hal)
+	$(use_enable libnotify notifications) $(use_enable python)"
 }
 
 pkg_postinst() {
