@@ -14,7 +14,7 @@ xfce4_core
 DESCRIPTION="File manager"
 HOMEPAGE="http://thunar.xfce.org"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-IUSE="+trash-plugin dbus debug exif gnome hal pcre startup-notification"
+IUSE="dbus debug doc exif gnome hal pcre startup-notification +trash-plugin"
 
 RDEPEND=">=dev-lang/perl-5.6
 	>=dev-libs/glib-2.6:2
@@ -38,11 +38,13 @@ RDEPEND=">=dev-lang/perl-5.6
 	trash-plugin? ( dev-libs/dbus-glib
 		>=xfce-base/xfce4-panel-${XFCE_VERSION} )"
 DEPEND="${RDEPEND}
-	dev-util/intltool"
+	dev-util/intltool
+	doc? ( dev-util/gtk-doc )"
 
 pkg_setup() {
-	XFCE_CONFIG+=" $(use_enable exif) $(use_enable gnome gnome-thumbnailers)
-	$(use_enable dbus) $(use_enable pcre)"
+	XFCE_CONFIG+="$(use_enable dbus) $(use_enable doc gtk-doc)
+	$(use_enable exif) $(use_enable gnome gnome-thumbnailers)
+	$(use_enable pcre)"
 
 	if use hal && ! use dbus; then
 		ewarn "USE hal detected, enabling dbus."
@@ -63,7 +65,7 @@ pkg_setup() {
 }
 
 src_test() {
-	Xemake check || die "emake check failed."
+	Xemake check || die "emake check failed"
 }
 
 DOCS="AUTHORS ChangeLog FAQ HACKING NEWS README THANKS TODO"

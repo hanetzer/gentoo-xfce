@@ -2,6 +2,10 @@
 # Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  18 Dec 2008; Christoph Mende <angelos@gentoo.org> thunar-0.9.92.ebuild,
+  thunar-9999.ebuild:
+  Added USE=doc
+
   10 Dec 2008; Christoph Mende <angelos@gentoo.org> thunar-9999.ebuild:
   Fixed exo dependency and removed unneeded MY_P
 
