@@ -11,7 +11,7 @@ xfce4_core
 DESCRIPTION="a GTK+ based and advanced archive manager for use with Thunar"
 HOMEPAGE="http://squeeze.xfce.org"
 KEYWORDS="~alpha ~amd64 -hppa ~ia64 ~ppc ~ppc64 -sparc ~x86 ~x86-fbsd"
-IUSE="debug +pathbar +toolbar"
+IUSE="debug doc +pathbar +toolbar"
 
 RDEPEND="dev-libs/dbus-glib
 	x11-libs/gtk+:2
@@ -19,10 +19,13 @@ RDEPEND="dev-libs/dbus-glib
 	>=xfce-base/thunar-${XFCE_VERSION}"
 DEPEND="${RDEPEND}
 	dev-util/intltool
-	sys-devel/gettext"
+	doc? ( dev-util/gtk-doc )"
+
+WANT_GTKDOCIZE="yes"
 
 pkg_setup() {
-	XFCE_CONFIG+=" $(use_enable pathbar) $(use_enable toolbar) $(use_enable debug)"
+	XFCE_CONFIG+=" $(use_enable debug) $(use_enable doc gtk-doc)
+	$(use_enable pathbar) $(use_enable toolbar)"
 }
 
 src_unpack() {
