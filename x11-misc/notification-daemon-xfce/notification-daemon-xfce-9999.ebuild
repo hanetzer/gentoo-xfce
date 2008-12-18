@@ -21,7 +21,6 @@ RDEPEND=">=dev-libs/glib-2.6:2
 	dev-libs/dbus-glib"
 DEPEND="${RDEPEND}
 	dev-util/intltool
-	sys-devel/gettext
 	!x11-misc/notification-daemon"
 
 pkg_setup() {
