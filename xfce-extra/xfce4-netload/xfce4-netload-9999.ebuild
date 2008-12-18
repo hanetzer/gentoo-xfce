@@ -11,9 +11,6 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 DEPEND="dev-util/intltool"
 
-src_unpack() {
-	xfce4_src_unpack
-	epatch "${FILESDIR}"/${PN}-0.4.0-asneeded.patch
-}
+XFCE4_PATCHES="${FILESDIR}/${PN}-0.4.0-asneeded.patch"
 
 DOCS="AUTHORS ChangeLog NEWS README"
