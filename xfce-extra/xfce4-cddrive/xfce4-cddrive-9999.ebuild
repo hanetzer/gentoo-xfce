@@ -24,4 +24,6 @@ pkg_setup() {
 	XFCE_CONFIG+=" $(use_enable cddb) $(use_enable !debug final)"
 }
 
+XFCE4_PATCHES="${FILESDIR}/${PN}-libtool22.patch"
+
 DOCS="AUTHORS ChangeLog README THANKS TODO"
