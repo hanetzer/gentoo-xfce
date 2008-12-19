@@ -150,7 +150,7 @@ xfce4_src_unpack() {
 			AT_M4DIR="/usr/share/xfce4/dev-tools/m4macros"
 			[ -n "${WANT_GTKDOCIZE}" ] && gtkdocize --copy
 			if [ -d po ]; then
-			grep -qs ^AC_PROG_INTLTOOL ${configure} \
+			grep -Eqs "^(AC|IT)_PROG_INTLTOOL" ${configure} \
 				&& intltoolize --automake --copy --force \
 				|| glib-gettextize --copy --force >/dev/null
 			fi
