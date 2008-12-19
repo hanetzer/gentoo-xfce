@@ -31,17 +31,3 @@ RDEPEND=">=x11-themes/gtk-engines-xfce-2.5.92
 	minimal? ( x11-themes/hicolor-icon-theme )
 	xscreensaver? ( || ( >=x11-misc/xscreensaver-5.03
 		gnome-extra/gnome-screensaver ) )"
-DEPEND="${RDEPEND}"
-
-src_install() {
-	dodir /etc/X11/Sessions
-	echo startxfce4 > "${D}/etc/X11/Sessions/Xfce4"
-	fperms 755 /etc/X11/Sessions/Xfce4
-}
-
-pkg_postinst() {
-	elog
-	elog "Run Xfce4 from your favourite Display Manager by using"
-	elog "XSESSION=\"Xfce4\" in /etc/rc.conf"
-	elog
-}
