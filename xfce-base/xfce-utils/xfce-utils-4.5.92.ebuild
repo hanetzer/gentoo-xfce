@@ -36,6 +36,17 @@ src_install() {
 
 	insinto /usr/share/xfce4
 	doins "${FILESDIR}/Gentoo"
+
+	dodir /etc/X11/Sessions
+	echo startxfce4 > "${D}/etc/X11/Sessions/Xfce4"
+	fperms 755 /etc/X11/Sessions/Xfce4
+}
+
+pkg_postinst() {
+	elog
+	elog "Run Xfce4 from your favourite Display Manager by using"
+	elog "XSESSION=\"Xfce4\" in /etc/rc.conf"
+	elog
 }
 
 DOCS="AUTHORS ChangeLog NEWS README TODO"
