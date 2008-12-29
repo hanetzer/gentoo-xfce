@@ -4,7 +4,7 @@
 
 inherit xfce4
 
-xfce4_panel_plugin
+xfce4_goodies
 
 DESCRIPTION="Xfce4 panel screenshooter plugin"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
