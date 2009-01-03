@@ -147,7 +147,7 @@ xfce4_src_unpack() {
 		if [ -f configure.?? ]; then
 			[ -f configure.ac ] && configure=configure.ac
 			[ -f configure.in ] && configure=configure.in
-			AT_M4DIR="/usr/share/xfce4/dev-tools/m4macros"
+			[ ${PN} != xfce4-dev-tools ] && AT_M4DIR="/usr/share/xfce4/dev-tools/m4macros"
 			[ -n "${WANT_GTKDOCIZE}" ] && gtkdocize --copy
 			if [ -d po ]; then
 			grep -Eqs "^(AC|IT)_PROG_INTLTOOL" ${configure} \
