@@ -7,7 +7,7 @@ EAPI=1
 MY_PN="gtk-xfce-engine"
 inherit xfce4
 
-XFCE_VERSION=4.5.92
+XFCE_VERSION=4.5.93
 
 xfce4_core
 
