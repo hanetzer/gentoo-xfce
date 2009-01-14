@@ -2,9 +2,6 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
-  14 Jan 2009; Christoph Mende <angelos@gentoo.org> +orage-4.5.93.ebuild:
-  orage: Xfce-4.6 beta3
-
 *orage-4.5.93 (14 Jan 2009)
 
   14 Jan 2009; Christoph Mende <angelos@gentoo.org> +orage-4.5.93.ebuild:
