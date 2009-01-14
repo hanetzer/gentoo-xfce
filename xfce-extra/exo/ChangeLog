@@ -1,6 +1,11 @@
 # ChangeLog for xfce-extra/exo
-# Copyright 1999-2008 Gentoo Foundation; Distributed under the GPL v2
+# Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
+
+*exo-0.3.93 (14 Jan 2009)
+
+  14 Jan 2009; Christoph Mende <angelos@gentoo.org> +exo-0.3.93.ebuild:
+  Xfce-4.6 beta3
 
   18 Dec 2008; Christoph Mende <angelos@gentoo.org> exo-0.3.92.ebuild,
   exo-9999.ebuild:

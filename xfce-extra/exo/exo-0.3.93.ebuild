@@ -4,8 +4,9 @@
 
 EAPI=1
 
-MY_PN="lib${PN}"
 inherit xfce4 python
+
+XFCE_VERSION=4.5.93
 
 xfce4_core
 
@@ -24,8 +25,6 @@ RDEPEND=">=dev-lang/perl-5.6
 DEPEND="${RDEPEND}
 	dev-util/intltool
 	doc? ( dev-util/gtk-doc )"
-
-WANT_GTKDOCIZE="yes"
 
 pkg_setup() {
 	XFCE_CONFIG+=" $(use_enable doc gtk-doc) $(use_enable hal)
