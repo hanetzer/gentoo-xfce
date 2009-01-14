@@ -7,7 +7,7 @@ EAPI=2
 MY_PN=${PN/t/T}
 inherit virtualx xfce4
 
-XFCE_VERSION=4.5.92
+XFCE_VERSION=4.5.93
 
 xfce4_core
 
