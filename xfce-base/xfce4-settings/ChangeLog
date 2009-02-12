@@ -2,6 +2,10 @@
 # Copyright 1999-2009 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  12 Feb 2009; Christoph Mende <angelos@gentoo.org>
+  xfce4-settings-4.5.99.1.ebuild:
+  Removed USE=nls and enabled USE=keyboard by default
+
 *xfce4-settings-4.5.99.1 (26 Jan 2009)
 
   26 Jan 2009; Christoph Mende <angelos@gentoo.org>

@@ -10,7 +10,7 @@ xfce4_core
 
 DESCRIPTION="Xfce4 settings"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-IUSE="debug keyboard libnotify nls sound"
+IUSE="debug +keyboard libnotify sound"
 
 RDEPEND=">=dev-libs/glib-2.12:2
 	dev-libs/dbus-glib
@@ -35,8 +35,7 @@ DEPEND="${RDEPEND}
 	x11-proto/inputproto
 	x11-proto/xf86vidmodeproto"
 
-XFCE_CONFIG+=" $(use_enable libnotify) $(use_enable nls)
-	$(use_enable keyboard libxklavier) $(use_enable sound sound-settings)
-	--enable-xcursor"
+XFCE_CONFIG+=" $(use_enable libnotify) $(use_enable keyboard libxklavier)
+	$(use_enable sound sound-settings) --enable-xcursor"
 
 DOCS="AUTHORS ChangeLog NEWS README TODO"
