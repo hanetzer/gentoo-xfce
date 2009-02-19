@@ -137,7 +137,6 @@ xfce4_src_unpack() {
 		[ -d po ] && linguas="$(sed -e '/^#/d' po/LINGUAS)"
 		[ -n "${XFCE4_PATCHES}" ] && epatch ${XFCE4_PATCHES}
 		if [ -f configure.??.in ]; then
-			mkdir m4
 			[ -f configure.ac.in ] && configure=configure.ac.in
 			[ -f configure.in.in ] && configure=configure.in.in
 			[ -n "${linguas}" ] && sed -i -e "s/@LINGUAS@/${linguas}/g" ${configure}
