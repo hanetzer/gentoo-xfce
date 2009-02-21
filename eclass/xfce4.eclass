@@ -38,7 +38,7 @@ S="${WORKDIR}/${MY_P}"
 # Define the file extensions for SRC_URI, defaults to .tar.bz2
 COMPRESS=".tar.bz2"
 
-[ ${PV} = 9999 -a -z "${XFCE_VERSION}" ] && XFCE_VERSION="4.5.92"
+[ ${PV} = 9999 -a -z "${XFCE_VERSION}" ] && XFCE_VERSION="4.5.99"
 [ -z ${XFCE_VERSION} ] && XFCE_VERSION=${PV}
 [ -z ${THUNAR_VERSION} ] && THUNAR_VERSION="0.9"
 
