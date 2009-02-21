@@ -12,7 +12,7 @@ DESCRIPTION="Window manager"
 HOMEPAGE="http://www.xfce.org/projects/xfwm4/"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 
-IUSE="debug nls startup-notification xcomposite"
+IUSE="debug startup-notification xcomposite"
 
 RDEPEND=">=dev-libs/glib-2.10:2
 	>=x11-libs/gtk+-2.10:2
@@ -37,7 +37,7 @@ DEPEND="${RDEPEND}
 
 pkg_setup() {
 	XFCE_CONFIG+=" --enable-xsync --enable-render --enable-randr
-	$(use_enable xcomposite compositor) $(use_enable nls)"
+	$(use_enable xcomposite compositor)"
 }
 
 DOCS="AUTHORS ChangeLog COMPOSITOR NEWS README TODO"
