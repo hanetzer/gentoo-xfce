@@ -25,7 +25,8 @@ DEPEND="${RDEPEND}
 
 if [ ${PV} = 9999 ]; then
 	[ -n "${WANT_GTKDOCIZE}" ] && DEPEND+=" dev-util/gtk-doc"
-	[ ${PN} != xfce4-dev-tools ] && DEPEND+=" >=dev-util/xfce4-dev-tools-9999"
+	[ ${PN} != xfce4-dev-tools ] && DEPEND+="
+		>=dev-util/xfce4-dev-tools-${XFCE_VERSION}"
 	[ "${XFCE_VCS}" = "git" ] && \
 		EGIT_REPO_URI="git://git.xfce.org/${XFCE_CAT}/${MY_PN:-${PN}}"
 fi
