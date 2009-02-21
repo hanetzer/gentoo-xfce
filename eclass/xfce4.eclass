@@ -23,6 +23,10 @@ SLOT="0"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
+[ ${PV} = 9999 -a -z "${XFCE_VERSION}" ] && XFCE_VERSION="4.5.99"
+[ -z ${XFCE_VERSION} ] && XFCE_VERSION=${PV}
+[ -z ${THUNAR_VERSION} ] && THUNAR_VERSION="0.9"
+
 if [ ${PV} = 9999 ]; then
 	[ -n "${WANT_GTKDOCIZE}" ] && DEPEND+=" dev-util/gtk-doc"
 	[ ${PN} != xfce4-dev-tools ] && DEPEND+="
@@ -38,10 +42,6 @@ S="${WORKDIR}/${MY_P}"
 # @DESCRIPTION:
 # Define the file extensions for SRC_URI, defaults to .tar.bz2
 COMPRESS=".tar.bz2"
-
-[ ${PV} = 9999 -a -z "${XFCE_VERSION}" ] && XFCE_VERSION="4.5.99"
-[ -z ${XFCE_VERSION} ] && XFCE_VERSION=${PV}
-[ -z ${THUNAR_VERSION} ] && THUNAR_VERSION="0.9"
 
 # @FUNCTION: xfce4_gzipped
 # @DESCRIPTION:
