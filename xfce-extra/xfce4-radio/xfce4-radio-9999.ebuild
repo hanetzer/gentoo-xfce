@@ -17,4 +17,4 @@ src_unpack() {
 	echo "panel-plugin/radio.desktop.in.in" >> "${S}"/po/POTFILES.in
 }
 
-DOCS="AUTHORS ChangeLog NEWS README"
+DOCS="AUTHORS NEWS README"
