@@ -8,5 +8,5 @@ xfce4_gzipped
 xfce4_panel_plugin
 
 DESCRIPTION="a user switching plugin"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
