@@ -26,4 +26,4 @@ src_unpack() {
 	echo "src/appfinder.c" >> "${S}"/po/POTFILES.in
 }
 
-DOCS="AUTHORS BUGS ChangeLog NEWS README TODO"
+DOCS="AUTHORS ChangeLog NEWS README TODO"
