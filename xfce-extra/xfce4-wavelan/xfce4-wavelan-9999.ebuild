@@ -12,4 +12,4 @@ IUSE="debug"
 
 DEPEND="dev-util/intltool"
 
-DOCS="AUTHORS ChangeLog NEWS README TODO"
+DOCS="AUTHORS ChangeLog NEWS README"
