@@ -9,5 +9,4 @@ xfce4_panel_plugin
 DESCRIPTION="Disk usage and performance panel plugin"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE=""
-XFCE4_PATCHES="${FILESDIR}/${PN}-libtool22.patch"
 DOCS="AUTHORS ChangeLog NEWS README"
