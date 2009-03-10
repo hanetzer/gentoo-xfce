@@ -7,7 +7,7 @@ inherit xfce4
 xfce4_thunar_plugin
 
 DESCRIPTION="Thunar subversion plugin"
-DEPEND=">=dev-util/subversion-1.4"
+DEPEND=">=dev-util/subversion-1.5"
 ESVN_PROJECT=${PN}
 
 KEYWORDS="~amd64 ~x86"
