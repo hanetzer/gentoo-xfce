@@ -13,7 +13,6 @@
 =net-print/xfprint-9999
 =www-client/midori-9999
 =x11-misc/gigolo-9999
-=x11-misc/notification-daemon-xfce-9999
 =x11-misc/xfce4-notifyd-9999
 =x11-terms/terminal-9999
 =x11-themes/gtk-engines-xfce-9999
