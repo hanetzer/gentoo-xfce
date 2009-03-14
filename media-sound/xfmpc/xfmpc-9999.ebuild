@@ -13,7 +13,7 @@ HOMEPAGE="http://goodies.xfce.org/projects/applications/xfmpc"
 KEYWORDS="~amd64 ~sparc ~x86"
 IUSE=""
 
-RDEPEND=">=media-libs/libmpd-0.15.0
+RDEPEND=">=media-libs/libmpd-0.15
 	>=dev-libs/glib-2.14:2
 	>=x11-libs/gtk+-2.12:2
 	>=xfce-base/libxfcegui4-${XFCE_VERSION}
@@ -21,11 +21,5 @@ RDEPEND=">=media-libs/libmpd-0.15.0
 DEPEND="${RDEPEND}
 	dev-util/intltool"
 
-XFCE4_PATCHES="${FILESDIR}/${P}-libtool.patch"
-
-src_unpack() {
-	xfce4_src_unpack
-	echo "src/dbbrowser.c" >> "${S}"/po/POTFILES.in
-}
-
+XFCE_CONFIG+=" --enable-funky-colors"
 DOCS="AUTHORS ChangeLog NEWS README THANKS"
