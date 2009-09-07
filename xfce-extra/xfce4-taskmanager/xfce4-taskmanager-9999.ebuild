@@ -11,7 +11,7 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 HOMEPAGE="http://goodies.xfce.org/projects/applications/xfce4-taskmanager"
 
-RDEPEND=">=xfce-base/libxfcegui4-${XFCE_VERSION}
+RDEPEND=">=xfce-base/libxfce4ui-${XFCE_VERSION}
 	>=xfce-base/libxfce4util-${XFCE_VERSION}"
 
 src_install() {

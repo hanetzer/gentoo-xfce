@@ -18,7 +18,7 @@ IUSE="+dbus debug gstreamer hal +xfce"
 RDEPEND=">=dev-libs/libburn-0.4.2
 	>=dev-libs/libisofs-0.6.2
 	>=x11-libs/gtk+-2.10:2
-	>=xfce-base/libxfcegui4-${XFCE_VERSION}
+	>=xfce-base/libxfce4ui-${XFCE_VERSION}
 	>=xfce-base/exo-0.3
 	xfce? ( >=xfce-base/thunar-${XFCE_VERSION} )
 	dbus? ( dev-libs/dbus-glib )

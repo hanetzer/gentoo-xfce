@@ -21,7 +21,7 @@ RDEPEND=">=dev-libs/glib-2.8:2
 	>=x11-libs/gtk+-2.8:2
 	>=x11-libs/libwnck-2.12
 	>=xfce-base/libxfce4util-${XFCE_VERSION}
-	>=xfce-base/libxfcegui4-${XFCE_VERSION}
+	>=xfce-base/libxfce4ui-${XFCE_VERSION}
 	>=xfce-base/exo-0.3.92
 	startup-notification? ( x11-libs/startup-notification )"
 DEPEND="${RDEPEND}

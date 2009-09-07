@@ -18,7 +18,7 @@ RDEPEND=">=dev-libs/dbus-glib-0.70
 	>=sys-apps/hal-0.5.6
 	>=x11-libs/gtk+-2.10:2
 	>=xfce-base/libxfce4util-${XFCE_VERSION}
-	>=xfce-base/libxfcegui4-${XFCE_VERSION}
+	>=xfce-base/libxfce4ui-${XFCE_VERSION}
 	>=xfce-base/xfconf-${XFCE_VERSION}"
 DEPEND="${RDEPEND}
 	dev-util/intltool"

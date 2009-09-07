@@ -15,7 +15,7 @@ IUSE="cddb debug"
 DEPEND=">=sys-apps/hal-0.5.8.1
 	>=dev-libs/dbus-glib-0.71
 	>=dev-libs/glib-2.12.4
-	>=xfce-base/libxfcegui4-${XFCE_VERSION}
+	>=xfce-base/libxfce4ui-${XFCE_VERSION}
 	>=xfce-base/exo-0.3.2
 	>=dev-libs/libcdio-0.76
 	cddb? ( >=media-libs/libcddb-1.2.1 )"

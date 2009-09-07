@@ -26,7 +26,7 @@ RDEPEND=">=dev-libs/glib-2.10:2
 	x11-libs/pango
 	>=x11-libs/libwnck-2.12
 	>=xfce-base/libxfce4util-${XFCE_VERSION}
-	>=xfce-base/libxfcegui4-${XFCE_VERSION}
+	>=xfce-base/libxfce4ui-${XFCE_VERSION}
 	>=xfce-base/xfconf-${XFCE_VERSION}
 	startup-notification? ( x11-libs/startup-notification )
 	xcomposite? ( x11-libs/libXcomposite

@@ -101,7 +101,7 @@ Index: panel-plugin/xfce4-cpufreq-linux.c
  
 +#include <stdlib.h>
  #include <dirent.h>
-+#include <libxfcegui4/libxfcegui4.h>
++#include <libxfce4ui/libxfce4ui.h>
  #include "xfce4-cpufreq-plugin.h"
  #include "xfce4-cpufreq-linux.h"
  

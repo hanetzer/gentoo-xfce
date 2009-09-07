@@ -22,7 +22,7 @@ RDEPEND=">=dev-libs/glib-2.12:2
 	x11-libs/libXrandr
 	x11-libs/libwnck
 	>=xfce-base/libxfce4util-${XFCE_VERSION}
-	>=xfce-base/libxfcegui4-${XFCE_VERSION}
+	>=xfce-base/libxfce4ui-${XFCE_VERSION}
 	>=xfce-base/xfconf-${XFCE_VERSION}
 	!xfce-base/xfce-mcs-manager
 	!xfce-base/xfce-mcs-plugins
