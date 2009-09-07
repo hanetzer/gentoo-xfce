@@ -23,7 +23,7 @@
 =xfce-base/libxfce4ui-9999
 =xfce-base/thunar-9999
 =xfce-base/xfce-utils-9999
-=xfce-base/xfce4-9999
+=xfce-base/xfce4-meta-9999
 =xfce-base/xfce4-extras-9999
 =xfce-base/xfce4-panel-9999
 =xfce-base/xfce4-session-9999
