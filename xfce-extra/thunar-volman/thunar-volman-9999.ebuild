@@ -16,7 +16,7 @@ IUSE="debug"
 
 RDEPEND="dev-libs/dbus-glib
 	sys-apps/hal
-	>=xfce-extra/exo-0.3.8[hal]
+	>=xfce-base/exo-0.3.8[hal]
 	>=xfce-base/thunar-${THUNAR_VERSION}"
 
 DOCS="AUTHORS ChangeLog NEWS README THANKS"

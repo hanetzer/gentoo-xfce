@@ -26,7 +26,7 @@ RDEPEND="gnome-base/libglade
 	>=xfce-base/libxfce4menu-${XFCE_VERSION}
 	>=xfce-base/xfconf-${XFCE_VERSION}
 	file-icons? ( >=xfce-base/thunar-0.9.92
-		>=xfce-extra/exo-0.3.92 dev-libs/dbus-glib )
+		>=xfce-base/exo-0.3.92 dev-libs/dbus-glib )
 	menu-plugin? ( >=xfce-base/xfce4-panel-${XFCE_VERSION} )"
 DEPEND="${RDEPEND}
 	dev-util/intltool

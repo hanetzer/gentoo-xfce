@@ -16,6 +16,6 @@ IUSE="debug"
 RDEPEND=">=dev-libs/glib-2.6.0
 	>=dev-libs/dbus-glib-0.7.0
 	>=sys-apps/hal-0.5.7.1
-	>=xfce-extra/exo-0.3.2[hal]"
+	>=xfce-base/exo-0.3.2[hal]"
 
 DOCS="AUTHORS ChangeLog NEWS README"

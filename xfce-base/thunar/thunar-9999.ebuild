@@ -23,7 +23,7 @@ RDEPEND=">=dev-lang/perl-5.6
 	>=x11-libs/gtk+-2.6:2
 	x11-libs/libSM
 	>=x11-misc/shared-mime-info-0.20
-	>=xfce-extra/exo-0.3.92[hal?]
+	>=xfce-base/exo-0.3.92[hal?]
 	>=xfce-base/libxfce4util-${XFCE_VERSION}
 	dbus? ( dev-libs/dbus-glib )
 	exif? ( >=media-libs/libexif-0.6 )

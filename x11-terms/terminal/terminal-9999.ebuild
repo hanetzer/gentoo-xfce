@@ -25,7 +25,7 @@ RDEPEND=">=dev-libs/glib-2.6:2
 	x11-libs/libXft
 	x11-libs/libXrender
 	>=x11-libs/vte-0.11.11
-	>=xfce-extra/exo-0.3.4
+	>=xfce-base/exo-0.3.4
 	startup-notification? ( x11-libs/startup-notification )
 	dbus? ( dev-libs/dbus-glib )"
 DEPEND="${RDEPEND}

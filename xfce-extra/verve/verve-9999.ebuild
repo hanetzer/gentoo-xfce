@@ -12,7 +12,7 @@ DESCRIPTION="Command line panel plugin"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="dbus debug"
 
-RDEPEND=">=xfce-extra/exo-0.3.2
+RDEPEND=">=xfce-base/exo-0.3.2
 	dev-libs/libpcre
 	dbus? ( dev-libs/dbus-glib )"
 DEPEND="${RDEPEND}
