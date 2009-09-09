@@ -17,7 +17,7 @@ RDEPEND="dev-libs/dbus-glib
 	gnome-base/libglade
 	>=x11-libs/gtk+-2.10:2
 	>=xfce-base/libxfce4util-${XFCE_VERSION}
-	>=xfce-base/libxfce4ui-${XFCE_VERSION}
+	>=xfce-base/libxfcegui4-${XFCE_VERSION}
 	>=xfce-base/xfconf-${XFCE_VERSION}
 	libsexy? ( x11-libs/libsexy )"
 DEPEND="${RDEPEND}

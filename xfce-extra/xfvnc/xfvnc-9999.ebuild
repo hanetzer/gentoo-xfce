@@ -19,6 +19,6 @@ RDEPEND="dev-libs/glib:2
 	net-libs/gtk-vnc
 	x11-libs/gtk+:2
 	>=xfce-base/libxfce4util-${XFCE_VERSION}
-	>=xfce-base/libxfce4ui-${XFCE_VERSION}"
+	>=xfce-base/libxfcegui4-${XFCE_VERSION}"
 
 DOCS="AUTHORS ChangeLog NEWS README THANKS TODO"

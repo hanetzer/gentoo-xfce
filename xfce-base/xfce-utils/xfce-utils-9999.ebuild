@@ -18,7 +18,7 @@ RDEPEND="x11-apps/xrdb
 	>=dev-libs/glib-2.6:2
 	>=x11-libs/gtk+-2.10:2
 	>=xfce-base/libxfce4util-${XFCE_VERSION}
-	>=xfce-base/libxfce4ui-${XFCE_VERSION}
+	>=xfce-base/libxfcegui4-${XFCE_VERSION}
 	>=xfce-base/xfconf-${XFCE_VERSION}
 	dbus? ( dev-libs/dbus-glib )
 	lock? ( || ( x11-misc/xscreensaver

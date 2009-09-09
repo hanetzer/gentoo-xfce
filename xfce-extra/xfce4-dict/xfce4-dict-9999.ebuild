@@ -11,7 +11,7 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 
 RDEPEND=">=x11-libs/gtk+-2.6.0
-	>=xfce-base/libxfce4ui-${XFCE_VERSION}
+	>=xfce-base/libxfcegui4-${XFCE_VERSION}
 	>=xfce-base/libxfce4util-${XFCE_VERSION}
 	>=xfce-base/xfce4-panel-${XFCE_VERSION}"
 DEPEND="${RDEPEND}

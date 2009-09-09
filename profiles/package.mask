@@ -21,6 +21,7 @@
 =xfce-base/libxfce4menu-9999
 =xfce-base/libxfce4util-9999
 =xfce-base/libxfce4ui-9999
+=xfce-base/libxfcegui4-9999
 =xfce-base/thunar-9999
 =xfce-base/xfce-utils-9999
 =xfce-base/xfce4-meta-9999

@@ -18,7 +18,7 @@ RDEPEND=">=dev-libs/glib-2.12:2
 	>=media-libs/gst-plugins-base-0.10.2
 	>=x11-libs/gtk+-2.10:2
 	>=xfce-base/libxfce4util-${XFCE_VERSION}
-	>=xfce-base/libxfce4ui-${XFCE_VERSION}
+	>=xfce-base/libxfcegui4-${XFCE_VERSION}
 	>=xfce-base/xfce4-panel-${XFCE_VERSION}
 	>=xfce-base/xfconf-${XFCE_VERSION}
 	alsa? ( media-plugins/gst-plugins-alsa )

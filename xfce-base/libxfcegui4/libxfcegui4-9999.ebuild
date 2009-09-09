@@ -8,21 +8,17 @@ inherit xfce4
 
 xfce4_core
 
-DESCRIPTION="Panel"
-HOMEPAGE="http://www.xfce.org/projects/xfce4-panel/"
+DESCRIPTION="Unified widgets library"
+HOMEPAGE="http://www.xfce.org/projects/libraries"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-
 IUSE="debug doc startup-notification"
 
-RDEPEND=">=dev-libs/glib-2.8:2
-	x11-libs/cairo
-	x11-libs/libX11
+RDEPEND="gnome-base/libglade
 	x11-libs/libSM
-	>=x11-libs/gtk+-2.8:2
-	>=x11-libs/libwnck-2.12
+	x11-libs/libX11
+	>=x11-libs/gtk+-2.6:2
 	>=xfce-base/libxfce4util-${XFCE_VERSION}
-	>=xfce-base/libxfcegui4-${XFCE_VERSION}
-	>=xfce-base/exo-0.3.92
+	>=xfce-base/xfconf-${XFCE_VERSION}
 	startup-notification? ( x11-libs/startup-notification )"
 DEPEND="${RDEPEND}
 	dev-util/intltool
@@ -34,4 +30,4 @@ pkg_setup() {
 	XFCE_CONFIG+=" $(use_enable doc gtk-doc)"
 }
 
-DOCS="AUTHORS ChangeLog HACKING NEWS README README.Plugins"
+DOCS="AUTHORS ChangeLog NEWS README TODO"

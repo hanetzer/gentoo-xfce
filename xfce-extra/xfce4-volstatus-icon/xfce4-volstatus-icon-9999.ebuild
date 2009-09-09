@@ -18,7 +18,7 @@ IUSE="debug"
 
 RDEPEND=">=x11-libs/gtk+-2.10:2
 	>=xfce-base/libxfce4util-${XFCE_VERSION}
-	>=xfce-base/libxfce4ui-${XFCE_VERSION}
+	>=xfce-base/libxfcegui4-${XFCE_VERSION}
 	>=xfce-base/exo-0.3.4[hal]
 	>=sys-apps/hal-0.5.9
 	>=dev-libs/ghal-0.1

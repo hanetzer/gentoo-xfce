@@ -19,7 +19,7 @@ RDEPEND=">=x11-libs/gtk+-2.10:2
 	media-libs/libexif
 	sys-apps/dbus
 	>=xfce-base/thunar-${THUNAR_VERSION}
-	>=xfce-base/libxfce4ui-${XFCE_VERSION}
+	>=xfce-base/libxfcegui4-${XFCE_VERSION}
 	>=xfce-base/libxfce4util-${XFCE_VERSION}
 	xfce? ( >=xfce-base/xfconf-${XFCE_VERSION} )"
 DEPEND="${RDEPEND}

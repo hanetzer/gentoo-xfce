@@ -14,7 +14,7 @@ IUSE="debug"
 
 RDEPEND=">=dev-libs/glib-2.12.0:2
 	>=x11-libs/gtk+-2.10.0:2
-	>=xfce-base/libxfce4ui-${XFCE_VERSION}
+	>=xfce-base/libxfcegui4-${XFCE_VERSION}
 	>=xfce-base/libxfce4util-${XFCE_VERSION}"
 
 DOCS="AUTHORS ChangeLog NEWS README TODO"

@@ -16,7 +16,7 @@ IUSE=""
 RDEPEND=">=media-libs/libmpd-0.15
 	>=dev-libs/glib-2.14:2
 	>=x11-libs/gtk+-2.12:2
-	>=xfce-base/libxfce4ui-${XFCE_VERSION}
+	>=xfce-base/libxfcegui4-${XFCE_VERSION}
 	>=xfce-base/libxfce4util-${XFCE_VERSION}"
 DEPEND="${RDEPEND}
 	dev-util/intltool"

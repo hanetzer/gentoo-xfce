@@ -19,7 +19,7 @@ RDEPEND="gnome-base/libglade
 	x11-libs/libwnck
 	x11-apps/iceauth
 	>=xfce-base/libxfce4util-${XFCE_VERSION}
-	>=xfce-base/libxfce4ui-${XFCE_VERSION}
+	>=xfce-base/libxfcegui4-${XFCE_VERSION}
 	>=xfce-base/xfconf-${XFCE_VERSION}
 	>=xfce-base/xfce-utils-${XFCE_VERSION}
 	games-misc/fortune-mod
