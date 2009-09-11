@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-MY_PN="xfce4-${PN}"
+MY_PN="${PN}"
 inherit xfce4
 
 xfce4_panel_plugin
