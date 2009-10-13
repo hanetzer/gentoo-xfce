@@ -15,18 +15,17 @@ IUSE="debug doc +file-icons +menu-plugin"
 
 LINGUAS="be ca cs da de el es et eu fi fr he hu it ja ko nb_NO nl pa pl pt_BR ro ru sk sv tr uk vi zh_CN zh_TW"
 
-RDEPEND="gnome-base/libglade
-	x11-libs/libX11
+RDEPEND="x11-libs/libX11
 	x11-libs/libSM
 	>=x11-libs/libwnck-2.12
 	>=dev-libs/glib-2.10:2
 	>=x11-libs/gtk+-2.10:2
 	>=xfce-base/libxfce4util-${XFCE_VERSION}
-	>=xfce-base/libxfcegui4-${XFCE_VERSION}
+	>=xfce-base/libxfce4ui-${XFCE_VERSION}
 	>=xfce-base/libxfce4menu-${XFCE_VERSION}
 	>=xfce-base/xfconf-${XFCE_VERSION}
-	file-icons? ( >=xfce-base/thunar-0.9.92
-		>=xfce-base/exo-0.3.92 dev-libs/dbus-glib )
+	file-icons? ( xfce-base/thunar-vfs
+		>=xfce-base/exo-0.3.100 dev-libs/dbus-glib )
 	menu-plugin? ( >=xfce-base/xfce4-panel-${XFCE_VERSION} )"
 DEPEND="${RDEPEND}
 	dev-util/intltool
