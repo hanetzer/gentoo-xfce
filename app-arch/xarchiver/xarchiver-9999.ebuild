@@ -6,7 +6,7 @@ EAPI=1
 
 inherit xfce4
 
-xfce4_core
+xfce4_apps
 
 DESCRIPTION="Archive manager"
 HOMEPAGE="http://xarchiver.xfce.org/"

@@ -3,11 +3,10 @@
 # $Header: $
 
 EAPI=1
-MY_PN="xfcalendar"
 
 inherit xfce4
 
-xfce4_core
+xfce4_apps
 
 DESCRIPTION="Calendar suite for Xfce4"
 HOMEPAGE="http://www.xfce.org/projects/orage/"

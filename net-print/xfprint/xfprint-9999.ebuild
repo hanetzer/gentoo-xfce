@@ -6,7 +6,7 @@ EAPI=1
 
 inherit xfce4
 
-xfce4_core
+xfce4_archive
 
 DESCRIPTION="Frontend for printing, management and job queue."
 HOMEPAGE="http://www.xfce.org/projects/xfprint"

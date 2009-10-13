@@ -6,7 +6,7 @@ EAPI=1
 
 inherit xfce4
 
-xfce4_goodies
+xfce4_apps
 
 DESCRIPTION="a lightweight BibTeX editor"
 KEYWORDS="~amd64 ~x86"

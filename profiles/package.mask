@@ -75,6 +75,6 @@
 =xfce-extra/xfce4-weather-plugin-9999
 =xfce-extra/xfce4-xfapplet-plugin-9999
 =xfce-extra/xfce4-xkb-plugin-9999
-=xfce-extra/xfmedia-remote-9999
+=xfce-extra/xfmedia-9999
 =xfce-extra/xfswitch-9999
 =xfce-extra/xfvnc-9999

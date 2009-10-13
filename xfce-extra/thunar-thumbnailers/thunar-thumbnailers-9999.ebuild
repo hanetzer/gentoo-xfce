@@ -4,7 +4,7 @@
 
 inherit xfce4
 
-xfce4_goodies
+xfce4_apps
 
 DESCRIPTION="Thunar thumbnailers plugin"
 HOMEPAGE="http://goodies.xfce.org/projects/thunar-plugins/thunar-thumbnailers"

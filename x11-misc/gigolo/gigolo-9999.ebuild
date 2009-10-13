@@ -6,7 +6,7 @@ EAPI=1
 
 inherit xfce4
 
-xfce4_goodies
+xfce4_apps
 
 DESCRIPTION="a frontend to easily manage connections to remote filesystems using
 GIO/GVfs"

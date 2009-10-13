@@ -4,7 +4,7 @@
 
 inherit xfce4
 
-xfce4_core
+xfce4_art
 
 DESCRIPTION="Window manager themes"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"

@@ -3,10 +3,10 @@
 # $Header: $
 
 EAPI=1
-XFCE_VCS="git"
-XFCE_CAT="kelnos"
 
 inherit xfce4
+
+xfce4_apps
 
 DESCRIPTION="Xfce4 notification daemon"
 HOMEPAGE="http://spuriousinterrupt.org/projects/xfce4-notifyd"

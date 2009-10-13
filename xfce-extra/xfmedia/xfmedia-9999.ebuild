@@ -4,7 +4,7 @@
 
 inherit xfce4
 
-xfce4_panel_plugin
+xfce4_archive
 
 DESCRIPTION="xfmedia panel plugin"
 KEYWORDS="~amd64 ~x86"

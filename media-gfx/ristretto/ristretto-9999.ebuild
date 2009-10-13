@@ -6,7 +6,7 @@ EAPI=1
 
 inherit xfce4
 
-xfce4_goodies
+xfce4_apps
 
 DESCRIPTION="a fast and lightweight picture-viewer for the Xfce desktop environment"
 HOMEPAGE="http://goodies.xfce.org/projects/applications/ristretto"

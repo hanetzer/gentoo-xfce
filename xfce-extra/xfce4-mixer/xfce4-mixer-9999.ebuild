@@ -6,7 +6,7 @@ EAPI=1
 
 inherit xfce4
 
-xfce4_core
+xfce4_apps
 
 DESCRIPTION="Volume control application using gstreamer"
 HOMEPAGE="http://www.xfce.org/projects/xfce4-mixer"

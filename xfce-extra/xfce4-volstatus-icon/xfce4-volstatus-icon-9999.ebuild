@@ -8,7 +8,7 @@ inherit xfce4
 
 XFCE_VERSION=4.4
 
-xfce4_goodies
+xfce4_apps
 
 DESCRIPTION="Systray status icon for safe unmount/eject of volumes"
 HOMEPAGE="http://goodies.xfce.org"

@@ -15,6 +15,4 @@ DEPEND="${RDEPEND}
 	dev-util/intltool
 	dev-lang/perl"
 
-XFCE4_PATCHES="${FILESDIR}/${PN}-libtool22.patch"
-
 DOCS="AUTHORS ChangeLog NEWS README THANKS TODO"

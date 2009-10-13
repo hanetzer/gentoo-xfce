@@ -4,7 +4,6 @@
 
 EAPI=1
 
-MY_PN="lib${PN}"
 inherit xfce4 python
 
 xfce4_core

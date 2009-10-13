@@ -4,7 +4,7 @@
 
 inherit xfce4
 
-xfce4_goodies
+xfce4_apps
 
 DESCRIPTION="Dict panel plugin"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"

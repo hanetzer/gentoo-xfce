@@ -8,7 +8,7 @@ inherit xfce4
 
 XFCE_VERSION=4.4
 
-xfce4_goodies
+xfce4_apps
 
 DESCRIPTION="GTK+ based CD and DVD burning application"
 HOMEPAGE="http://www.xfce.org/projects/xfburn"

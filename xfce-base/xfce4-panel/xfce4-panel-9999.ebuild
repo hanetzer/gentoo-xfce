@@ -22,7 +22,7 @@ RDEPEND=">=dev-libs/glib-2.8:2
 	>=x11-libs/libwnck-2.12
 	>=xfce-base/libxfce4util-${XFCE_VERSION}
 	>=xfce-base/libxfcegui4-${XFCE_VERSION}
-	>=xfce-base/exo-0.3.92
+	>=xfce-base/exo-0.3.100
 	startup-notification? ( x11-libs/startup-notification )"
 DEPEND="${RDEPEND}
 	dev-util/intltool

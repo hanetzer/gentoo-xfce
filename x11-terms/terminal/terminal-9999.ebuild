@@ -6,9 +6,7 @@ EAPI=1
 
 inherit xfce4
 
-xfce4_core
-
-MY_P="${P/t/T}"
+xfce4_apps
 
 DESCRIPTION="Terminal for Xfce desktop environment, based on vte library."
 HOMEPAGE="http://www.xfce.org/projects/terminal"

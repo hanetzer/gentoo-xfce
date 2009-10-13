@@ -6,7 +6,7 @@ EAPI=1
 
 inherit xfce4
 
-xfce4_goodies
+xfce4_apps
 
 DESCRIPTION="a graphical GTK+ MPD client focusing on low footprint"
 HOMEPAGE="http://goodies.xfce.org/projects/applications/xfmpc"
@@ -19,7 +19,8 @@ RDEPEND=">=media-libs/libmpd-0.15
 	>=xfce-base/libxfcegui4-${XFCE_VERSION}
 	>=xfce-base/libxfce4util-${XFCE_VERSION}"
 DEPEND="${RDEPEND}
-	dev-util/intltool"
+	dev-util/intltool
+	xfce-extra/xfce4-vala"
 
 XFCE_CONFIG+=" --enable-funky-colors"
 DOCS="AUTHORS ChangeLog NEWS README THANKS"

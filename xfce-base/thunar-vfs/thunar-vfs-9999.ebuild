@@ -6,17 +6,16 @@ EAPI=2
 
 inherit xfce4
 
-xfce4_apps
+xfce4_core
 
-DESCRIPTION="Thunar volume management"
-HOMEPAGE="http://foo-projects.org/~benny/projects/thunar-volman"
+DESCRIPTION="Thunar virtual filesystem"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="debug"
 
-RDEPEND="dev-libs/dbus-glib
-	sys-apps/hal
-	>=xfce-base/exo-0.3.8[hal]
+RDEPEND="xfce-base/exo:1
 	>=xfce-base/thunar-${THUNAR_VERSION}"
+
+WANT_GTKDOCIZE="yes"
 
 DOCS="AUTHORS ChangeLog NEWS README THANKS"

@@ -3,10 +3,10 @@
 # $Header: $
 
 EAPI=2
-XFCE_VCS="git"
-XFCE_CAT="kelnos"
 
 inherit xfce4
+
+xfce4_libs
 
 DESCRIPTION="a gobject-based wrapper for libhal and libhal-storage"
 HOMEPAGE="http://www.xfce.org/"
@@ -17,5 +17,7 @@ RDEPEND=">=dev-libs/glib-2.6.0
 	>=dev-libs/dbus-glib-0.7.0
 	>=sys-apps/hal-0.5.7.1
 	>=xfce-base/exo-0.3.2[hal]"
+
+WANT_GTKDOCIZE="yes"
 
 DOCS="AUTHORS ChangeLog NEWS README"

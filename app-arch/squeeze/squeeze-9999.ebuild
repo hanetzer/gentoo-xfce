@@ -6,7 +6,7 @@ EAPI=1
 
 inherit xfce4
 
-xfce4_core
+xfce4_apps
 
 DESCRIPTION="a GTK+ based and advanced archive manager for use with Thunar"
 HOMEPAGE="http://squeeze.xfce.org"
@@ -30,6 +30,7 @@ pkg_setup() {
 
 src_unpack() {
 	xfce4_src_unpack
+	mkdir "${S}"/m4
 	echo "src/button_drag_box.c" >> "${S}"/po/POTFILES.in
 	echo "src/preferences_dialog.c" >> "${S}"/po/POTFILES.in
 	echo "src/properties_dialog.c" >> "${S}"/po/POTFILES.in
