@@ -18,6 +18,7 @@ RDEPEND="gnome-base/libglade
 	x11-libs/libSM
 	x11-libs/libwnck
 	x11-apps/iceauth
+	xfce-base/exo
 	>=xfce-base/libxfce4util-${XFCE_VERSION}
 	>=xfce-base/libxfcegui4-${XFCE_VERSION}
 	>=xfce-base/xfconf-${XFCE_VERSION}
