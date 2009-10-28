@@ -15,6 +15,7 @@ IUSE="debug"
 
 RDEPEND=">=dev-libs/glib-2.6:2
 	>=x11-libs/gtk+-2.6:2
+	xfce-base/garcon
 	>=xfce-base/libxfce4util-${XFCE_VERSION}
 	>=xfce-base/libxfce4ui-${XFCE_VERSION}
 	>=xfce-base/thunar-${XFCE_VERSION}"
