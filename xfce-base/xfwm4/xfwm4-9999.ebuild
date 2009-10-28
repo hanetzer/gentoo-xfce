@@ -25,6 +25,7 @@ RDEPEND=">=dev-libs/glib-2.10:2
 	x11-libs/libXpm
 	x11-libs/pango
 	>=x11-libs/libwnck-2.12
+	xfce-base/exo
 	>=xfce-base/libxfce4util-${XFCE_VERSION}
 	>=xfce-base/libxfcegui4-${XFCE_VERSION}
 	>=xfce-base/xfconf-${XFCE_VERSION}
