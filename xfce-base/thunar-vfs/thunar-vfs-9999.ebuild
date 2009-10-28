@@ -13,7 +13,7 @@ DESCRIPTION="Thunar virtual filesystem"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="debug"
 
-RDEPEND="xfce-base/exo:1
+RDEPEND="xfce-base/exo
 	>=xfce-base/thunar-${THUNAR_VERSION}"
 
 WANT_GTKDOCIZE="yes"
