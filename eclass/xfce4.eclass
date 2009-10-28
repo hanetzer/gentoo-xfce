@@ -143,7 +143,7 @@ xfce4_src_unpack() {
 		revision+=$(git rev-parse HEAD | cut -c1-8)
 
 		local linguas
-		[ -d po ] && linguas="$(sed -e '/^#/d' po/LINGUAS)"
+		[ -d po ] && linguas=`cd "$conf_dir/po" 2>/dev/null && ls *.po 2>/dev/null | $AWK 'BEGIN { FS="."; ORS=" " } { print $1 }'`
 		[ -n "${XFCE4_PATCHES}" ] && epatch ${XFCE4_PATCHES}
 		if [ -f configure.??.in ]; then
 			[ -f configure.ac.in ] && configure=configure.ac.in
