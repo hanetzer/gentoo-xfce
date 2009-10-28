@@ -18,7 +18,7 @@ RDEPEND=">=dev-libs/glib-2.6:2
 	>=xfce-base/libxfce4util-${XFCE_VERSION}"
 DEPEND="${RDEPEND}
 	dev-util/intltool
-	doc? ( dev-util/gtk-doc )"
+	dev-util/gtk-doc"
 
 WANT_GTKDOCIZE="yes"
 

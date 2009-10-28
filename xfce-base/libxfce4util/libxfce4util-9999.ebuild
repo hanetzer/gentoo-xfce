@@ -15,11 +15,12 @@ IUSE="debug doc"
 
 RDEPEND=">=dev-libs/glib-2.6:2"
 DEPEND="${RDEPEND}
-	doc? ( dev-util/gtk-doc )"
+	dev-util/gtk-doc"
 
 WANT_GTKDOCIZE="yes"
 
 pkg_setup() {
+	echo $DEPEND
 	XFCE_CONFIG+=" $(use_enable doc gtk_doc)"
 }
 

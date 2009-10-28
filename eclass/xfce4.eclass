@@ -28,7 +28,6 @@ DEPEND="${RDEPEND}
 [ -z ${THUNAR_VERSION} ] && THUNAR_VERSION="0.9"
 
 if [ ${PV} = 9999 ]; then
-	[ -n "${WANT_GTKDOCIZE}" ] && DEPEND+=" dev-util/gtk-doc"
 	[ ${PN} != xfce4-dev-tools ] && DEPEND+="
 		>=dev-util/xfce4-dev-tools-${XFCE_VERSION}"
 fi

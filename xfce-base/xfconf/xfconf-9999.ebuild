@@ -16,7 +16,7 @@ RDEPEND=">=dev-libs/dbus-glib-0.72
 	>=dev-libs/glib-2.12:2
 	>=xfce-base/libxfce4util-${XFCE_VERSION}"
 DEPEND="${RDEPEND}
-	doc? ( dev-util/gtk-doc )"
+	dev-util/gtk-doc"
 
 WANT_GTKDOCIZE="yes"
 

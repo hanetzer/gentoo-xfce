@@ -26,7 +26,7 @@ RDEPEND=">=dev-libs/glib-2.8:2
 	startup-notification? ( x11-libs/startup-notification )"
 DEPEND="${RDEPEND}
 	dev-util/intltool
-	doc? ( dev-util/gtk-doc )"
+	dev-util/gtk-doc"
 
 WANT_GTKDOCIZE="yes"
 

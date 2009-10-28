@@ -23,7 +23,7 @@ RDEPEND="app-text/a2ps
 	!cups? ( net-print/lprng )"
 DEPEND="${RDEPEND}
 	dev-util/intltool
-	doc? ( dev-util/gtk-doc )"
+	dev-util/gtk-doc"
 
 WANT_GTKDOCIZE="yes"
 

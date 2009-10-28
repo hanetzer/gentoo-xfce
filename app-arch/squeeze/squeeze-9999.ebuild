@@ -19,7 +19,7 @@ RDEPEND="dev-libs/dbus-glib
 	>=xfce-base/thunar-${XFCE_VERSION}"
 DEPEND="${RDEPEND}
 	dev-util/intltool
-	doc? ( dev-util/gtk-doc )"
+	dev-util/gtk-doc"
 
 WANT_GTKDOCIZE="yes"
 

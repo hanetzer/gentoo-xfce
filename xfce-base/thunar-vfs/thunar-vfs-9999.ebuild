@@ -15,6 +15,8 @@ IUSE="debug"
 
 RDEPEND="xfce-base/exo
 	>=xfce-base/thunar-${THUNAR_VERSION}"
+DEPEND="${RDEPEND}
+	dev-util/gtk-doc"
 
 WANT_GTKDOCIZE="yes"
 

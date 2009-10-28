@@ -37,7 +37,7 @@ RDEPEND=">=dev-lang/perl-5.6
 		>=xfce-base/xfce4-panel-${XFCE_VERSION} )"
 DEPEND="${RDEPEND}
 	dev-util/intltool
-	doc? ( dev-util/gtk-doc )"
+	dev-util/gtk-doc"
 
 WANT_GTKDOCIZE="yes"
 

@@ -22,7 +22,7 @@ RDEPEND="gnome-base/libglade
 	startup-notification? ( x11-libs/startup-notification )"
 DEPEND="${RDEPEND}
 	dev-util/intltool
-	doc? ( dev-util/gtk-doc )"
+	dev-util/gtk-doc"
 
 WANT_GTKDOCIZE="yes"
 

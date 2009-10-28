@@ -22,7 +22,7 @@ RDEPEND=">=dev-lang/perl-5.6
 	python? ( dev-python/pygtk )"
 DEPEND="${RDEPEND}
 	dev-util/intltool
-	doc? ( dev-util/gtk-doc )"
+	dev-util/gtk-doc"
 
 WANT_GTKDOCIZE="yes"
 
