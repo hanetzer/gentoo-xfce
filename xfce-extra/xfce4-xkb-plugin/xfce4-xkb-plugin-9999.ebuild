@@ -10,9 +10,11 @@ DESCRIPTION="XKB layout switching panel plugin"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE=""
 
-RDEPEND=">=x11-libs/libxklavier-3.2"
+RDEPEND=">=x11-libs/libxklavier-4"
 DEPEND="${DEPEND}
 	dev-util/intltool
 	x11-proto/kbproto"
+
+XFCE4_PATCHES="${FILESDIR}/${PN}-xklavier4.patch"
 
 DOCS="AUTHORS ChangeLog NEWS README"
