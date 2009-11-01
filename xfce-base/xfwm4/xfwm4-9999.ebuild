@@ -12,7 +12,7 @@ DESCRIPTION="Window manager"
 HOMEPAGE="http://www.xfce.org/projects/xfwm4/"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 
-IUSE="debug nls startup-notification xcomposite"
+IUSE="debug nls startup-notification +xcomposite"
 
 RDEPEND=">=dev-libs/glib-2.10:2
 	>=x11-libs/gtk+-2.10:2
