@@ -22,7 +22,7 @@ DEPEND="${RDEPEND}
 WANT_GTKDOCIZE="yes"
 
 pkg_setup() {
-	XFCONF="--disable-dependency-tracking
+	XFCE4_CONFIG="--disable-dependency-tracking
 		--disable-static
 		$(use_enable debug)"
 }
