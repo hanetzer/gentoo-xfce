@@ -39,6 +39,7 @@ fi
 # Note: git ebuilds usually require XFCE_CAT (for example apps for xfce4-notifyd)
 xfce4_uri() {
 	[ -z ${MY_P} ] && MY_P=${MY_PN:-${PN}}-${MY_PV:-${PV}}
+	[ -z ${COMPRESS} ] && COMPRESS=".tar.bz2"
 	S="${WORKDIR}/${MY_P}"
 
 	if [ ${PV} = 9999 ]; then
