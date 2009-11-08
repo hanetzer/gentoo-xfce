@@ -20,11 +20,5 @@ DEPEND="${RDEPEND}
 	sys-devel/gettext"
 
 WANT_GTKDOCIZE="yes"
-
-pkg_setup() {
-	XFCE4_CONFIG="--disable-dependency-tracking
-		--disable-static
-		$(use_enable debug)"
-}
-
+XFCE_CONFIG+=" --disable-static"
 DOCS="AUTHORS ChangeLog HACKING NEWS README STATUS TODO"

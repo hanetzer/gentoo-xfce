@@ -30,10 +30,8 @@ DEPEND="${RDEPEND}
 WANT_GTKDOCIZE="yes"
 
 pkg_setup() {
-	XFCE4_CONFIG="--disable-dependency-tracking
-		$(use_enable libnotify)
-		$(use_enable taglib)
-		$(use_enable debug)"
+	XFCE_CONFIG+=" $(use_enable libnotify)
+		$(use_enable taglib)"
 }
 
 DOCS="AUTHORS ChangeLog README THANKS TODO"

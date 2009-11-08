@@ -24,8 +24,8 @@ DEPEND="${RDEPEND}
 WANT_GTKDOCIZE="yes"
 
 pkg_setup() {
-	XFCE_CONFIG+=" $(use_enable debug) $(use_enable doc gtk-doc)
-	$(use_enable pathbar) $(use_enable toolbar)"
+	XFCE_CONFIG+=" $(use_enable doc gtk-doc) $(use_enable pathbar)
+		$(use_enable toolbar)"
 }
 
 src_unpack() {
