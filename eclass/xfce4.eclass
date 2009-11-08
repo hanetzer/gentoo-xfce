@@ -44,7 +44,7 @@ xfce4_uri() {
 	if [ ${PV} = 9999 ]; then
 		EGIT_REPO_URI="git://git.xfce.org/${XFCE_CAT}/${MY_PN:-${PN}}"
 	else
-		SRC_URI="http://git.xfce.org/${XFCE_CAT}/${MY_PN:-${PN}}/snapshot/${MY_P}${COMPRESS}"
+		SRC_URI="mirror://xfce/${XFCE_CAT}/${XFCE_VERSION}/${MY_PN:-${PN}}/${MY_P}${COMPRESS}"
 	fi
 }
 
@@ -135,7 +135,7 @@ xfce4_single_make() {
 xfce4_src_unpack() {
 	if [ ${PV} = 9999 ]; then
 		local revision
-		XFCE_CONFIG+=" --enable-maintainer-mode"
+		XFCE_CONFIG+=" --enable-maintainer-mode --disable-dependency-tracking"
 		git_src_unpack
 		cd ${S}
 		revision=$(git show --pretty=format:%ci | head -n 1 | \
@@ -158,7 +158,7 @@ xfce4_src_unpack() {
 			[ ${PN} != xfce4-dev-tools ] && AT_M4DIR="/usr/share/xfce4/dev-tools/m4macros"
 			[ -n "${WANT_GTKDOCIZE}" ] && gtkdocize --copy
 			if [ -d po ]; then
-			grep -Eqs "^(AC|IT)_PROG_INTLTOOL" ${configure} \
+				grep -Eqs "^(AC|IT)_PROG_INTLTOOL" ${configure} \
 				&& intltoolize --automake --copy --force \
 				|| glib-gettextize --copy --force >/dev/null
 			fi
