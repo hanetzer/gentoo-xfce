@@ -243,4 +243,4 @@ xfce4_pkg_postrm() {
 	gnome2_icon_cache_update
 }
 
-EXPORT_FUNCTIONS src_unpack src_configure src_compile src_install pkg_preinst pkg_postinst pkg_postrm
+EXPORT_FUNCTIONS src_unpack src_prepare src_configure src_compile src_install pkg_preinst pkg_postinst pkg_postrm
