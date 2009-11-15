@@ -131,14 +131,27 @@ xfce4_single_make() {
 
 # @FUNCTION: xfce4_src_unpack
 # @DESCRIPTION:
-# Only used for live ebuilds. Patch autogen.sh to inject the correct revision
-# into configure.ac
+# Unpack depending on the source and run src_prepare on EAPI < 2
 xfce4_src_unpack() {
 	if [ ${PV} = 9999 ]; then
-		local revision
 		XFCE_CONFIG+=" --enable-maintainer-mode --disable-dependency-tracking"
 		git_src_unpack
-		cd ${S}
+	else
+		unpack ${A}
+	fi
+	cd "${S}"
+	
+	[ "${EAPI}" -le 1 ] && xfce4_src_prepare
+}
+
+# @FUNCTION: xfce4_src_prepare
+# @DESCRIPTION:
+# Patch autogen.sh in live ebuilds to inject the correct revision into
+# configure.ac
+# Run elibtoolize to fix libraries on BSD
+xfce4_src_prepare() {
+	if [ ${PV} = 9999 ]; then
+		local revision
 		revision=$(git show --pretty=format:%ci | head -n 1 | \
 		awk '{ gsub("-", "", $1); print $1"-"; }')
 		revision+=$(git rev-parse HEAD | cut -c1-8)
@@ -166,8 +179,6 @@ xfce4_src_unpack() {
 			eautoreconf
 		fi
 	else
-		unpack ${A}
-		cd "${S}"
 		[ -n "${XFCE4_PATCHES}" ] && epatch ${XFCE4_PATCHES}
 		elibtoolize
 	fi
