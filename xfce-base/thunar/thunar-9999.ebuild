@@ -12,7 +12,7 @@ DESCRIPTION="File manager"
 HOMEPAGE="http://thunar.xfce.org"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 IUSE="dbus debug doc exif gnome hal pcre startup-notification +trash-plugin"
-SLOT="2"
+SLOT="0"
 
 RDEPEND=">=dev-lang/perl-5.6
 	>=dev-libs/glib-2.6:2
