@@ -23,8 +23,6 @@ RDEPEND=">=dev-libs/dbus-glib-0.70
 DEPEND="${RDEPEND}
 	dev-util/intltool"
 
-XFCE4_PATCHES="${FILESDIR}/${PN}-remove-dpmsstr-include.patch"
-
 pkg_setup() {
 	XFCE_CONFIG+=" $(use_enable libnotify)"
 }
