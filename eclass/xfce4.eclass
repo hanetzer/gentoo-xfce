@@ -162,7 +162,7 @@ xfce4_src_prepare() {
 		if [ -f configure.??.in ]; then
 			[ -f configure.ac.in ] && configure=configure.ac.in
 			[ -f configure.in.in ] && configure=configure.in.in
-			[ -n "${linguas}" ] && sed -i -e "s/@LINGUAS@/${linguas}/g" ${configure}
+			sed -i -e "s/@LINGUAS@/${linguas}/g" ${configure}
 			sed -i -e "s/@REVISION@/${revision}/g" ${configure}
 			cp ${configure} ${configure/.in}
 		fi
