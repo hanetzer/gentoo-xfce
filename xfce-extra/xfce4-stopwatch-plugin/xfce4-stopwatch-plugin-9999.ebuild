@@ -1,6 +1,6 @@
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-stopwatch-plugin/xfce4-stopwatch-plugin-0.2.0.ebuild,v 1.4 2009/10/06 11:15:26 ssuominen Exp $
+# $Header: $
 
 EAPI=2
 inherit xfce4
@@ -16,7 +16,8 @@ IUSE="debug"
 RDEPEND=">=x11-libs/gtk+-2.10:2
 	>=xfce-base/libxfce4util-4.6
 	>=xfce-base/libxfcegui4-4.6
-	>=xfce-base/xfce4-panel-4.6"
+	>=xfce-base/xfce4-panel-4.6
+	>=xfce-extra/xfce4-vala-4.6"
 DEPEND="${RDEPEND}
 	dev-util/intltool"
 
