@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
+WANT_AUTOMAKE="1.11"
 inherit xfce4
 
 xfce4_panel_plugin
