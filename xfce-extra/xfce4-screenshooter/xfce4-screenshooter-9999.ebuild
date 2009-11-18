@@ -14,3 +14,8 @@ DOCS="AUTHORS ChangeLog NEWS README"
 
 RDEPEND=">=net-libs/libsoup-2.26.0"
 DEPEND="${RDEPEND}"
+
+src_unpack() {
+	xfce4_src_unpack
+	echo lib/exo-job.c >> po/POTFILES.skip
+}
