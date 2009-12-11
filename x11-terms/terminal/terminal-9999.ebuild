@@ -11,7 +11,7 @@ xfce4_apps
 DESCRIPTION="Terminal for Xfce desktop environment, based on vte library."
 HOMEPAGE="http://www.xfce.org/projects/terminal"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-IUSE="dbus debug startup-notification doc"
+IUSE="dbus debug doc"
 
 RDEPEND=">=dev-libs/glib-2.6:2
 	media-libs/fontconfig
@@ -24,14 +24,13 @@ RDEPEND=">=dev-libs/glib-2.6:2
 	x11-libs/libXrender
 	>=x11-libs/vte-0.11.11
 	>=xfce-base/exo-0.3.4
-	startup-notification? ( x11-libs/startup-notification )
 	dbus? ( dev-libs/dbus-glib )"
 DEPEND="${RDEPEND}
 	dev-util/intltool
 	doc? ( dev-libs/libxslt )"
 
 pkg_setup() {
-	XFCE_CONFIG+=" $(use_enable dbus) $(use_enable doc xsltproc)"
+	XFCE_CONFIG+=" --docdir=/usr/share/doc/${PF} $(use_enable dbus) $(use_enable doc gen-doc)"
 }
 
-DOCS="AUTHORS ChangeLog HACKING NEWS README THANKS TODO"
+DOCS="AUTHORS HACKING NEWS README THANKS TODO"
