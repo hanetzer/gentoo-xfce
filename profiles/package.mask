@@ -39,6 +39,7 @@
 =xfce-extra/thunar-svn-plugin-9999
 =xfce-extra/thunar-thumbnailers-9999
 =xfce-extra/thunar-volman-9999
+=xfce-extra/tumbler-9999
 =xfce-extra/xfce4-appfinder-9999
 =xfce-extra/xfce4-battery-plugin-9999
 =xfce-extra/xfce4-cddrive-plugin-9999
