@@ -14,6 +14,11 @@ HOMEPAGE="http://goodies.xfce.org/projects/applications/xfce4-taskmanager"
 RDEPEND=">=xfce-base/libxfcegui4-${XFCE_VERSION}
 	>=xfce-base/libxfce4util-${XFCE_VERSION}"
 
+src_unpack() {
+	xfce4_src_unpack
+	echo src/taskmanager-solaris.c >> po/POTFILES.skip
+}
+
 src_install() {
 	xfce4_src_install
 	make_desktop_entry ${PN} "Task Manager" xfce-system-settings "Application;System;Utility;Core;GTK"
