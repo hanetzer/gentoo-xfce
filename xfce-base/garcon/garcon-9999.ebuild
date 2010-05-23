@@ -1,15 +1,15 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/garcon/garcon-0.1.0.ebuild,v 1.5 2009/10/28 20:15:06 fauli Exp $
+# $Header: $
 
-EAPI=2
+EAPI=3
 inherit xfce4
 
 xfce4_libs
 
 DESCRIPTION="a freedesktop.org compliant menu implementation based on GLib and GIO"
 LICENSE="LGPL-2 FDL-1.1"
-KEYWORDS="~amd64 ~hppa ~ppc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd"
 IUSE="debug"
 
 RDEPEND=">=dev-libs/glib-2.14:2
@@ -20,5 +20,10 @@ DEPEND="${RDEPEND}
 	sys-devel/gettext"
 
 WANT_GTKDOCIZE="yes"
-XFCE_CONFIG+=" --disable-static"
-DOCS="AUTHORS ChangeLog HACKING NEWS README STATUS TODO"
+
+pkg_setup() {
+	XFCE_CONFIG+=" --disable-dependency-tracking
+		--disable-static
+		--with-html-dir=${EPREFIX}/usr/share/doc/${PF}/html"
+	DOCS="AUTHORS ChangeLog HACKING NEWS README STATUS TODO"
+}
