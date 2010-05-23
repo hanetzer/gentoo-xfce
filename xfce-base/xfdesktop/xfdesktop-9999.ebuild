@@ -24,7 +24,7 @@ RDEPEND="x11-libs/libX11
 	>=xfce-base/libxfce4ui-${XFCE_VERSION}
 	>=xfce-base/libxfce4menu-${XFCE_VERSION}
 	>=xfce-base/xfconf-${XFCE_VERSION}
-	file-icons? ( xfce-base/thunar-vfs
+	file-icons? ( xfce-extra/thunar-vfs
 		>=xfce-base/exo-0.3.100 dev-libs/dbus-glib )
 	menu-plugin? ( >=xfce-base/xfce4-panel-${XFCE_VERSION} )"
 DEPEND="${RDEPEND}
