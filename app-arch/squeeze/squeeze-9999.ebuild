@@ -1,22 +1,21 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=1
-
+EAPI=2
 inherit xfce4
 
 xfce4_apps
 
-DESCRIPTION="a GTK+ based and advanced archive manager for use with Thunar"
+DESCRIPTION="a GTK+ based and advanced archive manager for use with Thunar file manager."
 HOMEPAGE="http://squeeze.xfce.org"
 KEYWORDS="~alpha ~amd64 -hppa ~ia64 ~ppc ~ppc64 -sparc ~x86 ~x86-fbsd"
-IUSE="debug doc +pathbar +toolbar"
+IUSE="debug +pathbar +toolbar"
 
-RDEPEND="dev-libs/dbus-glib
-	x11-libs/gtk+:2
-	>=xfce-base/libxfce4util-${XFCE_VERSION}
-	>=xfce-base/thunar-${XFCE_VERSION}"
+RDEPEND="x11-libs/gtk+:2
+	dev-libs/dbus-glib
+	>=xfce-base/libxfce4util-4.4
+	xfce-extra/thunar-vfs"
 DEPEND="${RDEPEND}
 	dev-util/intltool
 	dev-util/gtk-doc"
@@ -24,16 +23,14 @@ DEPEND="${RDEPEND}
 WANT_GTKDOCIZE="yes"
 
 pkg_setup() {
-	XFCE_CONFIG+=" $(use_enable doc gtk-doc) $(use_enable pathbar)
+	XFCE_CONFIG+=" --disable-gtk-doc
+		--disable-dependency-tracking
+		$(use_enable pathbar)
 		$(use_enable toolbar)"
+	DOCS="AUTHORS ChangeLog NEWS README TODO"
 }
 
 src_unpack() {
 	xfce4_src_unpack
 	mkdir "${S}"/m4
-	echo "src/button_drag_box.c" >> "${S}"/po/POTFILES.in
-	echo "src/preferences_dialog.c" >> "${S}"/po/POTFILES.in
-	echo "src/properties_dialog.c" >> "${S}"/po/POTFILES.in
 }
-
-DOCS="AUTHORS ChangeLog NEWS README TODO"
