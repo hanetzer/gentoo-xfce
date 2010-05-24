@@ -47,9 +47,9 @@ pkg_setup() {
 		--with-html-dir=/usr/share/doc/${PF}/html"
 
 	if use hal; then
-		XFCONF="${XFCONF} --enable-dbus --with-volume-manager=hal"
+		XFCE_CONFIG+=" --enable-dbus --with-volume-manager=hal"
 	else
-		XFCONF="${XFCONF} --with-volume-manager=none"
+		XFCE_CONFIG+=" --with-volume-manager=none"
 	fi
 }
 
