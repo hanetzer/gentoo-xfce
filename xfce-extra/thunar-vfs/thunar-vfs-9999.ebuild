@@ -30,7 +30,7 @@ DEPEND="${RDEPEND}
 	dev-util/intltool
 	sys-devel/gettext
 	dev-lang/perl
-	dev-util/gtk-doc-am
+	dev-util/gtk-doc
 	doc? ( dev-libs/libxslt )"
 
 WANT_GTKDOCIZE="yes"
