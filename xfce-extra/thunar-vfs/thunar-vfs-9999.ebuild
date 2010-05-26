@@ -39,7 +39,6 @@ pkg_setup() {
 	DOCS="AUTHORS ChangeLog HACKING NEWS README TODO"
 
 	XFCE_CONFIG="--enable-maintainer-mode
-		--disable-dependency-tracking
 		$(use_enable dbus)
 		$(use_enable gnome gnome-thumbnailers)
 		$(use_enable doc xsltproc)

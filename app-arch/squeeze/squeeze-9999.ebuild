@@ -24,7 +24,6 @@ WANT_GTKDOCIZE="yes"
 
 pkg_setup() {
 	XFCE_CONFIG+=" --disable-gtk-doc
-		--disable-dependency-tracking
 		$(use_enable pathbar)
 		$(use_enable toolbar)"
 	DOCS="AUTHORS ChangeLog NEWS README TODO"
