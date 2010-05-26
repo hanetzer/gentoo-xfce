@@ -9,7 +9,7 @@ xfce4_apps
 
 DESCRIPTION="Calendar suite for Xfce4"
 HOMEPAGE="http://www.xfce.org/projects/orage/"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~x86-solaris"
 IUSE="berkdb dbus debug libnotify"
 
 RDEPEND=">=x11-libs/gtk+-2.10:2
