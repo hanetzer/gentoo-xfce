@@ -1,26 +1,25 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=1
-
+EAPI=2
 inherit xfce4
 
 xfce4_core
 
-DESCRIPTION="Collection of utils"
+DESCRIPTION="Collection of utils for Xfce4"
 HOMEPAGE="http://www.xfce.org/projects/xfce-utils/"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~x86-solaris"
 IUSE="dbus debug +lock"
 
 RDEPEND="x11-apps/xrdb
 	x11-libs/libX11
 	>=dev-libs/glib-2.6:2
 	>=x11-libs/gtk+-2.10:2
-	>=xfce-base/libxfce4util-${XFCE_VERSION}
-	>=xfce-base/libxfcegui4-${XFCE_VERSION}
-	>=xfce-base/xfconf-${XFCE_VERSION}
-	dbus? ( dev-libs/dbus-glib )
+	>=xfce-base/libxfce4util-4.6
+	>=xfce-base/libxfcegui4-4.6
+	>=xfce-base/xfconf-4.6
+	dbus? ( >=dev-libs/dbus-glib-0.70 )
 	lock? ( || ( x11-misc/xscreensaver
 		gnome-extra/gnome-screensaver
 		x11-misc/xlockmore ) )"
@@ -28,25 +27,22 @@ DEPEND="${RDEPEND}
 	dev-util/intltool"
 
 pkg_setup() {
-	XFCE_CONFIG+=" $(use_enable dbus) --with-vendor-info=Gentoo"
+	XFCE_CONFIG+=" $(use_enable dbus)
+		--with-vendor-info=Gentoo
+		--with-xsession-prefix=${EPREFIX}/usr"
+	DOCS="AUTHORS ChangeLog NEWS README"
 }
 
 src_install() {
 	xfce4_src_install
-
 	insinto /usr/share/xfce4
-	doins "${FILESDIR}/Gentoo"
-
-	dodir /etc/X11/Sessions
-	echo startxfce4 > "${D}/etc/X11/Sessions/Xfce4"
-	fperms 755 /etc/X11/Sessions/Xfce4
+	doins "${FILESDIR}"/Gentoo || die "doins failed"
+	echo startxfce4 > "${T}"/Xfce4
+	exeinto /etc/X11/Sessions
+	doexe "${T}"/Xfce4 || die "doexe failed"
 }
 
 pkg_postinst() {
-	elog
 	elog "Run Xfce4 from your favourite Display Manager by using"
 	elog "XSESSION=\"Xfce4\" in /etc/rc.conf"
-	elog
 }
-
-DOCS="AUTHORS ChangeLog NEWS README TODO"
