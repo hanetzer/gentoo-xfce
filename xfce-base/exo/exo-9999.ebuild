@@ -31,7 +31,7 @@ pkg_setup() {
 		$(use_enable hal)
 		$(use_enable python)
 		--with-html-dir=${EPREFIX}/usr/share/doc/${PF}/html"
-	DOCS="AUTHORS ChangeLog HACKING NEWS README THANKS TODO"
+	DOCS="AUTHORS HACKING NEWS README THANKS TODO"
 }
 
 src_prepare() {
