@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<herd>xfce</herd>
+	<herd>xfce</herd>
+	<use>
+		<flag name="consolekit">Use consolekit for shutdown/reboot</flag>
+		<flag name="fortune">Install tips and tricks app (xfce4-tips), adds dependency on games-misc/fortune-mod</flag>
+		<flag name="gnome-keyring">Support for storing your password.</flag>
+		<flag name="upower">Use upower for suspend/hibernate</flag>
+	</use>
 </pkgmetadata>
