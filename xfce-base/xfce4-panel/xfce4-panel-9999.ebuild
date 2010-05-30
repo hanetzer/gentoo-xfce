@@ -34,5 +34,5 @@ pkg_setup() {
 	XFCE_CONFIG+=" --docdir=${EPREFIX}/usr/share/doc/${PF}
 		--disable-static
 		--with-html-dir=${EPREFIX}/usr/share/doc/${PF}/html"
-	DOCS="AUTHORS ChangeLog NEWS THANKS"
+	DOCS="AUTHORS NEWS THANKS"
 }
