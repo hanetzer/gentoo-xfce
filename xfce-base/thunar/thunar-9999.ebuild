@@ -38,7 +38,8 @@ DEPEND="${COMMON_DEPEND}
 WANT_GTKDOCIZE="yes"
 
 pkg_setup() {
-	XFCE_CONFIG+=" $(use_enable dbus)
+	XFCE_CONFIG+=" --disable-dependency-tracking
+		$(use_enable dbus)
 		$(use_enable exif)
 		$(use_enable pcre)
 		--with-html-dir=${EPREFIX}/usr/share/doc/${PF}/html"

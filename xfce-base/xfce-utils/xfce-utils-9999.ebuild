@@ -17,7 +17,7 @@ RDEPEND="x11-apps/xrdb
 	>=dev-libs/glib-2.6:2
 	>=x11-libs/gtk+-2.10:2
 	>=xfce-base/libxfce4util-4.6
-	>=xfce-base/libxfcegui4-4.6
+	>=xfce-base/libxfce4ui-4.7
 	>=xfce-base/xfconf-4.6
 	dbus? ( >=dev-libs/dbus-glib-0.70 )
 	lock? ( || ( x11-misc/xscreensaver
@@ -27,7 +27,8 @@ DEPEND="${RDEPEND}
 	dev-util/intltool"
 
 pkg_setup() {
-	XFCE_CONFIG+=" $(use_enable dbus)
+	XFCE_CONFIG+=" --disable-dependency-tracking
+		$(use_enable dbus)
 		--with-vendor-info=Gentoo
 		--with-xsession-prefix=${EPREFIX}/usr"
 	DOCS="AUTHORS ChangeLog NEWS README"

@@ -21,7 +21,8 @@ DEPEND="${RDEPEND}
 WANT_GTKDOCIZE="yes"
 
 pkg_setup() {
-	XFCE_CONFIG=" --disable-static
+	XFCE_CONFIG=" --disable-dependency-tracking
+		--disable-static
 		--with-html-dir=${EPREFIX}/usr/share/doc/${PF}/html"
-	DOCS="AUTHORS ChangeLog NEWS README THANKS TODO"
+	DOCS="AUTHORS NEWS README THANKS TODO"
 }

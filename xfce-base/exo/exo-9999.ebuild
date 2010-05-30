@@ -26,7 +26,8 @@ DEPEND="${RDEPEND}
 WANT_GTKDOCIZE="yes"
 
 pkg_setup() {
-	XFCE_CONFIG+=" --disable-static
+	XFCE_CONFIG+=" --disable-dependency-tracking
+		--disable-static
 		$(use_enable libnotify notifications)
 		$(use_enable hal)
 		$(use_enable python)

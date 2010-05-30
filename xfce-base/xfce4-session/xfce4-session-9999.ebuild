@@ -30,7 +30,8 @@ DEPEND="${RDEPEND}
 	dev-util/intltool"
 
 pkg_setup() {
-	XFCE_CONFIG+=" --disable-hal
+	XFCE_CONFIG+=" --disable-dependency-tracking
+		--disable-hal
 		--enable-panel-plugin
 		$(use_enable consolekit)
 		$(use_enable gnome)

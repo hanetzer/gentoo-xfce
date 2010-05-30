@@ -10,12 +10,8 @@
 # This eclass provides functions to install Xfce4 packages with a
 # minimum of duplication in ebuilds
 
-inherit fdo-mime gnome2-utils libtool
+inherit autotools fdo-mime git gnome2-utils libtool
 [ -n ${XFCE4_PATCHES} ] && inherit eutils
-if [ ${PV} = 9999 ]; then
-	inherit autotools
-	inherit git
-fi
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -23,14 +19,8 @@ SLOT="0"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
-[ ${PV} = 9999 -a -z "${XFCE_VERSION}" ] && XFCE_VERSION="4.6.0"
-[ -z ${XFCE_VERSION} ] && XFCE_VERSION=${PV}
-[ -z ${THUNAR_VERSION} ] && THUNAR_VERSION="0.9"
-
-if [ ${PV} = 9999 ]; then
-	[ ${PN} != xfce4-dev-tools ] && DEPEND+="
-		>=dev-util/xfce4-dev-tools-${XFCE_VERSION}"
-fi
+[ ${PN} != xfce4-dev-tools ] && DEPEND+="
+	>=dev-util/xfce4-dev-tools-9999"
 
 
 # @FUNCTION: xfce4_apps
@@ -42,11 +32,7 @@ xfce4_uri() {
 	[ -z ${COMPRESS} ] && COMPRESS=".tar.bz2"
 	S="${WORKDIR}/${MY_P}"
 
-	if [ ${PV} = 9999 ]; then
-		EGIT_REPO_URI="git://git.xfce.org/${XFCE_CAT}/${MY_PN:-${PN}}"
-	else
-		SRC_URI="mirror://xfce/${XFCE_CAT}/${XFCE_VERSION}/${MY_PN:-${PN}}/${MY_P}${COMPRESS}"
-	fi
+	EGIT_REPO_URI="git://git.xfce.org/${XFCE_CAT}/${MY_PN:-${PN}}"
 }
 
 # @FUNCTION: xfce4_apps
@@ -96,8 +82,8 @@ xfce4_panel_plugin() {
 	XFCE_CAT="panel-plugins"
 	xfce4_uri
 	[ -z ${HOMEPAGE} ] && HOMEPAGE="http://goodies.xfce.org/projects/panel-plugins/${MY_PN}"
-	RDEPEND="${RDEPEND} >=xfce-base/xfce4-panel-${XFCE_VERSION}"
-	DEPEND="${DEPEND} >=xfce-base/xfce4-panel-${XFCE_VERSION}"
+	RDEPEND="${RDEPEND} >=xfce-base/xfce4-panel-9999"
+	DEPEND="${DEPEND} >=xfce-base/xfce4-panel-9999"
 }
 
 # @FUNCTION: xfce4_thunar_plugin
@@ -108,8 +94,8 @@ xfce4_thunar_plugin() {
 	XFCE_CAT="thunar-plugins"
 	xfce4_uri
 	[ -z ${HOMEPAGE} ] && HOMEPAGE="http://thunar.xfce.org/plugins.html"
-	RDEPEND="${RDEPEND} >=xfce-base/thunar-${THUNAR_VERSION}"
-	DEPEND="${DEPEND} >=xfce-base/thunar-${THUNAR_VERSION}"
+	RDEPEND="${RDEPEND} >=xfce-base/thunar-9999"
+	DEPEND="${DEPEND} >=xfce-base/thunar-9999"
 }
 
 # @FUNCTION: xfce4_core
@@ -133,12 +119,8 @@ xfce4_single_make() {
 # @DESCRIPTION:
 # Unpack depending on the source and run src_prepare on EAPI < 2
 xfce4_src_unpack() {
-	if [ ${PV} = 9999 ]; then
-		XFCE_CONFIG+=" --enable-maintainer-mode --disable-dependency-tracking"
-		git_src_unpack
-	else
-		unpack ${A}
-	fi
+	XFCE_CONFIG+=" --enable-maintainer-mode"
+	git_src_unpack
 	cd "${S}"
 	
 	[ "${EAPI}" -le 1 ] && xfce4_src_prepare
@@ -150,37 +132,32 @@ xfce4_src_unpack() {
 # configure.ac
 # Run elibtoolize to fix libraries on BSD
 xfce4_src_prepare() {
-	if [ ${PV} = 9999 ]; then
-		local revision
-		revision=$(git show --pretty=format:%ci | head -n 1 | \
-		awk '{ gsub("-", "", $1); print $1"-"; }')
-		revision+=$(git rev-parse HEAD | cut -c1-8)
+	local revision
+	revision=$(git show --pretty=format:%ci | head -n 1 | \
+	awk '{ gsub("-", "", $1); print $1"-"; }')
+	revision+=$(git rev-parse HEAD | cut -c1-8)
 
-		local linguas
-		[ -d po ] && linguas=`cd po 2>/dev/null && ls *.po 2>/dev/null | awk 'BEGIN { FS="."; ORS=" " } { print $1 }'`
-		[ -n "${XFCE4_PATCHES}" ] && epatch ${XFCE4_PATCHES}
-		if [ -f configure.??.in ]; then
-			[ -f configure.ac.in ] && configure=configure.ac.in
-			[ -f configure.in.in ] && configure=configure.in.in
-			sed -i -e "s/@LINGUAS@/${linguas}/g" ${configure}
-			sed -i -e "s/@REVISION@/${revision}/g" ${configure}
-			cp ${configure} ${configure/.in}
+	local linguas
+	[ -d po ] && linguas=`cd po 2>/dev/null && ls *.po 2>/dev/null | awk 'BEGIN { FS="."; ORS=" " } { print $1 }'`
+	[ -n "${XFCE4_PATCHES}" ] && epatch ${XFCE4_PATCHES}
+	if [ -f configure.??.in ]; then
+		[ -f configure.ac.in ] && configure=configure.ac.in
+		[ -f configure.in.in ] && configure=configure.in.in
+		sed -i -e "s/@LINGUAS@/${linguas}/g" ${configure}
+		sed -i -e "s/@REVISION@/${revision}/g" ${configure}
+		cp ${configure} ${configure/.in}
+	fi
+	if [ -f configure.?? ]; then
+		[ -f configure.ac ] && configure=configure.ac
+		[ -f configure.in ] && configure=configure.in
+		[ ${PN} != xfce4-dev-tools ] && AT_M4DIR="/usr/share/xfce4/dev-tools/m4macros"
+		[ -n "${WANT_GTKDOCIZE}" ] && gtkdocize --copy
+		if [ -d po ]; then
+			grep -Eqs "^(AC|IT)_PROG_INTLTOOL" ${configure} \
+			&& intltoolize --automake --copy --force \
+			|| glib-gettextize --copy --force >/dev/null
 		fi
-		if [ -f configure.?? ]; then
-			[ -f configure.ac ] && configure=configure.ac
-			[ -f configure.in ] && configure=configure.in
-			[ ${PN} != xfce4-dev-tools ] && AT_M4DIR="/usr/share/xfce4/dev-tools/m4macros"
-			[ -n "${WANT_GTKDOCIZE}" ] && gtkdocize --copy
-			if [ -d po ]; then
-				grep -Eqs "^(AC|IT)_PROG_INTLTOOL" ${configure} \
-				&& intltoolize --automake --copy --force \
-				|| glib-gettextize --copy --force >/dev/null
-			fi
-			eautoreconf
-		fi
-	else
-		[ -n "${XFCE4_PATCHES}" ] && epatch ${XFCE4_PATCHES}
-		elibtoolize
+		eautoreconf
 	fi
 }
 

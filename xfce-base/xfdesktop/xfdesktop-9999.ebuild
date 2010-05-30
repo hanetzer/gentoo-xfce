@@ -1,57 +1,72 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=1
-
-inherit eutils xfce4
+EAPI=2
+inherit xfce4
 
 xfce4_core
 
-DESCRIPTION="Desktop manager"
+DESCRIPTION="Desktop manager for Xfce4"
 HOMEPAGE="http://www.xfce.org/projects/xfdesktop"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
-IUSE="debug doc +file-icons +menu-plugin"
+SRC_URI="branding? ( http://www.gentoo.org/images/backgrounds/gentoo-minimal-1280x1024.jpg )"
+
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~x86-solaris"
+IUSE="+branding debug doc thunar"
 
 LINGUAS="be ca cs da de el es et eu fi fr he hu it ja ko nb_NO nl pa pl pt_BR ro ru sk sv tr uk vi zh_CN zh_TW"
-
-RDEPEND="x11-libs/libX11
-	x11-libs/libSM
-	>=x11-libs/libwnck-2.12
-	>=dev-libs/glib-2.10:2
-	>=x11-libs/gtk+-2.10:2
-	>=xfce-base/libxfce4util-${XFCE_VERSION}
-	>=xfce-base/libxfce4ui-${XFCE_VERSION}
-	>=xfce-base/libxfce4menu-${XFCE_VERSION}
-	>=xfce-base/xfconf-${XFCE_VERSION}
-	file-icons? ( xfce-extra/thunar-vfs
-		>=xfce-base/exo-0.3.100 dev-libs/dbus-glib )
-	menu-plugin? ( >=xfce-base/xfce4-panel-${XFCE_VERSION} )"
-DEPEND="${RDEPEND}
-	dev-util/intltool
-	doc? ( dev-libs/libxslt )"
 
 for X in ${LINGUAS}; do
 	IUSE="${IUSE} linguas_${X}"
 done
 
-XFCE_LOCALIZED_CONFIGS="/etc/xdg/xfce4/desktop/xfce-registered-categories.xml
-	/etc/xdg/xfce4/desktop/menu.xml"
+RDEPEND="gnome-base/libglade
+	x11-libs/libX11
+	x11-libs/libSM
+	>=x11-libs/libwnck-2.12
+	>=dev-libs/glib-2.18:2
+	>=x11-libs/gtk+-2.14:2
+	>=xfce-base/libxfce4util-4.6
+	>=xfce-base/libxfce4ui-4.7
+	>=xfce-base/libxfce4menu-4.6
+	>=xfce-base/xfconf-4.6
+	branding? ( >=x11-libs/gtk+-2.10:2[jpeg] )
+	thunar? ( >=xfce-base/thunar-1
+		>=xfce-base/exo-0.3.100
+		dev-libs/dbus-glib )"
+DEPEND="${RDEPEND}
+	dev-util/intltool
+	doc? ( dev-libs/libxslt )"
 
 pkg_setup() {
-	XFCE_CONFIG+=" $(use_enable doc xsltproc) $(use_enable menu-plugin panel-plugin)"
+	XFCE_LOCALIZED_CONFIGS="/etc/xdg/xfce4/desktop/menu.xml
+		/etc/xdg/xfce4/desktop/xfce-registered-categories.xml"
+	# TODO: fix USE=thunar
+	XFCE_CONFIG+=" --disable-dependency-tracking
+		--disable-static
+		$(use_enable thunar file-icons)
+		$(use_enable thunar thunarx)
+		$(use_enable thunar exo)
+		$(use_enable thunar desktop-menu)
+		$(use_enable doc xsltproc)"
+	DOCS="AUTHORS ChangeLog NEWS TODO README"
+}
 
-	if use file-icons; then
-		XFCE_CONFIG+=" --enable-thunarx --enable-file-icons --enable-exo
-		--enable-desktop-icons"
-	else
-		XFCE_CONFIG+=" --disable-thunarx --disable-file-icons --disable-exo
-		--disable-desktop-icons"
+src_prepare() {
+	if use branding; then
+		sed -i -e "s:xfce-stripes.png:gentoo-minimal-1280x1024.jpg:" \
+			common/xfdesktop-common.h || die "sed failed"
 	fi
+	xfce4_src_prepare
 }
 
 src_install() {
 	xfce4_src_install
+
+	if use branding; then
+		insinto /usr/share/xfce4/backdrops
+		doins "${DISTDIR}"/gentoo-minimal-1280x1024.jpg || die "doins failed"
+	fi
 
 	local config lang
 	for config in ${XFCE_LOCALIZED_CONFIGS}; do
@@ -63,5 +78,3 @@ src_install() {
 		done
 	done
 }
-
-DOCS="AUTHORS ChangeLog HACKING NEWS TODO README"

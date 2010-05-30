@@ -38,12 +38,12 @@ WANT_GTKDOCIZE="yes"
 pkg_setup() {
 	DOCS="AUTHORS ChangeLog HACKING NEWS README TODO"
 
-	XFCE_CONFIG="--enable-maintainer-mode
+	XFCE_CONFIG+=" --disable-dependency-tracking
 		$(use_enable dbus)
 		$(use_enable gnome gnome-thumbnailers)
 		$(use_enable doc xsltproc)
 		$(use_enable debug)
-		--with-html-dir=/usr/share/doc/${PF}/html"
+		--with-html-dir=${EPREFIX}/usr/share/doc/${PF}/html"
 
 	if use hal; then
 		XFCE_CONFIG+=" --enable-dbus --with-volume-manager=hal"

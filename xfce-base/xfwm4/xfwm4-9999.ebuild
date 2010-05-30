@@ -1,20 +1,20 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=1
-
+EAPI=2
 inherit xfce4
 
 xfce4_core
 
-DESCRIPTION="Window manager"
+DESCRIPTION="Window manager for Xfce4"
 HOMEPAGE="http://www.xfce.org/projects/xfwm4/"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd"
 
-IUSE="debug nls startup-notification +xcomposite"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~x86-solaris"
+IUSE="debug startup-notification +xcomposite"
 
 RDEPEND=">=dev-libs/glib-2.10:2
+	>=dev-libs/dbus-glib-0.72
 	>=x11-libs/gtk+-2.10:2
 	x11-libs/libICE
 	x11-libs/libSM
@@ -25,10 +25,9 @@ RDEPEND=">=dev-libs/glib-2.10:2
 	x11-libs/libXpm
 	x11-libs/pango
 	>=x11-libs/libwnck-2.12
-	xfce-base/exo
-	>=xfce-base/libxfce4util-${XFCE_VERSION}
-	>=xfce-base/libxfcegui4-${XFCE_VERSION}
-	>=xfce-base/xfconf-${XFCE_VERSION}
+	>=xfce-base/libxfce4util-4.6
+	>=xfce-base/libxfce4ui-4.7
+	>=xfce-base/xfconf-4.6
 	startup-notification? ( x11-libs/startup-notification )
 	xcomposite? ( x11-libs/libXcomposite
 		x11-libs/libXdamage
@@ -37,22 +36,10 @@ DEPEND="${RDEPEND}
 	dev-util/intltool"
 
 pkg_setup() {
-	XFCE_CONFIG+=" --enable-xsync --enable-render --enable-randr
-	$(use_enable xcomposite compositor) $(use_enable nls)"
+	XFCE_CONFIG+="--disable-dependency-tracking
+		--enable-xsync
+		--enable-render
+		--enable-randr
+		$(use_enable xcomposite compositor)"
+	DOCS="AUTHORS ChangeLog COMPOSITOR NEWS NOTES README TODO"
 }
-
-src_unpack() {
-	xfce4_src_unpack
-
-	echo "mcs-plugin/margins.c" >> "${S}"/po/POTFILES.skip
-	echo "mcs-plugin/wmtweaks_plugin.c" >> "${S}"/po/POTFILES.skip
-	echo "mcs-plugin/workspaces.c" >> "${S}"/po/POTFILES.skip
-	echo "mcs-plugin/workspaces_plugin.c" >> "${S}"/po/POTFILES.skip
-	echo "mcs-plugin/xfce-wm-settings.desktop.in" >> "${S}"/po/POTFILES.skip
-	echo "mcs-plugin/xfce-wmtweaks-settings.desktop.in" >> "${S}"/po/POTFILES.skip
-	echo "mcs-plugin/xfce-workspaces-settings.desktop.in" >> "${S}"/po/POTFILES.skip
-	echo "mcs-plugin/xfwm4_plugin.c" >> "${S}"/po/POTFILES.skip
-	echo "mcs-plugin/xfwm4_shortcuteditor.c" >> "${S}"/po/POTFILES.skip
-}
-
-DOCS="AUTHORS ChangeLog COMPOSITOR NEWS README TODO"

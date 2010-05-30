@@ -35,7 +35,8 @@ DEPEND="${RDEPEND}
 	x11-proto/xf86vidmodeproto"
 
 pkg_setup() {
-	XFCE_CONFIG+=" --disable-static
+	XFCE_CONFIG+=" --disable-dependency-tracking
+		--disable-static
 		$(use_enable libnotify)
 		$(use_enable keyboard libxklavier)
 		$(use_enable sound sound-settings)"

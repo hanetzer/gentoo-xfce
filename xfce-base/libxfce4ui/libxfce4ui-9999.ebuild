@@ -31,7 +31,8 @@ DEPEND="${RDEPEND}
 WANT_GTKDOCIZE="yes"
 
 pkg_setup() {
-	XFCE_CONFIG+=" $(use_enable glade gladeui)
+	XFCE_CONFIG+=" --disable-dependency-tracking
+		$(use_enable glade gladeui)
 		--enable-keyboard-library
 		--with-html-dir=${EPREFIX}/usr/share/doc/${PF}/html"
 	DOCS="AUTHORS NEWS README THANKS TODO"
