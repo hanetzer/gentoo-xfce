@@ -41,7 +41,7 @@ pkg_setup() {
 }
 
 src_compile() {
-	emake OTHERLDFLAGS="${LDFLAGS}" || die
+	emake PERL="/usr/bin/env perl" OTHERLDFLAGS="${LDFLAGS}" || die
 }
 
 src_install() {
