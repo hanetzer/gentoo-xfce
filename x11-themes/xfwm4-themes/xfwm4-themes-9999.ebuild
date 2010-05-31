@@ -5,6 +5,8 @@
 EAPI=2
 inherit xfce4
 
+xfce4_art
+
 DESCRIPTION="Xfce4 window manager themes"
 HOMEPAGE="http://www.xfce.org/"
 
