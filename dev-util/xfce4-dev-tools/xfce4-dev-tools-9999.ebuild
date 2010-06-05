@@ -11,4 +11,4 @@ HOMEPAGE="http://foo-projects.org/~benny/projects/xfce4-dev-tools"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~x64-solaris"
 IUSE=""
 
-DOCS="AUTHORS ChangeLog HACKING NEWS README"
+DOCS="AUTHORS HACKING NEWS README"
