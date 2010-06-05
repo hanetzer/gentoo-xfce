@@ -23,7 +23,8 @@ DEPEND="${RDEPEND}
 	doc? ( dev-libs/libxslt )"
 
 pkg_setup() {
-	XFCE_CONFIG+=" --docdir=${EPREFIX}/usr/share/doc/${PF}
+	XFCE_CONFIG+=" --disable-dependency-tracking
+		--docdir=${EPREFIX}/usr/share/doc/${PF}
 		$(use_enable dbus)
 		$(use_enable doc gen-doc)"
 	DOCS="AUTHORS HACKING NEWS README THANKS TODO"
