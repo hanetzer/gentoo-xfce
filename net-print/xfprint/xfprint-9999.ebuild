@@ -27,7 +27,8 @@ DEPEND="${RDEPEND}
 WANT_GTKDOCIZE="yes"
 
 pkg_setup() {
-	XFCE_CONFIG+=" --enable-bsdlpr
+	XFCE_CONFIG+=" --disable-dependency-tracking
+		--enable-bsdlpr
 		$(use_enable cups)"
 	DOCS="AUTHORS ChangeLog NEWS README TODO"
 }
