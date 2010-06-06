@@ -14,7 +14,7 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-
 IUSE="alsa debug oss"
 
 COMMON_DEPEND=">=dev-libs/glib-2.12:2
-	>=media-libs/gst-plugins-base-0.10.14
+	>=media-libs/gst-plugins-base-0.10.2
 	>=x11-libs/gtk+-2.10:2
 	>=xfce-base/libxfce4util-4.6
 	>=xfce-base/libxfcegui4-4.6
@@ -28,5 +28,5 @@ DEPEND="${COMMON_DEPEND}
 
 pkg_setup() {
 	DOCS="AUTHORS ChangeLog HACKING NEWS README THANKS TODO"
-	XFCONF="--disable-dependency-tracking"
+	XFCE_CONFIG+=" --disable-dependency-tracking"
 }
