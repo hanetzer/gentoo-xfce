@@ -13,9 +13,6 @@
 inherit autotools fdo-mime git gnome2-utils libtool
 [ -n ${XFCE4_PATCHES} ] && inherit eutils
 
-LICENSE="GPL-2"
-SLOT="0"
-
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
@@ -192,7 +189,7 @@ xfce4_src_compile() {
 xfce4_src_install() {
 	[ -n "${DOCS}" ] && dodoc ${DOCS}
 
-	emake DESTDIR="${D}" install || die "emake install failed"
+	emake DESTDIR="${D}" "$@" install || die "emake install failed"
 }
 
 # @FUNCTION: xfce4_pkg_preinst
