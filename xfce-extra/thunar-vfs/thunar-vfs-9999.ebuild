@@ -1,61 +1,52 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI=3
 inherit xfce4
 
 xfce4_core
 
-DESCRIPTION="Separate package for (old) Thunar VFS libraries"
+DESCRIPTION="Xfce's filesystem libraries (deprecated: don't use this for future development)"
+HOMEPAGE="http://git.xfce.org/xfce/thunar-vfs/"
 
-KEYWORDS="~amd64 ~x86"
-IUSE="dbus debug doc gnome hal startup-notification"
+LICENSE="LGPL-2"
+SLOT="0"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~x86-solaris"
+IUSE="dbus debug gnome startup-notification"
 
-RDEPEND=">=xfce-base/exo-0.5.1
+RDEPEND=">=xfce-base/exo-0.6
 	>=dev-libs/glib-2.12:2
 	>=x11-libs/gtk+-2.10:2
-	>=xfce-base/libxfce4util-4.6
-	>=media-libs/libpng-1.2
+	>=xfce-base/libxfce4util-4.8
+	>=media-libs/libpng-1.4
 	>=media-libs/freetype-2
-	>=media-libs/jpeg-6b:0
-	dbus? ( >=dev-libs/dbus-glib-0.34 )
+	virtual/fam
+	virtual/jpeg
+	dbus? ( >=dev-libs/dbus-glib-0.88 )
 	gnome? ( >=gnome-base/gconf-2 )
-	hal? ( >=dev-libs/dbus-glib-0.34
-		sys-apps/hal )
 	startup-notification? ( >=x11-libs/startup-notification-0.4 )
 	!<xfce-base/thunar-1.1.0"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
+	dev-util/gtk-doc
 	dev-util/intltool
 	sys-devel/gettext
-	dev-lang/perl
-	dev-util/gtk-doc
-	doc? ( dev-libs/libxslt )"
+	dev-lang/perl"
 
 WANT_GTKDOCIZE="yes"
 
 pkg_setup() {
-	DOCS="AUTHORS ChangeLog HACKING NEWS README TODO"
-
 	XFCE_CONFIG+=" --disable-dependency-tracking
 		$(use_enable dbus)
 		$(use_enable gnome gnome-thumbnailers)
-		$(use_enable doc xsltproc)
-		$(use_enable debug)
-		--with-html-dir=${EPREFIX}/usr/share/doc/${PF}/html"
+		$(use_enable startup-notification)
+		--with-html-dir="${EPREFIX}"/usr/share/doc/${PF}/html
+		--with-volume-manager=none"
 
-	if use hal; then
-		XFCE_CONFIG+=" --enable-dbus --with-volume-manager=hal"
-	else
-		XFCE_CONFIG+=" --with-volume-manager=none"
-	fi
+	DOCS="AUTHORS HACKING NEWS README TODO"
 }
 
-src_prepare() {
-	sed -i \
-		-e "/^docdir/s:=.*:= /usr/share/doc/${PF}:" \
-		docs/Makefile.am || die
-
-	xfce4_src_prepare
+src_install() {
+	xfce4_src_install \
+		docdir="${EPREFIX}"/usr/share/doc/${PF}
 }
