@@ -1,14 +1,14 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI=3
 inherit xfce4
 
 xfce4_art
 
-DESCRIPTION="Xfce4 window manager themes"
-HOMEPAGE="http://www.xfce.org/"
+DESCRIPTION="Xfce's window manager themes"
+HOMEPAGE="http://www.xfce.org/projects/xfwm4/"
 
 LICENSE="GPL-3"
 SLOT="0"
