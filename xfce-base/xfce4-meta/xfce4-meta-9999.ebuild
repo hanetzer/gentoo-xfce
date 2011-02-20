@@ -1,10 +1,10 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI=3
 
-DESCRIPTION="Xfce4 Desktop Environment (meta package)"
+DESCRIPTION="The Xfce Desktop Environment (meta package)"
 HOMEPAGE="http://www.xfce.org/"
 SRC_URI=""
 
@@ -21,6 +21,6 @@ RDEPEND="x11-themes/gtk-engines-xfce
 	>=xfce-base/xfce4-settings-${PV}
 	x11-themes/hicolor-icon-theme
 	!minimal? ( media-fonts/dejavu
-		x11-themes/xfce4-icon-theme )
+		x11-themes/tango-icon-theme )
 	session? ( >=xfce-base/xfce4-session-${PV} )
 	svg? ( gnome-base/librsvg )"
