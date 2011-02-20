@@ -1,49 +1,54 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI=3
 inherit xfce4
 
 xfce4_core
 
-DESCRIPTION="Collection of utils for Xfce4"
+DESCRIPTION="Utilities for the Xfce desktop environment"
 HOMEPAGE="http://www.xfce.org/projects/xfce-utils/"
+
+LICENSE="GPL-2"
+SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~x86-solaris"
 IUSE="dbus debug +lock"
 
-RDEPEND="x11-apps/xrdb
-	x11-libs/libX11
-	>=dev-libs/glib-2.6:2
+COMMON_DEPEND="x11-libs/libX11
 	>=x11-libs/gtk+-2.10:2
-	>=xfce-base/libxfce4util-4.6
-	>=xfce-base/libxfce4ui-4.7
-	>=xfce-base/xfconf-4.6
-	dbus? ( >=dev-libs/dbus-glib-0.70 )
+	>=xfce-base/libxfce4util-4.8
+	>=xfce-base/libxfce4ui-4.8
+	>=xfce-base/xfconf-4.8
+	dbus? ( >=dev-libs/dbus-glib-0.88 )"
+RDEPEND="${COMMON_DEPEND}
+	x11-apps/xrdb
+	x11-misc/xdg-user-dirs
 	lock? ( || ( x11-misc/xscreensaver
 		gnome-extra/gnome-screensaver
-		x11-misc/xlockmore ) )"
-DEPEND="${RDEPEND}
-	dev-util/intltool"
+		x11-misc/xlockmore
+		x11-misc/slock ) )"
+DEPEND="${COMMON_DEPEND}
+	dev-util/intltool
+	sys-devel/gettext"
 
 pkg_setup() {
-	XFCE_CONFIG+=" --disable-dependency-tracking
-		$(use_enable dbus)
-		--with-vendor-info=Gentoo
-		--with-xsession-prefix=${EPREFIX}/usr"
-	DOCS="AUTHORS ChangeLog NEWS README"
+	XFCE_CONFIG+=" --docdir="${EPREFIX}"/usr/share/doc/${PF}
+	--disable-dependency-tracking
+	--disable-xfconf-migration
+	$(use_enable dbus)
+	--with-vendor-info=Gentoo
+	--with-xsession-prefix="${EPREFIX}"/usr"
+
+	DOCS="AUTHORS NEWS README"
 }
 
 src_install() {
 	xfce4_src_install
-	insinto /usr/share/xfce4
-	doins "${FILESDIR}"/Gentoo || die "doins failed"
+
+	rm -f "${ED}"/usr/share/applications/xfhelp4.desktop
+
 	echo startxfce4 > "${T}"/Xfce4
 	exeinto /etc/X11/Sessions
-	doexe "${T}"/Xfce4 || die "doexe failed"
-}
-
-pkg_postinst() {
-	elog "Run Xfce4 from your favourite Display Manager by using"
-	elog "XSESSION=\"Xfce4\" in /etc/rc.conf"
+	doexe "${T}"/Xfce4 || die
 }
