@@ -1,69 +1,50 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
+EAPI=3
 inherit xfce4
 
 xfce4_core
 
-DESCRIPTION="Session manager for Xfce4"
+DESCRIPTION="Xfce's session manager"
 HOMEPAGE="http://www.xfce.org/projects/xfce4-session/"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~x86-solaris"
-IUSE="+consolekit debug fortune gnome gnome-keyring +upower"
 
-RDEPEND=">=dev-libs/dbus-glib-0.73
-	>=x11-libs/gtk+-2.14:2
+LICENSE="GPL-2"
+SLOT="0"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~x86-solaris"
+IUSE="consolekit debug gnome-keyring policykit udev +xfce_plugins_logout"
+
+COMMON_DEPEND=">=dev-libs/dbus-glib-0.88
+	x11-apps/iceauth
+	x11-libs/libSM
 	>=x11-libs/libwnck-2.22
-	>=xfce-base/libxfce4ui-4.7
-	>=xfce-base/libxfce4util-4.7
-	>=xfce-base/xfce4-panel-4.6
-	>=xfce-base/xfconf-4.7
-	consolekit? ( sys-auth/consolekit
-		sys-auth/polkit )
-	fortune? ( games-misc/fortune-mod )
-	gnome? ( >=gnome-base/gconf-2.4 )
-	gnome-keyring? ( >=gnome-base/gnome-keyring-2.22 )
-	upower? ( sys-power/upower
-		sys-auth/polkit )"
-DEPEND="${RDEPEND}
-	dev-util/intltool"
+	x11-libs/libX11
+	>=xfce-base/libxfce4util-4.8
+	>=xfce-base/libxfce4ui-4.8
+	>=xfce-base/xfconf-4.8
+	>=xfce-base/xfce-utils-4.8
+	gnome-keyring? ( gnome-base/libgnome-keyring )
+	xfce_plugins_logout? ( >=xfce-base/xfce4-panel-4.8 )"
+RDEPEND="${COMMON_DEPEND}
+	consolekit? ( sys-auth/consolekit )
+	policykit? ( sys-auth/polkit )
+	udev? ( sys-power/upower )"
+DEPEND="${COMMON_DEPEND}
+	dev-util/intltool
+	sys-devel/gettext"
 
 pkg_setup() {
-	XFCE_CONFIG+=" --disable-dependency-tracking
-		--disable-hal
-		--enable-panel-plugin
-		$(use_enable consolekit)
-		$(use_enable gnome)
+	XFCE_CONFIG+="
+		--docdir=${EPREFIX}/usr/share/doc/${PF}
+		--disable-dependency-tracking
+		--disable-static
+		$(use_enable xfce_plugins_logout panel-plugin)
 		$(use_enable gnome-keyring libgnome-keyring)
-		$(use_enable upower)"
-
-	if use consolekit || use upower; then
-		XFCE_CONFIG+=" --enable-polkit"
-	fi
+		--disable-hal
+		$(use_enable udev upower)
+		$(use_enable consolekit)
+		$(use_enable policykit polkit)"
 
 	DOCS="AUTHORS BUGS NEWS README TODO"
-}
-
-src_install() {
-	xfce4_src_install
-
-	if ! use fortune; then
-		# Wipe away unusable xfce4-tips
-		rm -Rf "${D}"/usr/share/xfce4/tips
-		rm -f "${D}"/usr/bin/xfce4-tips \
-			"${D}"/usr/lib/debug/usr/bin/xfce4-tips.debug \
-			"${D}"/etc/xdg/autostart/xfce4-tips-autostart.desktop
-		rmdir "${D}"/etc/xdg/autostart
-	fi
-}
-
-pkg_postinst() {
-	if ! use consolekit || ! use upower; then
-		einfo "consolekit or upower is disabled, you will need sudo to"
-		einfo "shutdown/suspend as user."
-		einfo "Please add the following to your sudoers file:"
-		einfo "myuser        myhost=${EPREFIX}/usr/libexec/xfsm-shutdown-helper"
-		einfo "Where myuser is your user and myhost your hostname"
-	fi
 }
