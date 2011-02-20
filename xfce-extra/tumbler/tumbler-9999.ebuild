@@ -5,7 +5,7 @@
 EAPI=2
 inherit xfce4
 
-xfce4_apps
+xfce4_core
 
 DESCRIPTION="A D-Bus service for applications to request thumbnails"
 HOMEPAGE="http://www.xfce.org/"
