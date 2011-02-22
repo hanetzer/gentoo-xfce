@@ -3,12 +3,11 @@
 # $Header: $
 
 EAPI=3
-inherit xfce4
-
-xfce4_art
+inherit xfconf-live
 
 DESCRIPTION="Icon theme called Rodent"
 HOMEPAGE="http://www.xfce.org/"
+EGIT_REPO_URI="git://git.xfce.org/art/${PN}"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -17,6 +16,8 @@ IUSE="minimal"
 
 RDEPEND="x11-themes/hicolor-icon-theme
 	!minimal? ( || ( x11-themes/tango-icon-theme x11-themes/gnome-icon-theme ) )"
-DEPEND="dev-util/intltool"
+DEPEND="dev-util/pkgconfig
+	dev-util/intltool
+	sys-devel/gettext"
 
 RESTRICT="binchecks strip"

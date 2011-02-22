@@ -3,9 +3,7 @@
 # $Header: $
 
 EAPI=3
-inherit xfce4
-
-xfce4_core
+inherit xfconf-live
 
 DESCRIPTION="Desktop manager for the Xfce desktop environment"
 HOMEPAGE="http://www.xfce.org/projects/xfdesktop/"
@@ -26,20 +24,24 @@ RDEPEND="x11-libs/libX11
 	>=xfce-base/xfconf-4.8
 	libnotify? ( >=x11-libs/libnotify-0.4 )
 	thunar? ( >=xfce-base/exo-0.6
-	>=xfce-base/thunar-1.2
-	>=dev-libs/dbus-glib-0.88 )"
+		>=xfce-base/thunar-1.2
+		>=dev-libs/dbus-glib-0.88 )"
 DEPEND="${RDEPEND}
 	dev-util/intltool
+	dev-util/pkgconfig
 	sys-devel/gettext"
 
 pkg_setup() {
-	XFCE_CONFIG+=" --docdir="${EPREFIX}"/usr/share/doc/${PF}
+	XFCONF=(
+		--docdir="${EPREFIX}"/usr/share/doc/${PF}
 		--disable-dependency-tracking
 		--disable-static
 		$(use_enable thunar file-icons)
 		$(use_enable thunar thunarx)
 		$(use_enable thunar exo)
-		$(use_enable libnotify notifications)"
+		$(use_enable libnotify notifications)
+		$(xfconf_use_debug)
+		)
 
-	DOCS="AUTHORS ChangeLog NEWS TODO README"
+	DOCS="AUTHORS NEWS README TODO"
 }

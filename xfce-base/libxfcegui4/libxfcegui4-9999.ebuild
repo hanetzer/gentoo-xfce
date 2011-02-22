@@ -3,9 +3,8 @@
 # $Header: $
 
 EAPI=3
-inherit xfce4
-
-xfce4_core
+GTKDOCIZE="yes"
+inherit xfconf-live
 
 DESCRIPTION="Xfce's unified widgets library (deprecated: don't use this for future development)"
 HOMEPAGE="http://www.xfce.org/projects/libraries/"
@@ -24,16 +23,18 @@ RDEPEND="gnome-base/libglade
 	startup-notification? ( x11-libs/startup-notification )"
 DEPEND="${RDEPEND}
 	dev-util/intltool
-	dev-util/gtk-doc
-	sys-devel/gettext"
-
-WANT_GTKDOCIZE="yes"
+	sys-devel/gettext
+	dev-util/pkgconfig"
 
 pkg_setup() {
-	XFCE_CONFIG+=" --disable-dependency-tracking
+	XFCONF=(
+		--disable-dependency-tracking
 		--disable-static
+		$(use_enable startup-notification)
 		$(use_enable glade gladeui)
-		--with-html-dir=${EPREFIX}/usr/share/doc/${PF}/html"
+		$(xfconf_use_debug)
+		--with-html-dir="${EPREFIX}"/usr/share/doc/${PF}/html
+		)
 
-	DOCS="AUTHORS NEWS README TODO"
+	DOCS="AUTHORS NEWS"
 }

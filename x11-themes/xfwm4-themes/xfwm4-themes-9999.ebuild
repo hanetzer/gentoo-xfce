@@ -3,12 +3,11 @@
 # $Header: $
 
 EAPI=3
-inherit xfce4
-
-xfce4_art
+inherit xfconf-live
 
 DESCRIPTION="Xfce's window manager themes"
 HOMEPAGE="http://www.xfce.org/projects/xfwm4/"
+EGIT_REPO_URI="git://git.xfce.org/art/${PN}"
 
 LICENSE="GPL-3"
 SLOT="0"

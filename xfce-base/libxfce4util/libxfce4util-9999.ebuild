@@ -3,9 +3,8 @@
 # $Header: $
 
 EAPI=3
-inherit xfce4
-
-xfce4_core
+GTKDOCIZE="yes"
+inherit xfconf-live
 
 DESCRIPTION="Xfce's basic utilities library"
 HOMEPAGE="http://www.xfce.org/projects/libraries/"
@@ -18,15 +17,16 @@ IUSE="debug"
 RDEPEND=">=dev-libs/glib-2.12:2"
 DEPEND="${RDEPEND}
 	dev-util/intltool
-	dev-util/gtk-doc
+	dev-util/pkgconfig
 	sys-devel/gettext"
 
-WANT_GTKDOCIZE="yes"
-
 pkg_setup() {
-	XFCE_CONFIG=" --disable-dependency-tracking
+	XFCONF=(
+		--disable-dependency-tracking
 		--disable-static
-		--with-html-dir=${EPREFIX}/usr/share/doc/${PF}/html"
+		$(xfconf_use_debug)
+		--with-html-dir="${EPREFIX}"/usr/share/doc/${PF}/html
+		)
 
 	DOCS="AUTHORS NEWS README THANKS TODO"
 }

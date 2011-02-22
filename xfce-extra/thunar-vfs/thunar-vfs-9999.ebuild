@@ -3,9 +3,7 @@
 # $Header: $
 
 EAPI=3
-inherit xfce4
-
-xfce4_core
+inherit xfconf-live
 
 DESCRIPTION="Xfce's filesystem libraries (deprecated: don't use this for future development)"
 HOMEPAGE="http://git.xfce.org/xfce/thunar-vfs/"
@@ -28,25 +26,26 @@ RDEPEND=">=xfce-base/exo-0.6
 	startup-notification? ( >=x11-libs/startup-notification-0.4 )
 	!<xfce-base/thunar-1.1.0"
 DEPEND="${RDEPEND}
-	dev-util/gtk-doc
+	dev-util/pkgconfig
 	dev-util/intltool
 	sys-devel/gettext
 	dev-lang/perl"
 
-WANT_GTKDOCIZE="yes"
-
 pkg_setup() {
-	XFCE_CONFIG+=" --disable-dependency-tracking
+	XFCONF=(
+		--disable-dependency-tracking
 		$(use_enable dbus)
 		$(use_enable gnome gnome-thumbnailers)
 		$(use_enable startup-notification)
+		$(xfconf_use_debug)
 		--with-html-dir="${EPREFIX}"/usr/share/doc/${PF}/html
-		--with-volume-manager=none"
+		--with-volume-manager=none
+		)
 
 	DOCS="AUTHORS HACKING NEWS README TODO"
 }
 
 src_install() {
-	xfce4_src_install \
+	xfconf_src_install \
 		docdir="${EPREFIX}"/usr/share/doc/${PF}
 }

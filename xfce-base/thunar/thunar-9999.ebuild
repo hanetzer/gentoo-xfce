@@ -2,11 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=2
-
-inherit virtualx xfce4
-
-xfce4_core
+EAPI=4
+GTKDOCIZE="yes"
+inherit virtualx xfconf-live
 
 DESCRIPTION="File manager for the Xfce desktop environment"
 HOMEPAGE="http://www.xfce.org/projects/thunar/ http://thunar.xfce.org/"
@@ -30,7 +28,7 @@ COMMON_DEPEND=">=xfce-base/exo-0.6
 	startup-notification? ( x11-libs/startup-notification )
 	udev? ( >=sys-fs/udev-145[extras] )
 	xfce_plugins_trash? ( >=dev-libs/dbus-glib-0.88
-	>=xfce-base/xfce4-panel-4.8 )"
+		>=xfce-base/xfce4-panel-4.8 )"
 RDEPEND="${COMMON_DEPEND}
 	x11-misc/shared-mime-info
 	dev-util/desktop-file-utils
@@ -39,25 +37,28 @@ RDEPEND="${COMMON_DEPEND}
 	xfce_plugins_trash? ( ${GVFS_DEPEND} )"
 DEPEND="${COMMON_DEPEND}
 	dev-util/intltool
-	dev-util/gtk-doc
+	dev-util/pkgconfig
 	sys-devel/gettext"
 
-WANT_GTKDOCIZE="yes"
+S=${WORKDIR}/${MY_P}
 
 pkg_setup() {
-	XFCE_CONFIG+=" --disable-dependency-tracking
-		--docdir=${EPREFIX}/usr/share/doc/${PF}
+	XFCONF=(
+		--docdir="${EPREFIX}"/usr/share/doc/${PF}
 		$(use_enable dbus)
+		$(use_enable startup-notification)
 		$(use_enable udev gudev)
 		$(use_enable libnotify notifications)
+		$(xfconf_use_debug)
 		$(use_enable exif)
 		$(use_enable pcre)
-		--with-html-dir=${EPREFIX}/usr/share/doc/${PF}/html"
+		--with-html-dir="${EPREFIX}"/usr/share/doc/${PF}/html
+		)
 
 	if use xfce_plugins_trash; then
-		XFCE_CONFIG+=" --enable-dbus"
+		XFCONF+=( --enable-dbus )
 	else
-		XFCE_CONFIG+=" --disable-tpa-plugin"
+		XFCONF+=( --disable-tpa-plugin )
 	fi
 
 	DOCS="AUTHORS FAQ HACKING NEWS README THANKS TODO"

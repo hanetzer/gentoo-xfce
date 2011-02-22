@@ -3,9 +3,7 @@
 # $Header: $
 
 EAPI=3
-inherit xfce4
-
-xfce4_core
+inherit xfconf-live
 
 DESCRIPTION="Xfce's configuration storage system"
 HOMEPAGE="http://www.xfce.org/projects/xfconf/"
@@ -20,24 +18,26 @@ RDEPEND=">=dev-libs/dbus-glib-0.72
 	>=xfce-base/libxfce4util-4.8
 	perl? ( dev-perl/glib-perl )"
 DEPEND="${RDEPEND}
-	dev-util/gtk-doc
+	dev-util/pkgconfig
 	dev-util/intltool
 	sys-devel/gettext
 	perl? ( dev-perl/extutils-depends
 		dev-perl/extutils-pkgconfig )"
 
-WANT_GTKDOCIZE="yes"
+RESTRICT="test"
 
 pkg_setup() {
-	XFCE_CONFIG+=" --disable-dependency-tracking
-		--enable-maintainer-mode
+	XFCONF=(
+		--disable-dependency-tracking
 		--disable-static
 		$(use_enable perl perl-bindings)
+		$(xfconf_use_debug)
 		$(use_enable debug checks)
 		--with-perl-options=INSTALLDIRS=vendor
-		--with-html-dir="${EPREFIX}"/usr/share/doc/${PF}/html"
+		--with-html-dir="${EPREFIX}"/usr/share/doc/${PF}/html
+		)
 
-	DOCS="AUTHORS NEWS README TODO"
+	DOCS="AUTHORS NEWS TODO"
 }
 
 src_compile() {
@@ -45,7 +45,7 @@ src_compile() {
 }
 
 src_install() {
-	xfce4_src_install
+	xfconf_src_install
 
 	if use perl; then
 		find "${ED}" -type f -name perllocal.pod -delete

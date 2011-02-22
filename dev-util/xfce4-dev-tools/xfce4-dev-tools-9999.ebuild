@@ -2,9 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-inherit xfce4
-
-xfce4_core
+EAPI=3
+inherit xfconf-live
 
 DESCRIPTION="Xfce's build scripts and aclocal macros"
 HOMEPAGE="http://www.xfce.org/ http://foo-projects.org/~benny/projects/xfce4-dev-tools/"

@@ -3,9 +3,8 @@
 # $Header: $
 
 EAPI=4
-inherit xfce4
-
-xfce4_core
+GTKDOCIZE="yes"
+inherit xfconf-live
 
 DESCRIPTION="Panel for the Xfce desktop environment"
 HOMEPAGE="http://www.xfce.org/projects/xfce4-panel/"
@@ -29,16 +28,16 @@ RDEPEND="x11-libs/libX11
 DEPEND="${RDEPEND}
 	dev-lang/perl
 	dev-util/intltool
-	dev-util/gtk-doc
-	sys-devel/gettext"
-
-WANT_GTKDOCIZE="yes"
+	sys-devel/gettext
+	dev-util/pkgconfig"
 
 pkg_setup() {
-	XFCE_CONFIG+=" --disable-dependency-tracking
-		--docdir=${EPREFIX}/usr/share/doc/${PF}
+	XFCONF=(
+		--docdir="${EPREFIX}"/usr/share/doc/${PF}
 		--disable-static
-		--with-html-dir=${EPREFIX}/usr/share/doc/${PF}/html"
+		$(xfconf_use_debug)
+		--with-html-dir="${EPREFIX}"/usr/share/doc/${PF}/html
+		)
 
 	DOCS="AUTHORS NEWS THANKS"
 }

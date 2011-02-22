@@ -3,9 +3,7 @@
 # $Header: $
 
 EAPI=3
-inherit xfce4
-
-xfce4_core
+inherit xfconf-live
 
 DESCRIPTION="Xfce's session manager"
 HOMEPAGE="http://www.xfce.org/projects/xfce4-session/"
@@ -32,19 +30,22 @@ RDEPEND="${COMMON_DEPEND}
 	udev? ( sys-power/upower )"
 DEPEND="${COMMON_DEPEND}
 	dev-util/intltool
+	dev-util/pkgconfig
 	sys-devel/gettext"
 
 pkg_setup() {
-	XFCE_CONFIG+="
-		--docdir=${EPREFIX}/usr/share/doc/${PF}
+	XFCONF=(
+		--docdir="${EPREFIX}"/usr/share/doc/${PF}
 		--disable-dependency-tracking
 		--disable-static
 		$(use_enable xfce_plugins_logout panel-plugin)
 		$(use_enable gnome-keyring libgnome-keyring)
+		$(xfconf_use_debug)
 		--disable-hal
 		$(use_enable udev upower)
 		$(use_enable consolekit)
-		$(use_enable policykit polkit)"
+		$(use_enable policykit polkit)
+		)
 
 	DOCS="AUTHORS BUGS NEWS README TODO"
 }

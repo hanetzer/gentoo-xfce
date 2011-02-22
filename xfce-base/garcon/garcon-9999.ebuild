@@ -3,9 +3,8 @@
 # $Header: $
 
 EAPI=3
-inherit xfce4
-
-xfce4_core
+GTKDOCIZE="yes"
+inherit xfconf-live
 
 DESCRIPTION="Xfce's freedesktop.org specification compatible menu implementation library"
 HOMEPAGE="http://www.xfce.org/projects/libraries/"
@@ -18,16 +17,17 @@ IUSE="debug"
 RDEPEND=">=dev-libs/glib-2.14:2
 	!<xfce-base/xfdesktop-4.7.0"
 DEPEND="${RDEPEND}
+	dev-util/pkgconfig
 	dev-util/intltool
-	dev-util/gtk-doc
 	sys-devel/gettext"
 
-WANT_GTKDOCIZE="yes"
-
 pkg_setup() {
-	XFCE_CONFIG+=" --disable-dependency-tracking
+	XFCONF=(
+		--disable-dependency-tracking
 		--disable-static
-		--with-html-dir=${EPREFIX}/usr/share/doc/${PF}/html"
+		$(xfconf_use_debug)
+		--with-html-dir="${EPREFIX}"/usr/share/doc/${PF}/html
+		)
 
 	DOCS="AUTHORS HACKING NEWS README STATUS TODO"
 }

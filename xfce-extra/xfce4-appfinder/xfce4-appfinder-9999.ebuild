@@ -3,9 +3,7 @@
 # $Header: $
 
 EAPI=3
-inherit xfce4
-
-xfce4_core
+inherit xfconf-live
 
 DESCRIPTION="Application finder and launcher for the Xfce desktop environment"
 HOMEPAGE="http://www.xfce.org/projects/xfce4-appfinder/"
@@ -22,10 +20,14 @@ RDEPEND=">=dev-libs/glib-2.16:2
 	>=xfce-base/garcon-0.1.2
 	>=xfce-base/xfconf-4.8"
 DEPEND="${RDEPEND}
+	dev-util/pkgconfig
 	dev-util/intltool"
 
 pkg_setup() {
-	XFCE_CONFIG+=" --disable-dependency-tracking"
+	XFCONF=(
+		--disable-dependency-tracking
+		$(xfconf_use_debug)
+		)
 
 	DOCS="AUTHORS NEWS README TODO"
 }

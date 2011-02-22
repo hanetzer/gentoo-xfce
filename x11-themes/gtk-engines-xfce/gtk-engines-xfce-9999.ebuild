@@ -4,9 +4,7 @@
 
 EAPI=3
 MY_PN=gtk-xfce-engine
-inherit xfce4
-
-xfce4_core
+inherit xfconf-live
 
 DESCRIPTION="Xfce's GTK+ engine and themes"
 HOMEPAGE="http://www.xfce.org/projects/"
@@ -21,8 +19,14 @@ RDEPEND=">=dev-libs/glib-2.18:2
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig"
 
+S=${WORKDIR}/${MY_PN}-${PV}
+
 pkg_setup() {
-	XFCE_CONFIG+=" --disable-dependency-tracking
-		--disable-static"
+	XFCONF=(
+		--disable-dependency-tracking
+		--disable-static
+		$(xfconf_use_debug)
+		)
+
 	DOCS="AUTHORS NEWS README"
 }

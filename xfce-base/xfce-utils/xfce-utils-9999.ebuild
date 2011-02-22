@@ -3,9 +3,7 @@
 # $Header: $
 
 EAPI=3
-inherit xfce4
-
-xfce4_core
+inherit xfconf-live
 
 DESCRIPTION="Utilities for the Xfce desktop environment"
 HOMEPAGE="http://www.xfce.org/projects/xfce-utils/"
@@ -30,21 +28,25 @@ RDEPEND="${COMMON_DEPEND}
 		x11-misc/slock ) )"
 DEPEND="${COMMON_DEPEND}
 	dev-util/intltool
+	dev-util/pkgconfig
 	sys-devel/gettext"
 
 pkg_setup() {
-	XFCE_CONFIG+=" --docdir="${EPREFIX}"/usr/share/doc/${PF}
-	--disable-dependency-tracking
-	--disable-xfconf-migration
-	$(use_enable dbus)
-	--with-vendor-info=Gentoo
-	--with-xsession-prefix="${EPREFIX}"/usr"
+	XFCONF=(
+		--docdir="${EPREFIX}"/usr/share/doc/${PF}
+		--disable-dependency-tracking
+		--disable-xfconf-migration
+		$(use_enable dbus)
+		$(xfconf_use_debug)
+		--with-vendor-info=Gentoo
+		--with-xsession-prefix="${EPREFIX}"/usr
+		)
 
-	DOCS="AUTHORS NEWS README"
+	DOCS="AUTHORS NEWS"
 }
 
 src_install() {
-	xfce4_src_install
+	xfconf_src_install
 
 	rm -f "${ED}"/usr/share/applications/xfhelp4.desktop
 

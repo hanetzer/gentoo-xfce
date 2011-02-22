@@ -3,9 +3,7 @@
 # $Header: $
 
 EAPI=3
-inherit xfce4
-
-xfce4_core
+inherit xfconf-live
 
 DESCRIPTION="Configuration system for the Xfce desktop environment"
 HOMEPAGE="http://www.xfce.org/projects/xfce4-settings/"
@@ -27,20 +25,25 @@ RDEPEND=">=dev-libs/glib-2.16:2
 	>=xfce-base/libxfce4ui-4.8
 	>=xfce-base/xfconf-4.8
 	>=xfce-base/exo-0.6
-	libcanberra? ( 	>=media-libs/libcanberra-0.25[sound] )
+	libcanberra? ( >=media-libs/libcanberra-0.25[sound] )
 	libnotify? ( >=x11-libs/libnotify-0.1.3 )
 	xklavier? ( >=x11-libs/libxklavier-0.3 )"
 DEPEND="${RDEPEND}
 	dev-util/intltool
+	dev-util/pkgconfig
 	sys-devel/gettext
 	>=x11-proto/inputproto-1.4
 	x11-proto/xproto"
 
 pkg_setup() {
-	XFCE_CONFIG+=" --disable-dependency-tracking
+	XFCONF=(
+		--disable-dependency-tracking
 		--disable-static
 		$(use_enable libnotify)
 		$(use_enable xklavier libxklavier)
-		$(use_enable libcanberra sound-settings)"
-	DOCS="AUTHORS NEWS README TODO"
+		$(use_enable libcanberra sound-settings)
+		$(xfconf_use_debug)
+		)
+
+	DOCS="AUTHORS NEWS TODO"
 }

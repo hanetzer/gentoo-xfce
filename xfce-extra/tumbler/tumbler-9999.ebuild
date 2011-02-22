@@ -3,9 +3,7 @@
 # $Header: $
 
 EAPI=3
-inherit xfce4
-
-xfce4_core
+inherit xfconf-live
 
 DESCRIPTION="A thumbnail service for the filemanager of Xfce desktop environment"
 HOMEPAGE="http://www.xfce.org/projects/thunar/"
@@ -20,26 +18,26 @@ COMMON_DEPEND=">=dev-libs/dbus-glib-0.88
 	media-libs/freetype:2
 	>=media-libs/libpng-1.4
 	>=sys-apps/dbus-1.4.1
-	|| ( x11-libs/gdk-pixbuf:2 ( <x11-libs/gtk+-2.22:2
-	>=x11-libs/gtk+-2.14:2 ) )
+	|| ( x11-libs/gdk-pixbuf:2 ( <x11-libs/gtk+-2.22:2 >=x11-libs/gtk+-2.14:2 ) )
 	ffmpeg? ( >=media-video/ffmpegthumbnailer-2 )
 	jpeg? ( virtual/jpeg )
 	pdf? ( >=app-text/poppler-0.12.4[cairo] )"
 RDEPEND="${COMMON_DEPEND}
 	>=xfce-base/thunar-1.2"
 DEPEND="${COMMON_DEPEND}
-	dev-util/gtk-doc
-	dev-util/intltool"
-
-WANT_GTKDOCIZE="yes"
+	dev-util/intltool
+	dev-util/pkgconfig"
 
 pkg_setup() {
-	XFCE_CONFIG+=" --disable-dependency-tracking
+	XFCONF=(
+		--disable-dependency-tracking
 		--disable-static
 		$(use_enable jpeg jpeg-thumbnailer)
 		$(use_enable ffmpeg ffmpeg-thumbnailer)
 		$(use_enable pdf poppler-thumbnailer)
-		--with-html-dir="${EPREFIX}"/usr/share/doc/${PF}/html"
+		$(xfconf_use_debug)
+		--with-html-dir="${EPREFIX}"/usr/share/doc/${PF}/html
+		)
 
 	DOCS="AUTHORS ChangeLog NEWS README TODO"
 }
