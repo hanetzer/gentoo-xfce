@@ -20,14 +20,8 @@ EGIT_REPO_URI="git://git.xfce.org/xfce/${MY_PN:-${PN}}"
 EGIT_BOOTSTRAP="autogen.sh"
 export NOCONFIGURE="yes"
 
-if [[ "${GTKDOCIZE}" == "yes" ]]; then
-	_xfce4_gtkdocize="dev-util/gtk-doc"
-fi
-
 DEPEND+="
-	${_xfce4_gtkdocize}"
-
-unset _xfce4_gtkdocize
+	dev-util/gtk-doc"
 
 EXPORT_FUNCTIONS src_unpack src_prepare src_configure src_install pkg_preinst pkg_postinst pkg_postrm
 

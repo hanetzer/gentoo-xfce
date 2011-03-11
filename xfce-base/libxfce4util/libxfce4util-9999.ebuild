@@ -3,7 +3,6 @@
 # $Header: $
 
 EAPI=3
-GTKDOCIZE="yes"
 inherit xfconf-live
 
 DESCRIPTION="Xfce's basic utilities library"

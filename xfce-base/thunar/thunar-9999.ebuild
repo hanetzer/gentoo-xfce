@@ -3,7 +3,6 @@
 # $Header: $
 
 EAPI=4
-GTKDOCIZE="yes"
 inherit virtualx xfconf-live
 
 DESCRIPTION="File manager for the Xfce desktop environment"

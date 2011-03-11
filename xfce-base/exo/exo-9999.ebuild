@@ -6,8 +6,6 @@ EAPI=3
 
 PYTHON_DEPEND="python? 2"
 
-GTKDOCIZE="yes"
-
 inherit python xfconf-live
 
 DESCRIPTION="Extensions, widgets and framework library with session management support"

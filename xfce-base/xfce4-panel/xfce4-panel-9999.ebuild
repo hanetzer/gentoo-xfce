@@ -3,7 +3,6 @@
 # $Header: $
 
 EAPI=4
-GTKDOCIZE="yes"
 inherit xfconf-live
 
 DESCRIPTION="Panel for the Xfce desktop environment"
