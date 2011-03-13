@@ -31,8 +31,8 @@ EXPORT_FUNCTIONS src_unpack src_prepare src_configure src_install pkg_preinst pk
 # configure.ac
 xfconf-live_src_prepare() {
 	debug-print-function ${FUNCNAME} "$@"
-	base_src_prepare
 	git_src_prepare
+	base_src_prepare
 	return
 }
 
