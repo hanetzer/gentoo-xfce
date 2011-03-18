@@ -47,3 +47,8 @@ pkg_setup() {
 
 	DOCS="AUTHORS NEWS TODO"
 }
+
+src_prepare() {
+	sed -i -e '/IconThemeName/s:Rodent:Tango:' xfsettingsd/xsettings.xml || die
+	xfconf_src_prepare
+}
