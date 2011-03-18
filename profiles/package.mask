@@ -1,10 +1,7 @@
 # Gentoo/Xfce team <xfce@gentoo.org> (22 Feb 2011)
 # These ebuilds are not guaranteed to work at any time, use at your own risk
 ~dev-util/xfce4-dev-tools-9999
-~x11-terms/terminal-9999
 ~x11-themes/gtk-engines-xfce-9999
-~x11-themes/xfce4-icon-theme-9999
-~x11-themes/xfwm4-themes-9999
 ~xfce-base/exo-9999
 ~xfce-base/garcon-9999
 ~xfce-base/libxfce4ui-9999
