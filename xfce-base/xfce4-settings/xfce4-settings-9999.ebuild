@@ -50,5 +50,5 @@ pkg_setup() {
 
 src_prepare() {
 	sed -i -e '/IconThemeName/s:Rodent:Tango:' xfsettingsd/xsettings.xml || die
-	xfconf_src_prepare
+	xfconf-live_src_prepare
 }
