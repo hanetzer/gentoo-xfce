@@ -7,7 +7,7 @@
 # Gentoo's Xfce Team <xfce@gentoo.org>
 # @BLURB: Default XFCE ebuild layout
 # @DESCRIPTION:
-# Default XFCE ebuild layout
+# Default XFCE ebuild layout, see xfconf
 
 if [[ "${PN}" != "xfce4-dev-tools" ]]; then
 	EAUTORECONF="yes"
@@ -25,10 +25,6 @@ DEPEND+="
 
 EXPORT_FUNCTIONS src_unpack src_prepare src_configure src_install pkg_preinst pkg_postinst pkg_postrm
 
-# @FUNCTION: xfconf_src_prepare
-# @DESCRIPTION:
-# Patch autogen.sh in live ebuilds to inject the correct revision into
-# configure.ac
 xfconf-live_src_prepare() {
 	debug-print-function ${FUNCNAME} "$@"
 	git_src_prepare
