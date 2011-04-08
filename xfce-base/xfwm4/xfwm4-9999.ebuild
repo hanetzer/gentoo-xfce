@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfwm4/xfwm4-4.8.1.ebuild,v 1.7 2011/03/29 13:11:12 jer Exp $
 
 EAPI=3
 inherit xfconf-live
@@ -23,7 +23,7 @@ RDEPEND=">=dev-libs/glib-2.10:2
 	x11-libs/libXrender
 	x11-libs/libXpm
 	x11-libs/pango
-	>=x11-libs/libwnck-2.22
+	>=x11-libs/libwnck-2.22:1
 	>=xfce-base/libxfce4util-4.8
 	>=xfce-base/libxfce4ui-4.8
 	>=xfce-base/xfconf-4.8
@@ -48,5 +48,5 @@ pkg_setup() {
 		$(xfconf_use_debug)
 		)
 
-	DOCS="AUTHORS COMPOSITOR NEWS README TODO"
+	DOCS="AUTHORS ChangeLog COMPOSITOR NEWS README TODO"
 }
