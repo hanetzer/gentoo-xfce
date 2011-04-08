@@ -1,9 +1,11 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/thunar/thunar-1.2.1.ebuild,v 1.7 2011/03/22 20:44:59 xarthisius Exp $
 
 EAPI=4
 inherit virtualx xfconf-live
+
+MY_P=${P/t/T}
 
 DESCRIPTION="File manager for the Xfce desktop environment"
 HOMEPAGE="http://www.xfce.org/projects/thunar/ http://thunar.xfce.org/"
@@ -60,7 +62,7 @@ pkg_setup() {
 		XFCONF+=( --disable-tpa-plugin )
 	fi
 
-	DOCS="AUTHORS FAQ HACKING NEWS README THANKS TODO"
+	DOCS="AUTHORS ChangeLog FAQ HACKING NEWS README THANKS TODO"
 }
 
 src_test() {
