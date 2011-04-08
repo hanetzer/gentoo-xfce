@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfconf/xfconf-4.8.0.ebuild,v 1.6 2011/02/14 19:13:36 ssuominen Exp $
 
 EAPI=3
 inherit xfconf-live
@@ -37,7 +37,7 @@ pkg_setup() {
 		--with-html-dir="${EPREFIX}"/usr/share/doc/${PF}/html
 		)
 
-	DOCS="AUTHORS NEWS TODO"
+	DOCS="AUTHORS ChangeLog NEWS TODO"
 }
 
 src_compile() {
@@ -45,7 +45,7 @@ src_compile() {
 }
 
 src_install() {
-	xfconf_src_install
+	xfconf-live_src_install
 
 	if use perl; then
 		find "${ED}" -type f -name perllocal.pod -delete
