@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfce4-settings/xfce4-settings-4.8.1.ebuild,v 1.9 2011/03/29 13:10:04 jer Exp $
 
 EAPI=3
 inherit xfconf-live
@@ -45,7 +45,7 @@ pkg_setup() {
 		$(xfconf_use_debug)
 		)
 
-	DOCS="AUTHORS NEWS TODO"
+	DOCS="AUTHORS ChangeLog NEWS TODO"
 }
 
 src_prepare() {
