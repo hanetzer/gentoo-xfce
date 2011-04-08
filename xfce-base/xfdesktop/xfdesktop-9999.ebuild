@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfdesktop/xfdesktop-4.8.1.ebuild,v 1.6 2011/03/22 20:46:35 xarthisius Exp $
 
 EAPI=3
 inherit xfconf-live
@@ -15,7 +15,7 @@ IUSE="debug libnotify thunar"
 
 RDEPEND="x11-libs/libX11
 	x11-libs/libSM
-	>=x11-libs/libwnck-2.22
+	>=x11-libs/libwnck-2.22:1
 	>=dev-libs/glib-2.18:2
 	>=x11-libs/gtk+-2.14:2
 	>=xfce-base/libxfce4util-4.8
@@ -43,5 +43,5 @@ pkg_setup() {
 		$(xfconf_use_debug)
 		)
 
-	DOCS="AUTHORS NEWS README TODO"
+	DOCS="AUTHORS ChangeLog NEWS README TODO"
 }
