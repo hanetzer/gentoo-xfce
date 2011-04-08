@@ -28,7 +28,7 @@ xfconf-live_src_prepare() {
 	debug-print-function ${FUNCNAME} "$@"
 	NOCONFIGURE=yes git_src_prepare
 	base_src_prepare
-	return
+	[ -e ChangeLog ] || touch ChangeLog
 }
 
 xfconf-live_src_unpack() {
