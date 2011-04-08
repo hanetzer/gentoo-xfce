@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfce4-panel/xfce4-panel-4.8.3.ebuild,v 1.1 2011/04/06 17:31:49 angelos Exp $
 
 EAPI=4
 inherit xfconf-live
@@ -23,7 +23,7 @@ RDEPEND="x11-libs/libX11
 	>=dev-libs/glib-2.18:2
 	>=dev-libs/dbus-glib-0.88
 	>=x11-libs/cairo-1
-	>=x11-libs/libwnck-2.22"
+	>=x11-libs/libwnck-2.22:1"
 DEPEND="${RDEPEND}
 	dev-lang/perl
 	dev-util/intltool
@@ -38,5 +38,5 @@ pkg_setup() {
 		--with-html-dir="${EPREFIX}"/usr/share/doc/${PF}/html
 		)
 
-	DOCS="AUTHORS NEWS THANKS"
+	DOCS="AUTHORS ChangeLog NEWS THANKS"
 }
