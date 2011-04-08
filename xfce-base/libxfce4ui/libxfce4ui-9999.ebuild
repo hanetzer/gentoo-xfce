@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/libxfce4ui/libxfce4ui-4.8.0.ebuild,v 1.7 2011/02/14 19:15:54 ssuominen Exp $
 
 EAPI=3
 inherit xfconf-live
@@ -38,5 +38,5 @@ pkg_setup() {
 		--with-html-dir="${EPREFIX}"/usr/share/doc/${PF}/html
 		)
 
-	DOCS="AUTHORS NEWS README THANKS TODO"
+	DOCS="AUTHORS ChangeLog NEWS README THANKS TODO"
 }
