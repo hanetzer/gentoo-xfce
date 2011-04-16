@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/garcon/garcon-0.1.6.ebuild,v 1.1 2011/04/06 16:54:57 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/garcon/garcon-0.1.7.ebuild,v 1.1 2011/04/16 10:27:19 angelos Exp $
 
 EAPI=4
 inherit xfconf-live
@@ -22,7 +22,6 @@ DEPEND="${RDEPEND}
 
 pkg_setup() {
 	XFCONF=(
-		--disable-dependency-tracking
 		--disable-static
 		$(xfconf_use_debug)
 		--with-html-dir="${EPREFIX}"/usr/share/doc/${PF}/html
