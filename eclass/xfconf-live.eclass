@@ -13,7 +13,7 @@ if [[ "${PN}" != "xfce4-dev-tools" ]]; then
 	EAUTORECONF="yes"
 fi
 
-inherit git xfconf
+inherit git-2 xfconf
 
 SRC_URI=""
 EGIT_REPO_URI="git://git.xfce.org/xfce/${MY_PN:-${PN}}"
@@ -26,13 +26,12 @@ EXPORT_FUNCTIONS src_unpack src_prepare src_configure src_install pkg_preinst pk
 
 xfconf-live_src_prepare() {
 	debug-print-function ${FUNCNAME} "$@"
-	NOCONFIGURE=yes git_src_prepare
 	base_src_prepare
 	[ -e ChangeLog ] || touch ChangeLog
 }
 
 xfconf-live_src_unpack() {
-	git_src_unpack "$@"
+	NOCONFIGURE=yes git-2_src_unpack "$@"
 }
 
 xfconf-live_src_configure() {
