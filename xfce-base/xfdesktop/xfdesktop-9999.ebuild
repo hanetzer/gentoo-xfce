@@ -29,7 +29,8 @@ RDEPEND="x11-libs/libX11
 DEPEND="${RDEPEND}
 	dev-util/intltool
 	dev-util/pkgconfig
-	sys-devel/gettext"
+	sys-devel/gettext
+	xfce-base/exo"
 
 pkg_setup() {
 	XFCONF=(
