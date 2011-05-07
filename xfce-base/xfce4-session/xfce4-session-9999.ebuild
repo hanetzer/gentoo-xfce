@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfce4-session/xfce4-session-4.8.1.ebuild,v 1.7 2011/03/29 13:09:27 jer Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfce4-session/xfce4-session-4.8.1.ebuild,v 1.8 2011/04/23 17:23:45 ssuominen Exp $
 
 EAPI=3
 inherit xfconf-live
@@ -31,7 +31,8 @@ RDEPEND="${COMMON_DEPEND}
 DEPEND="${COMMON_DEPEND}
 	dev-util/intltool
 	dev-util/pkgconfig
-	sys-devel/gettext"
+	sys-devel/gettext
+	xfce-base/exo"
 
 pkg_setup() {
 	XFCONF=(
