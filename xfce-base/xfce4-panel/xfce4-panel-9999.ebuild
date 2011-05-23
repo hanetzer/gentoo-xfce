@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfce4-panel/xfce4-panel-4.8.3.ebuild,v 1.2 2011/04/16 19:13:11 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfce4-panel/xfce4-panel-4.8.3.ebuild,v 1.8 2011/05/19 22:14:48 ssuominen Exp $
 
 EAPI=4
 inherit xfconf-live
@@ -38,5 +38,5 @@ pkg_setup() {
 		--with-html-dir="${EPREFIX}"/usr/share/doc/${PF}/html
 		)
 
-	DOCS="AUTHORS ChangeLog NEWS THANKS"
+	DOCS=( AUTHORS ChangeLog NEWS THANKS )
 }
