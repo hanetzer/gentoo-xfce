@@ -3,14 +3,14 @@
 # $Header: /var/cvsroot/gentoo-x86/xfce-base/xfce4-settings/xfce4-settings-4.8.2.ebuild,v 1.2 2011/05/19 19:25:34 ssuominen Exp $
 
 EAPI=4
-inherit xfconf-live
+inherit xfconf
 
 DESCRIPTION="Configuration system for the Xfce desktop environment"
 HOMEPAGE="http://www.xfce.org/projects/xfce4-settings/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~ia64-linux ~x86-linux"
+KEYWORDS=""
 IUSE="debug libcanberra libnotify +xklavier"
 
 RDEPEND=">=dev-libs/glib-2.16:2
@@ -49,5 +49,5 @@ pkg_setup() {
 
 src_prepare() {
 	sed -i -e '/IconThemeName/s:Rodent:Tango:' xfsettingsd/xsettings.xml || die
-	xfconf-live_src_prepare
+	xfconf_src_prepare
 }
