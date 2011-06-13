@@ -4,14 +4,14 @@
 
 EAPI=3
 PYTHON_DEPEND="python? 2"
-inherit python xfconf-live
+inherit python xfconf
 
 DESCRIPTION="Extensions, widgets and framework library with session management support"
 HOMEPAGE="http://www.xfce.org/projects/exo/"
 
 LICENSE="GPL-2 LGPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~x64-solaris ~x86-solaris"
+KEYWORDS=""
 IUSE="debug python"
 
 RDEPEND=">=dev-lang/perl-5.6
@@ -48,15 +48,15 @@ src_prepare() {
 	rm -f py-compile
 	ln -s $(type -P true) py-compile
 
-	xfconf-live_src_prepare
+	xfconf_src_prepare
 }
 
 pkg_postinst() {
-	xfconf-live_pkg_postinst
+	xfconf_pkg_postinst
 	use python && python_mod_optimize exo-0.6 pyexo.py
 }
 
 pkg_postrm() {
-	xfconf-live_pkg_postrm
+	xfconf_pkg_postrm
 	use python && python_mod_cleanup exo-0.6 pyexo.py
 }
