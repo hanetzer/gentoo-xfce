@@ -3,14 +3,14 @@
 # $Header: /var/cvsroot/gentoo-x86/xfce-base/garcon/garcon-0.1.7.ebuild,v 1.7 2011/05/19 22:12:28 ssuominen Exp $
 
 EAPI=4
-inherit xfconf-live
+inherit xfconf
 
 DESCRIPTION="Xfce's freedesktop.org specification compatible menu implementation library"
 HOMEPAGE="http://www.xfce.org/projects/libraries/"
 
 LICENSE="LGPL-2 FDL-1.1"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~x86-solaris"
+KEYWORDS=""
 IUSE="debug"
 
 RDEPEND=">=dev-libs/glib-2.14:2
