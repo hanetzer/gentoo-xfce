@@ -3,14 +3,14 @@
 # $Header: /var/cvsroot/gentoo-x86/xfce-base/xfconf/xfconf-4.8.0.ebuild,v 1.8 2011/05/20 17:47:26 grobian Exp $
 
 EAPI=4
-inherit xfconf-live
+inherit xfconf
 
 DESCRIPTION="Xfce's configuration storage system"
 HOMEPAGE="http://www.xfce.org/projects/xfconf/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~ia64-linux ~x86-linux ~x64-solaris"
+KEYWORDS=""
 IUSE="debug perl"
 
 RDEPEND=">=dev-libs/dbus-glib-0.88
@@ -45,7 +45,7 @@ src_compile() {
 }
 
 src_install() {
-	xfconf-live_src_install
+	xfconf_src_install
 
 	if use perl; then
 		find "${ED}" -type f -name perllocal.pod -delete
