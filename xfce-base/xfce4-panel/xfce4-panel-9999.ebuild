@@ -3,14 +3,14 @@
 # $Header: /var/cvsroot/gentoo-x86/xfce-base/xfce4-panel/xfce4-panel-4.8.3.ebuild,v 1.8 2011/05/19 22:14:48 ssuominen Exp $
 
 EAPI=4
-inherit xfconf-live
+inherit xfconf
 
 DESCRIPTION="Panel for the Xfce desktop environment"
 HOMEPAGE="http://www.xfce.org/projects/xfce4-panel/"
 
 LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~x86-solaris"
+KEYWORDS=""
 IUSE="debug"
 
 RDEPEND="x11-libs/libX11
