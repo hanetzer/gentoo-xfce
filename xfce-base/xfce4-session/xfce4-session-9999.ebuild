@@ -3,14 +3,14 @@
 # $Header: /var/cvsroot/gentoo-x86/xfce-base/xfce4-session/xfce4-session-4.8.1.ebuild,v 1.9 2011/05/19 21:59:42 ssuominen Exp $
 
 EAPI=4
-inherit xfconf-live
+inherit xfconf
 
 DESCRIPTION="Xfce's session manager"
 HOMEPAGE="http://www.xfce.org/projects/xfce4-session/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~x86-solaris"
+KEYWORDS=""
 IUSE="consolekit debug gnome-keyring policykit udev +xfce_plugins_logout"
 
 COMMON_DEPEND=">=dev-libs/dbus-glib-0.88
