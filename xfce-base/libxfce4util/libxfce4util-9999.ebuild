@@ -3,14 +3,14 @@
 # $Header: /var/cvsroot/gentoo-x86/xfce-base/libxfce4util/libxfce4util-4.8.1.ebuild,v 1.7 2011/05/20 17:44:35 grobian Exp $
 
 EAPI=4
-inherit xfconf-live
+inherit xfconf
 
 DESCRIPTION="Xfce's basic utilities library"
 HOMEPAGE="http://www.xfce.org/projects/libraries/"
 
 LICENSE="LGPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~x64-solaris ~x86-solaris"
+KEYWORDS=""
 IUSE="debug"
 
 RDEPEND=">=dev-libs/glib-2.12:2"
