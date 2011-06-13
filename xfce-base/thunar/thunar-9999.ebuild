@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/xfce-base/thunar/thunar-1.2.2.ebuild,v 1.2 2011/06/07 09:14:20 angelos Exp $
 
 EAPI=4
-inherit virtualx xfconf-live
+inherit virtualx xfconf
 
 MY_P=${P/t/T}
 
@@ -12,7 +12,7 @@ HOMEPAGE="http://www.xfce.org/projects/thunar/ http://thunar.xfce.org/"
 
 LICENSE="GPL-2 LGPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~x86-freebsd ~x86-interix ~amd64-linux ~x86-linux ~x86-solaris"
+KEYWORDS=""
 IUSE="dbus debug exif libnotify pcre startup-notification test +xfce_plugins_trash udev"
 
 GVFS_DEPEND=">=gnome-base/gvfs-1.6.7"
