@@ -14,7 +14,9 @@ KEYWORDS=""
 IUSE="consolekit debug gnome-keyring policykit udev +xfce_plugins_logout"
 
 COMMON_DEPEND=">=dev-libs/dbus-glib-0.88
+	sys-apps/dbus
 	x11-apps/iceauth
+	>=x11-libs/gtk+-2.14:2
 	x11-libs/libSM
 	>=x11-libs/libwnck-2.22:1
 	x11-libs/libX11
