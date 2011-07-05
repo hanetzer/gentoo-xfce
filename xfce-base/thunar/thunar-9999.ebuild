@@ -19,6 +19,8 @@ GVFS_DEPEND=">=gnome-base/gvfs-1.6.7"
 COMMON_DEPEND=">=xfce-base/exo-0.6
 	>=dev-libs/glib-2.18:2
 	>=x11-libs/gtk+-2.14:2
+	x11-libs/libSM
+	x11-libs/libX11
 	>=xfce-base/libxfce4util-4.8
 	>=xfce-base/libxfce4ui-4.8
 	>=dev-lang/perl-5.6
