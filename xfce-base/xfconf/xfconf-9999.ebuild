@@ -14,6 +14,7 @@ KEYWORDS=""
 IUSE="debug perl"
 
 RDEPEND=">=dev-libs/dbus-glib-0.88
+	sys-apps/dbus
 	>=dev-libs/glib-2.18:2
 	>=xfce-base/libxfce4util-4.8
 	perl? ( dev-perl/glib-perl )"
