@@ -13,10 +13,11 @@ SLOT="0"
 KEYWORDS=""
 IUSE="debug libcanberra libnotify +xklavier"
 
-RDEPEND=">=dev-libs/glib-2.16:2
+RDEPEND=">=dev-libs/glib-2.24:2
 	>=dev-libs/dbus-glib-0.88
-	>=gnome-base/libglade-2
-	>=x11-libs/gtk+-2.14:2
+	gnome-base/libglade:2.0
+	media-libs/fontconfig:1.0
+	>=x11-libs/gtk+-2.20:2
 	x11-libs/libX11
 	>=x11-libs/libXcursor-1.1
 	>=x11-libs/libXi-1.3
