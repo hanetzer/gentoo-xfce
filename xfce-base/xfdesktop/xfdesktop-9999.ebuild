@@ -10,7 +10,6 @@ HOMEPAGE="http://www.xfce.org/projects/xfdesktop/"
 
 LICENSE="GPL-2"
 SLOT="0"
-# XXX: Don't mark this ebuild stable because of fake transparency problems, stay with 4.8.1 instead
 KEYWORDS=""
 IUSE="debug libnotify thunar"
 
