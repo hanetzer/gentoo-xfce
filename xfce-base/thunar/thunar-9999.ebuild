@@ -1,6 +1,6 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/thunar/thunar-1.2.2.ebuild,v 1.2 2011/06/07 09:14:20 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/thunar/thunar-1.2.2-r1.ebuild,v 1.1 2011/08/09 11:02:30 ssuominen Exp $
 
 EAPI=4
 inherit virtualx xfconf
@@ -19,8 +19,6 @@ GVFS_DEPEND=">=gnome-base/gvfs-1.6.7"
 COMMON_DEPEND=">=xfce-base/exo-0.6
 	>=dev-libs/glib-2.18:2
 	>=x11-libs/gtk+-2.14:2
-	x11-libs/libSM
-	x11-libs/libX11
 	>=xfce-base/libxfce4util-4.8
 	>=xfce-base/libxfce4ui-4.8
 	>=dev-lang/perl-5.6
