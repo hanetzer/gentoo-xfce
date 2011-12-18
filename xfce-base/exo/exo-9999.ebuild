@@ -1,9 +1,10 @@
 # Copyright 1999-2011 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/exo/exo-0.6.2.ebuild,v 1.1 2011/06/10 18:38:28 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/exo/exo-0.6.2.ebuild,v 1.7 2011/11/26 17:47:07 armin76 Exp $
 
 EAPI=4
-inherit xfconf
+PYTHON_DEPEND="python? 2"
+inherit python xfconf
 
 DESCRIPTION="Extensions, widgets and framework library with session management support"
 HOMEPAGE="http://www.xfce.org/projects/exo/"
@@ -11,28 +12,50 @@ HOMEPAGE="http://www.xfce.org/projects/exo/"
 LICENSE="GPL-2 LGPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="debug"
+IUSE="debug python"
 
 RDEPEND=">=dev-lang/perl-5.6
 	dev-perl/URI
 	>=dev-libs/glib-2.18:2
 	>=x11-libs/gtk+-2.14:2
-	x11-libs/libX11
-	>=xfce-base/libxfce4ui-4.8
-	>=xfce-base/libxfce4util-4.8"
+	>=xfce-base/libxfce4util-4.8
+	python? ( >=dev-python/pygtk-2.4 )"
 DEPEND="${RDEPEND}
 	dev-util/pkgconfig
 	dev-util/intltool
 	sys-devel/gettext"
 
 pkg_setup() {
+	if use python; then
+		python_set_active_version 2
+		python_pkg_setup
+	fi
+
 	XFCONF=(
 		--docdir="${EPREFIX}"/usr/share/doc/${PF}
 		--disable-static
+		$(use_enable python)
 		$(xfconf_use_debug)
 		--with-html-dir="${EPREFIX}"/usr/share/doc/${PF}/html
 		)
+
 	[[ ${CHOST} == *-darwin* ]] && XFCONF+=( --disable-visibility ) # 366857
 
 	DOCS=( AUTHORS ChangeLog HACKING NEWS README THANKS TODO )
+}
+
+src_prepare() {
+	rm -f py-compile
+	ln -s $(type -P true) py-compile
+	xfconf_src_prepare
+}
+
+pkg_postinst() {
+	xfconf_pkg_postinst
+	use python && python_mod_optimize exo-0.6 pyexo.py
+}
+
+pkg_postrm() {
+	xfconf_pkg_postrm
+	use python && python_mod_cleanup exo-0.6 pyexo.py
 }
