@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/garcon/garcon-0.1.9.ebuild,v 1.7 2011/11/26 17:50:01 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/garcon/garcon-0.1.9.ebuild,v 1.9 2012/03/23 21:14:58 angelos Exp $
 
 EAPI=4
 inherit xfconf
@@ -14,11 +14,10 @@ KEYWORDS=""
 IUSE="debug"
 
 RDEPEND=">=dev-libs/glib-2.14:2
-	>=xfce-base/libxfce4util-4.8
-	!<xfce-base/xfdesktop-4.7.0"
+	>=xfce-base/libxfce4util-4.8"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
 	dev-util/intltool
+	dev-util/pkgconfig
 	sys-devel/gettext"
 
 pkg_setup() {
