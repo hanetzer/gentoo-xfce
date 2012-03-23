@@ -1,6 +1,6 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/thunar/thunar-1.2.3.ebuild,v 1.5 2011/11/26 17:54:42 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/thunar/thunar-1.2.3.ebuild,v 1.9 2012/03/23 21:22:12 angelos Exp $
 
 EAPI=4
 inherit virtualx xfconf
@@ -13,26 +13,25 @@ HOMEPAGE="http://www.xfce.org/projects/thunar/ http://thunar.xfce.org/"
 LICENSE="GPL-2 LGPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="dbus debug exif libnotify pcre startup-notification test +xfce_plugins_trash udev"
+IUSE="+dbus debug exif libnotify pcre startup-notification test +xfce_plugins_trash udev"
 
 GVFS_DEPEND=">=gnome-base/gvfs-1.6.7"
-COMMON_DEPEND=">=xfce-base/exo-0.6
+COMMON_DEPEND=">=dev-lang/perl-5.6
 	>=dev-libs/glib-2.18:2
+	>=xfce-base/exo-0.6
 	>=x11-libs/gtk+-2.14:2
-	>=xfce-base/libxfce4util-4.8
 	>=xfce-base/libxfce4ui-4.8
-	>=dev-lang/perl-5.6
-	dbus? ( >=dev-libs/dbus-glib-0.88 )
+	>=xfce-base/libxfce4util-4.8
+	dbus? ( >=dev-libs/dbus-glib-0.90 )
 	exif? ( >=media-libs/libexif-0.6.19 )
-	libnotify? ( x11-libs/libnotify )
+	libnotify? ( >=x11-libs/libnotify-0.7 )
 	pcre? ( >=dev-libs/libpcre-6 )
 	startup-notification? ( x11-libs/startup-notification )
-	udev? ( || ( >=sys-fs/udev-171[gudev] >=sys-fs/udev-145[extras] ) )
-	xfce_plugins_trash? ( >=dev-libs/dbus-glib-0.88
-		>=xfce-base/xfce4-panel-4.8 )"
+	udev? ( || ( >=sys-fs/udev-171-r1[gudev] <sys-fs/udev-171-r1[extras] ) )
+	xfce_plugins_trash? ( >=xfce-base/xfce4-panel-4.8 )"
 RDEPEND="${COMMON_DEPEND}
-	x11-misc/shared-mime-info
 	dev-util/desktop-file-utils
+	x11-misc/shared-mime-info
 	dbus? ( ${GVFS_DEPEND} )
 	udev? ( ${GVFS_DEPEND}[gdu,udev] )
 	xfce_plugins_trash? ( ${GVFS_DEPEND} )"
@@ -40,6 +39,7 @@ DEPEND="${COMMON_DEPEND}
 	dev-util/intltool
 	dev-util/pkgconfig
 	sys-devel/gettext"
+REQUIRED_USE="xfce_plugins_trash? ( dbus )"
 
 S=${WORKDIR}/${MY_P}
 
@@ -56,11 +56,7 @@ pkg_setup() {
 		--with-html-dir="${EPREFIX}"/usr/share/doc/${PF}/html
 		)
 
-	if use xfce_plugins_trash; then
-		XFCONF+=( --enable-dbus )
-	else
-		XFCONF+=( --disable-tpa-plugin )
-	fi
+	use xfce_plugins_trash || XFCONF+=( --disable-tpa-plugin )
 
 	DOCS=( AUTHORS ChangeLog FAQ HACKING NEWS README THANKS TODO )
 }
