@@ -1,9 +1,9 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-power-manager/xfce4-power-manager-1.0.10.ebuild,v 1.5 2011/05/19 20:06:06 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-power-manager/xfce4-power-manager-1.0.10-r1.ebuild,v 1.5 2012/02/07 13:44:15 ssuominen Exp $
 
 EAPI=4
-inherit flag-o-matic xfconf
+inherit flag-o-matic linux-info xfconf
 
 DESCRIPTION="Power manager for the Xfce desktop environment"
 HOMEPAGE="http://goodies.xfce.org/projects/applications/xfce4-power-manager"
@@ -36,6 +36,11 @@ DEPEND="${COMMON_DEPEND}
 	x11-proto/xproto"
 
 pkg_setup() {
+	if use kernel_linux; then
+		CONFIG_CHECK="~TIMER_STATS"
+		linux-info_pkg_setup
+	fi
+
 	XFCONF=(
 		$(use_enable policykit polkit)
 		--enable-dpms
