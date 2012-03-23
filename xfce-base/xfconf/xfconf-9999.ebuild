@@ -1,29 +1,30 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfconf/xfconf-4.8.0.ebuild,v 1.8 2011/05/20 17:47:26 grobian Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfconf/xfconf-4.8.1.ebuild,v 1.6 2012/03/23 21:29:28 angelos Exp $
 
 EAPI=4
 inherit xfconf
 
-DESCRIPTION="Xfce's configuration storage system"
-HOMEPAGE="http://www.xfce.org/projects/xfconf/"
+DESCRIPTION="A simple client-server configuration storage and query system for the Xfce desktop environment"
+HOMEPAGE="http://www.xfce.org/projects/xfconf"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
 IUSE="debug perl"
 
-RDEPEND=">=dev-libs/dbus-glib-0.88
-	sys-apps/dbus
+RDEPEND=">=dev-libs/dbus-glib-0.90
 	>=dev-libs/glib-2.18:2
 	>=xfce-base/libxfce4util-4.8
 	perl? ( dev-perl/glib-perl )"
 DEPEND="${RDEPEND}
-	dev-util/pkgconfig
 	dev-util/intltool
+	dev-util/pkgconfig
 	sys-devel/gettext
-	perl? ( dev-perl/extutils-depends
-		dev-perl/extutils-pkgconfig )"
+	perl? (
+		dev-perl/extutils-depends
+		dev-perl/extutils-pkgconfig
+		)"
 
 RESTRICT="test"
 
@@ -36,7 +37,8 @@ pkg_setup() {
 		--with-perl-options=INSTALLDIRS=vendor
 		--with-html-dir="${EPREFIX}"/usr/share/doc/${PF}/html
 		)
-	[[ ${CHOST} == *-darwin* ]] && XFCONF+=( --disable-visibility ) # 366857
+
+	[[ ${CHOST} == *-darwin* ]] && XFCONF+=( --disable-visibility ) #366857
 
 	DOCS=( AUTHORS ChangeLog NEWS TODO )
 }
