@@ -1,17 +1,21 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/xfce4-dev-tools/xfce4-dev-tools-4.9.0.ebuild,v 1.1 2011/10/15 11:53:50 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/xfce4-dev-tools/xfce4-dev-tools-4.9.1.ebuild,v 1.3 2012/03/23 21:11:11 angelos Exp $
 
 EAPI=4
 inherit xfconf
 
-DESCRIPTION="Xfce's build scripts and aclocal macros"
+DESCRIPTION="A set of scripts and m4/autoconf macros that ease build system maintenance"
 HOMEPAGE="http://www.xfce.org/ http://foo-projects.org/~benny/projects/xfce4-dev-tools/"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
 IUSE=""
+
+RDEPEND=">=dev-libs/glib-2.18:2"
+DEPEND="${RDEPEND}
+	dev-util/pkgconfig"
 
 pkg_setup() {
 	DOCS=( AUTHORS ChangeLog HACKING NEWS README )
