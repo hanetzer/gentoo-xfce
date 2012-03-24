@@ -21,7 +21,8 @@ RDEPEND=">=dev-libs/glib-2.16:2
 	>=xfce-base/libxfce4util-4.8
 	>=xfce-base/xfconf-4.8
 	glade? ( dev-util/glade:3 )
-	startup-notification? ( x11-libs/startup-notification )"
+	startup-notification? ( x11-libs/startup-notification )
+	!xfce-base/xfce-utils"
 DEPEND="${RDEPEND}
 	dev-lang/perl
 	dev-util/intltool
