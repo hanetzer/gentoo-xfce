@@ -1,17 +1,17 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/libxfcegui4/libxfcegui4-4.8.1.ebuild,v 1.8 2011/05/19 22:11:08 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/libxfcegui4/libxfcegui4-4.8.1-r1.ebuild,v 1.1 2012/03/31 10:00:48 ssuominen Exp $
 
 EAPI=4
 inherit xfconf
 
-DESCRIPTION="Xfce's unified widgets library (deprecated: don't use this for future development)"
-HOMEPAGE="http://www.xfce.org/projects/libraries/"
+DESCRIPTION="This package has been replaced by libxfce4ui. You shouldn't be using this."
+HOMEPAGE="http://www.xfce.org/"
 
 LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
 KEYWORDS=""
-IUSE="debug glade startup-notification"
+IUSE="glade startup-notification"
 
 RDEPEND="gnome-base/libglade
 	x11-libs/libSM
@@ -30,9 +30,11 @@ pkg_setup() {
 		--disable-static
 		$(use_enable startup-notification)
 		$(use_enable glade gladeui)
-		$(xfconf_use_debug)
-		--with-html-dir="${EPREFIX}"/usr/share/doc/${PF}/html
+		--with-html-dir="${EPREFIX}"/deprecated
 		)
+}
 
-	DOCS=( AUTHORS ChangeLog NEWS )
+src_install() {
+	xfconf_src_install
+	rm -rf "${ED}"/deprecated
 }
