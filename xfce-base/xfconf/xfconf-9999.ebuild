@@ -1,21 +1,21 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfconf/xfconf-4.8.1.ebuild,v 1.6 2012/03/23 21:29:28 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfconf/xfconf-4.9.0.ebuild,v 1.1 2012/03/30 20:19:27 ssuominen Exp $
 
 EAPI=4
 inherit xfconf
 
 DESCRIPTION="A simple client-server configuration storage and query system for the Xfce desktop environment"
-HOMEPAGE="http://www.xfce.org/projects/xfconf"
+HOMEPAGE="http://www.xfce.org/projects/"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
 IUSE="debug perl"
 
-RDEPEND=">=dev-libs/dbus-glib-0.90
-	>=dev-libs/glib-2.18:2
-	>=xfce-base/libxfce4util-4.8
+RDEPEND=">=dev-libs/dbus-glib-0.98
+	>=dev-libs/glib-2.18
+	>=xfce-base/libxfce4util-4.9
 	perl? ( dev-perl/glib-perl )"
 DEPEND="${RDEPEND}
 	dev-util/intltool
@@ -25,8 +25,6 @@ DEPEND="${RDEPEND}
 		dev-perl/extutils-depends
 		dev-perl/extutils-pkgconfig
 		)"
-
-RESTRICT="test"
 
 pkg_setup() {
 	XFCONF=(
@@ -51,7 +49,7 @@ src_install() {
 	xfconf_src_install
 
 	if use perl; then
-		find "${ED}" -type f -name perllocal.pod -delete
-		find "${ED}" -depth -mindepth 1 -type d -empty -delete
+		find "${ED}" -type f -name perllocal.pod -exec rm -f {} +
+		find "${ED}" -depth -mindepth 1 -type d -empty -exec rm -rf {} +
 	fi
 }
