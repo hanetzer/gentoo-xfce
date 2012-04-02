@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/thunar/thunar-1.2.3.ebuild,v 1.9 2012/03/23 21:22:12 angelos Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/thunar/thunar-1.3.1.ebuild,v 1.1 2012/03/31 05:05:56 ssuominen Exp $
 
 EAPI=4
 inherit virtualx xfconf
@@ -8,27 +8,27 @@ inherit virtualx xfconf
 MY_P=${P/t/T}
 
 DESCRIPTION="File manager for the Xfce desktop environment"
-HOMEPAGE="http://www.xfce.org/projects/thunar/ http://thunar.xfce.org/"
+HOMEPAGE="http://www.xfce.org/projects/ http://thunar.xfce.org/"
 
 LICENSE="GPL-2 LGPL-2"
 SLOT="0"
 KEYWORDS=""
 IUSE="+dbus debug exif libnotify pcre startup-notification test +xfce_plugins_trash udev"
 
-GVFS_DEPEND=">=gnome-base/gvfs-1.6.7"
+GVFS_DEPEND=">=gnome-base/gvfs-1.10.1"
 COMMON_DEPEND=">=dev-lang/perl-5.6
-	>=dev-libs/glib-2.18:2
-	>=xfce-base/exo-0.6
-	>=x11-libs/gtk+-2.14:2
-	>=xfce-base/libxfce4ui-4.8
-	>=xfce-base/libxfce4util-4.8
-	dbus? ( >=dev-libs/dbus-glib-0.90 )
+	>=dev-libs/glib-2.24
+	>=x11-libs/gtk+-2.20:2
+	>=xfce-base/exo-0.7
+	>=xfce-base/libxfce4ui-4.9
+	>=xfce-base/libxfce4util-4.9
+	dbus? ( >=dev-libs/dbus-glib-0.98 )
 	exif? ( >=media-libs/libexif-0.6.19 )
 	libnotify? ( >=x11-libs/libnotify-0.7 )
 	pcre? ( >=dev-libs/libpcre-6 )
 	startup-notification? ( x11-libs/startup-notification )
-	udev? ( || ( >=sys-fs/udev-171-r1[gudev] <sys-fs/udev-171-r1[extras] ) )
-	xfce_plugins_trash? ( >=xfce-base/xfce4-panel-4.8 )"
+	udev? ( || ( >=sys-fs/udev-171-r5[gudev] <sys-fs/udev-171-r5[extras] ) )
+	xfce_plugins_trash? ( >=xfce-base/xfce4-panel-4.9 )"
 RDEPEND="${COMMON_DEPEND}
 	dev-util/desktop-file-utils
 	x11-misc/shared-mime-info
