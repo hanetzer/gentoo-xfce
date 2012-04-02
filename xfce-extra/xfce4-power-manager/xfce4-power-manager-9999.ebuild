@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-power-manager/xfce4-power-manager-1.0.10-r1.ebuild,v 1.6 2012/03/27 18:42:39 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-power-manager/xfce4-power-manager-1.0.11.ebuild,v 1.1 2012/03/30 14:14:48 ssuominen Exp $
 
 EAPI=4
 inherit flag-o-matic linux-info xfconf
@@ -13,25 +13,25 @@ SLOT="0"
 KEYWORDS=""
 IUSE="debug kernel_linux networkmanager policykit +xfce_plugins_brightness"
 
-COMMON_DEPEND=">=x11-libs/gtk+-2.18:2
-	>=dev-libs/glib-2.16:2
-	>=dev-libs/dbus-glib-0.88
-	>=xfce-base/xfconf-4.8
-	>=xfce-base/libxfce4ui-4.8
-	>=xfce-base/libxfce4util-4.8
-	>=x11-libs/libnotify-0.4.5
+COMMON_DEPEND=">=dev-libs/dbus-glib-0.98
+	>=dev-libs/glib-2.16
+	sys-power/upower
+	>=x11-libs/gtk+-2.18:2
+	>=x11-libs/libnotify-0.7
 	>=x11-libs/libXrandr-1.2
 	x11-libs/libX11
 	x11-libs/libXext
-	sys-power/upower
+	>=xfce-base/xfconf-4.8
+	>=xfce-base/libxfce4ui-4.8
+	>=xfce-base/libxfce4util-4.8
 	kernel_linux? ( sys-fs/udisks:0 )
-	xfce_plugins_brightness? ( >=xfce-base/xfce4-panel-4.8 )
-	policykit? ( >=sys-auth/polkit-0.91 )"
+	policykit? ( >=sys-auth/polkit-0.104-r1 )
+	xfce_plugins_brightness? ( >=xfce-base/xfce4-panel-4.8 )"
 RDEPEND="${COMMON_DEPEND}
 	networkmanager? ( net-misc/networkmanager )"
 DEPEND="${COMMON_DEPEND}
-	dev-util/pkgconfig
 	dev-util/intltool
+	dev-util/pkgconfig
 	sys-devel/gettext
 	x11-proto/xproto"
 
