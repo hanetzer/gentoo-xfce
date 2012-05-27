@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/exo/exo-0.7.2.ebuild,v 1.1 2012/03/30 20:39:17 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/exo/exo-0.8.0.ebuild,v 1.8 2012/05/22 05:04:36 jdhore Exp $
 
 EAPI=4
 inherit xfconf
@@ -8,20 +8,20 @@ inherit xfconf
 DESCRIPTION="Extensions, widgets and framework library with session support for the Xfce desktop environment"
 HOMEPAGE="http://www.xfce.org/projects/"
 
-LICENSE="GPL-2 LGPL-2"
+LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
 KEYWORDS=""
 IUSE="debug"
 
 RDEPEND=">=dev-lang/perl-5.6
-	>=dev-libs/glib-2.18
+	>=dev-libs/glib-2.24
 	dev-perl/URI
-	>=x11-libs/gtk+-2.14:2
-	>=xfce-base/libxfce4ui-4.9
-	>=xfce-base/libxfce4util-4.9"
+	>=x11-libs/gtk+-2.20:2
+	>=xfce-base/libxfce4ui-4.10
+	>=xfce-base/libxfce4util-4.10"
 DEPEND="${RDEPEND}
 	dev-util/intltool
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	sys-devel/gettext"
 
 pkg_setup() {
