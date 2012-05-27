@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/thunar/thunar-1.3.1.ebuild,v 1.1 2012/03/31 05:05:56 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/thunar/thunar-1.4.0.ebuild,v 1.7 2012/05/22 05:28:36 jdhore Exp $
 
 EAPI=4
 inherit virtualx xfconf
@@ -19,25 +19,25 @@ GVFS_DEPEND=">=gnome-base/gvfs-1.10.1"
 COMMON_DEPEND=">=dev-lang/perl-5.6
 	>=dev-libs/glib-2.24
 	>=x11-libs/gtk+-2.20:2
-	>=xfce-base/exo-0.7
-	>=xfce-base/libxfce4ui-4.9
-	>=xfce-base/libxfce4util-4.9
+	>=xfce-base/exo-0.8
+	>=xfce-base/libxfce4ui-4.10
+	>=xfce-base/libxfce4util-4.10
 	dbus? ( >=dev-libs/dbus-glib-0.98 )
 	exif? ( >=media-libs/libexif-0.6.19 )
 	libnotify? ( >=x11-libs/libnotify-0.7 )
 	pcre? ( >=dev-libs/libpcre-6 )
 	startup-notification? ( x11-libs/startup-notification )
-	udev? ( || ( >=sys-fs/udev-171-r5[gudev] <sys-fs/udev-171-r5[extras] ) )
-	xfce_plugins_trash? ( >=xfce-base/xfce4-panel-4.9 )"
+	udev? ( || ( >=sys-fs/udev-171-r5[gudev] <sys-fs/udev-171[extras] ) )
+	xfce_plugins_trash? ( >=xfce-base/xfce4-panel-4.10 )"
 RDEPEND="${COMMON_DEPEND}
-	dev-util/desktop-file-utils
+	>=dev-util/desktop-file-utils-0.20-r1
 	x11-misc/shared-mime-info
 	dbus? ( ${GVFS_DEPEND} )
-	udev? ( ${GVFS_DEPEND}[gdu,udev] )
+	udev? ( || ( ${GVFS_DEPEND}[udisks,udev] ${GVFS_DEPEND}[gdu,udev] ) )
 	xfce_plugins_trash? ( ${GVFS_DEPEND} )"
 DEPEND="${COMMON_DEPEND}
 	dev-util/intltool
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	sys-devel/gettext"
 REQUIRED_USE="xfce_plugins_trash? ( dbus )"
 
