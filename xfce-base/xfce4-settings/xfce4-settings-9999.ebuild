@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfce4-settings/xfce4-settings-4.9.4.ebuild,v 1.1 2012/04/01 10:06:29 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfce4-settings/xfce4-settings-4.9.5.ebuild,v 1.2 2012/05/05 07:01:21 mgorny Exp $
 
 EAPI=4
 inherit xfconf
@@ -21,17 +21,17 @@ RDEPEND=">=dev-libs/dbus-glib-0.98
 	>=x11-libs/libXcursor-1.1
 	>=x11-libs/libXi-1.3
 	>=x11-libs/libXrandr-1.2
-	>=xfce-base/garcon-0.1.11
-	>=xfce-base/exo-0.7.2
-	>=xfce-base/libxfce4ui-4.9
-	>=xfce-base/libxfce4util-4.9
-	>=xfce-base/xfconf-4.9
+	>=xfce-base/garcon-0.1.12
+	>=xfce-base/exo-0.7.3
+	>=xfce-base/libxfce4ui-4.9.2
+	>=xfce-base/libxfce4util-4.9.1
+	>=xfce-base/xfconf-4.9.1
 	libcanberra? ( >=media-libs/libcanberra-0.25[sound] )
 	libnotify? ( >=x11-libs/libnotify-0.7 )
 	xklavier? ( >=x11-libs/libxklavier-5 )"
 DEPEND="${RDEPEND}
 	dev-util/intltool
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	sys-devel/gettext
 	>=x11-proto/inputproto-1.4
 	x11-proto/xproto"
