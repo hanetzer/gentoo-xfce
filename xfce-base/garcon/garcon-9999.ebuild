@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/garcon/garcon-0.2.0.ebuild,v 1.8 2012/05/22 05:29:47 jdhore Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/garcon/garcon-0.2.0.ebuild,v 1.9 2012/07/14 12:14:26 maekke Exp $
 
 EAPI=4
 inherit xfconf
