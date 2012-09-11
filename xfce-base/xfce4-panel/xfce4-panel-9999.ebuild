@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfce4-panel/xfce4-panel-4.9.2.ebuild,v 1.3 2012/05/05 09:12:18 jdhore Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfce4-panel/xfce4-panel-4.10.0.ebuild,v 1.9 2012/09/09 14:41:44 armin76 Exp $
 
 EAPI=4
 inherit xfconf
@@ -19,11 +19,11 @@ RDEPEND=">=dev-libs/dbus-glib-0.98
 	>=x11-libs/gtk+-2.20:2
 	x11-libs/libX11
 	>=x11-libs/libwnck-2.31:1
-	>=xfce-base/exo-0.7.3
-	>=xfce-base/garcon-0.1.12
-	>=xfce-base/libxfce4ui-4.9.2
-	>=xfce-base/libxfce4util-4.9.1
-	>=xfce-base/xfconf-4.9.1"
+	>=xfce-base/exo-0.8
+	>=xfce-base/garcon-0.2
+	>=xfce-base/libxfce4ui-4.10
+	>=xfce-base/libxfce4util-4.10
+	>=xfce-base/xfconf-4.10"
 DEPEND="${RDEPEND}
 	dev-lang/perl
 	dev-util/intltool
