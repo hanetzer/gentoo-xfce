@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfwm4/xfwm4-4.9.1.ebuild,v 1.2 2012/05/05 09:15:01 jdhore Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfwm4/xfwm4-4.10.0.ebuild,v 1.10 2012/09/09 14:47:05 armin76 Exp $
 
 EAPI=4
 inherit xfconf
@@ -13,8 +13,8 @@ SLOT="0"
 KEYWORDS=""
 IUSE="debug startup-notification +xcomposite"
 
-RDEPEND=">=dev-libs/glib-2.10
-	>=x11-libs/gtk+-2.14:2
+RDEPEND=">=dev-libs/glib-2.20
+	>=x11-libs/gtk+-2.24:2
 	x11-libs/libICE
 	x11-libs/libSM
 	x11-libs/libX11
@@ -22,10 +22,10 @@ RDEPEND=">=dev-libs/glib-2.10
 	x11-libs/libXrandr
 	x11-libs/libXrender
 	x11-libs/pango
-	>=x11-libs/libwnck-2.22:1
-	>=xfce-base/libxfce4util-4.9.1
-	>=xfce-base/libxfce4ui-4.9.2
-	>=xfce-base/xfconf-4.9.1
+	>=x11-libs/libwnck-2.30:1
+	>=xfce-base/libxfce4util-4.10
+	>=xfce-base/libxfce4ui-4.10
+	>=xfce-base/xfconf-4.10
 	startup-notification? ( x11-libs/startup-notification )
 	xcomposite? (
 		x11-libs/libXcomposite
