@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfce4-session/xfce4-session-4.9.2.ebuild,v 1.2 2012/05/05 06:56:06 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfce4-session/xfce4-session-4.10.0.ebuild,v 1.10 2012/09/09 14:43:49 armin76 Exp $
 
 EAPI=4
 inherit xfconf
@@ -11,16 +11,17 @@ HOMEPAGE="http://docs.xfce.org/xfce/xfce4-session/start"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="consolekit debug policykit udev +xscreensaver"
+IUSE="consolekit debug gnome-keyring policykit udev +xscreensaver"
 
 COMMON_DEPEND=">=dev-libs/dbus-glib-0.98
 	x11-apps/iceauth
 	x11-libs/libSM
-	>=x11-libs/libwnck-2.22:1
+	>=x11-libs/libwnck-2.30:1
 	x11-libs/libX11
-	>=xfce-base/libxfce4util-4.9.1
-	>=xfce-base/libxfce4ui-4.9.2
-	>=xfce-base/xfconf-4.9.1
+	>=xfce-base/libxfce4util-4.10
+	>=xfce-base/libxfce4ui-4.10
+	>=xfce-base/xfconf-4.10
+	gnome-keyring? ( >=gnome-base/libgnome-keyring-2.22 )
 	!xfce-base/xfce-utils"
 RDEPEND="${COMMON_DEPEND}
 	x11-apps/xrdb
@@ -42,6 +43,8 @@ DEPEND="${COMMON_DEPEND}
 pkg_setup() {
 	XFCONF=(
 		--docdir="${EPREFIX}"/usr/share/doc/${PF}
+		--with-xsession-prefix="${EPREFIX}"/usr
+		$(use_enable gnome-keyring libgnome-keyring)
 		$(xfconf_use_debug)
 		)
 
