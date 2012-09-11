@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/libxfce4util/libxfce4util-4.9.1.ebuild,v 1.2 2012/05/05 06:56:38 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/libxfce4util/libxfce4util-4.10.0.ebuild,v 1.10 2012/09/09 14:30:32 armin76 Exp $
 
 EAPI=4
 inherit xfconf
