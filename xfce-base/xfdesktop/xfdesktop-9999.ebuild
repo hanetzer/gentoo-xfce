@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfdesktop/xfdesktop-4.9.3.ebuild,v 1.2 2012/05/05 07:01:20 mgorny Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfdesktop/xfdesktop-4.10.0.ebuild,v 1.9 2012/09/09 14:45:57 armin76 Exp $
 
 EAPI=4
 inherit xfconf
@@ -18,14 +18,14 @@ RDEPEND=">=dev-libs/glib-2.20
 	x11-libs/libSM
 	>=x11-libs/libwnck-2.30:1
 	x11-libs/libX11
-	>=xfce-base/exo-0.7.3
-	>=xfce-base/garcon-0.1.12
-	>=xfce-base/libxfce4ui-4.9.2
-	>=xfce-base/libxfce4util-4.9.1
-	>=xfce-base/xfconf-4.9.1
+	>=xfce-base/exo-0.8
+	>=xfce-base/garcon-0.2
+	>=xfce-base/libxfce4ui-4.10
+	>=xfce-base/libxfce4util-4.10
+	>=xfce-base/xfconf-4.10
 	libnotify? ( >=x11-libs/libnotify-0.7 )
 	thunar? (
-		>=xfce-base/thunar-1.3[dbus]
+		>=xfce-base/thunar-1.4[dbus]
 		>=dev-libs/dbus-glib-0.98
 		)"
 DEPEND="${RDEPEND}
