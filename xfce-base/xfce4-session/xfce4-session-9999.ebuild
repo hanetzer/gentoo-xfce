@@ -11,7 +11,7 @@ HOMEPAGE="http://docs.xfce.org/xfce/xfce4-session/start"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="consolekit debug gnome-keyring policykit udev +xscreensaver"
+IUSE="consolekit debug policykit udev +xscreensaver"
 
 COMMON_DEPEND=">=dev-libs/dbus-glib-0.98
 	x11-apps/iceauth
@@ -21,7 +21,6 @@ COMMON_DEPEND=">=dev-libs/dbus-glib-0.98
 	>=xfce-base/libxfce4util-4.10
 	>=xfce-base/libxfce4ui-4.10
 	>=xfce-base/xfconf-4.10
-	gnome-keyring? ( >=gnome-base/libgnome-keyring-2.22 )
 	!xfce-base/xfce-utils"
 RDEPEND="${COMMON_DEPEND}
 	x11-apps/xrdb
@@ -44,7 +43,6 @@ pkg_setup() {
 	XFCONF=(
 		--docdir="${EPREFIX}"/usr/share/doc/${PF}
 		--with-xsession-prefix="${EPREFIX}"/usr
-		$(use_enable gnome-keyring libgnome-keyring)
 		$(xfconf_use_debug)
 		)
 
