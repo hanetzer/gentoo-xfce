@@ -1,8 +1,8 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/thunar/thunar-1.4.0.ebuild,v 1.9 2012/09/09 14:42:38 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/thunar/thunar-1.6.1.ebuild,v 1.1 2012/12/10 07:47:54 ssuominen Exp $
 
-EAPI=4
+EAPI=5
 inherit virtualx xfconf
 
 MY_P=${P/t/T}
@@ -17,17 +17,19 @@ IUSE="+dbus debug exif libnotify pcre startup-notification test +xfce_plugins_tr
 
 GVFS_DEPEND=">=gnome-base/gvfs-1.10.1"
 COMMON_DEPEND=">=dev-lang/perl-5.6
-	>=dev-libs/glib-2.24
-	>=x11-libs/gtk+-2.20:2
-	>=xfce-base/exo-0.8
+	>=dev-libs/glib-2.30
+	>=x11-libs/gdk-pixbuf-2.14
+	>=x11-libs/gtk+-2.24:2
+	>=xfce-base/exo-0.10
 	>=xfce-base/libxfce4ui-4.10
 	>=xfce-base/libxfce4util-4.10
-	dbus? ( >=dev-libs/dbus-glib-0.98 )
+	>=xfce-base/xfconf-4.10
+	dbus? ( >=dev-libs/dbus-glib-0.100 )
 	exif? ( >=media-libs/libexif-0.6.19 )
 	libnotify? ( >=x11-libs/libnotify-0.7 )
 	pcre? ( >=dev-libs/libpcre-6 )
 	startup-notification? ( x11-libs/startup-notification )
-	udev? ( || ( >=sys-fs/udev-171-r5[gudev] <sys-fs/udev-171[extras] ) )
+	udev? ( virtual/udev[gudev] )
 	xfce_plugins_trash? ( >=xfce-base/xfce4-panel-4.10 )"
 RDEPEND="${COMMON_DEPEND}
 	>=dev-util/desktop-file-utils-0.20-r1
@@ -37,8 +39,8 @@ RDEPEND="${COMMON_DEPEND}
 	xfce_plugins_trash? ( ${GVFS_DEPEND} )"
 DEPEND="${COMMON_DEPEND}
 	dev-util/intltool
-	virtual/pkgconfig
-	sys-devel/gettext"
+	sys-devel/gettext
+	virtual/pkgconfig"
 REQUIRED_USE="xfce_plugins_trash? ( dbus )"
 
 S=${WORKDIR}/${MY_P}
