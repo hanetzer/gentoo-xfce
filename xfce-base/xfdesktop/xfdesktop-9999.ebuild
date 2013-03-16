@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfdesktop/xfdesktop-4.10.0.ebuild,v 1.10 2012/11/28 12:30:04 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfdesktop/xfdesktop-4.10.2.ebuild,v 1.1 2013/03/11 10:08:50 ssuominen Exp $
 
 EAPI=5
 inherit xfconf
@@ -25,13 +25,13 @@ RDEPEND=">=dev-libs/glib-2.20
 	>=xfce-base/xfconf-4.10
 	libnotify? ( >=x11-libs/libnotify-0.7 )
 	thunar? (
-		>=xfce-base/thunar-1.4[dbus]
-		>=dev-libs/dbus-glib-0.98
+		>=xfce-base/thunar-1.6[dbus]
+		>=dev-libs/dbus-glib-0.100
 		)"
 DEPEND="${RDEPEND}
 	dev-util/intltool
-	virtual/pkgconfig
-	sys-devel/gettext"
+	sys-devel/gettext
+	virtual/pkgconfig"
 
 pkg_setup() {
 	XFCONF=(
