@@ -20,3 +20,6 @@ DEPEND="${RDEPEND}
 pkg_setup() {
 	DOCS=( AUTHORS ChangeLog HACKING NEWS README )
 }
+
+# Avoid running elibtoolize (bug #450452)
+src_prepare() { :; }
