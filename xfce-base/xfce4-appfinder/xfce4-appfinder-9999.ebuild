@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfce4-appfinder/xfce4-appfinder-4.10.0.ebuild,v 1.11 2012/11/28 12:30:11 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfce4-appfinder/xfce4-appfinder-4.10.0-r1.ebuild,v 1.1 2013/03/31 04:49:14 ssuominen Exp $
 
 EAPI=5
 inherit xfconf
@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS=""
 IUSE="debug gtk3"
 
-RDEPEND=">=dev-libs/dbus-glib-0.98
+RDEPEND=">=dev-libs/dbus-glib-0.100
 	>=dev-libs/glib-2.28
 	>=xfce-base/garcon-0.2
 	>=xfce-base/libxfce4util-4.10
@@ -29,7 +29,10 @@ DEPEND="${RDEPEND}
 	sys-devel/gettext"
 
 pkg_setup() {
-	XFCONF=( $(xfconf_use_debug)
-		$(use_enable gtk3) )
+	XFCONF=(
+		$(xfconf_use_debug)
+		$(use_enable gtk3)
+		)
+
 	DOCS=( AUTHORS ChangeLog NEWS )
 }
