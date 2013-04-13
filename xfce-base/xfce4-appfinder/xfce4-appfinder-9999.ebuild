@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfce4-appfinder/xfce4-appfinder-4.10.0-r1.ebuild,v 1.1 2013/03/31 04:49:14 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfce4-appfinder/xfce4-appfinder-4.10.0-r1.ebuild,v 1.10 2013/04/13 07:19:50 ago Exp $
 
 EAPI=5
 inherit xfconf
@@ -17,16 +17,15 @@ RDEPEND=">=dev-libs/dbus-glib-0.100
 	>=dev-libs/glib-2.28
 	>=xfce-base/garcon-0.2
 	>=xfce-base/libxfce4util-4.10
+	>=xfce-base/libxfce4ui-4.10[gtk3?]
 	>=xfce-base/xfconf-4.10
-	gtk3? ( >=x11-libs/gtk+-3.2:3
-		>=xfce-base/libxfce4ui-4.10[gtk3] )
-	!gtk3? ( >=x11-libs/gtk+-2.24:2
-		>=xfce-base/libxfce4ui-4.10 )
+	gtk3? ( >=x11-libs/gtk+-3.2:3 )
+	!gtk3? ( >=x11-libs/gtk+-2.20:2 )
 	!xfce-base/xfce-utils"
 DEPEND="${RDEPEND}
 	dev-util/intltool
-	virtual/pkgconfig
-	sys-devel/gettext"
+	sys-devel/gettext
+	virtual/pkgconfig"
 
 pkg_setup() {
 	XFCONF=(
