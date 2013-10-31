@@ -1,6 +1,6 @@
 # Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfce4-appfinder/xfce4-appfinder-4.10.0-r1.ebuild,v 1.10 2013/04/13 07:19:50 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfce4-appfinder/xfce4-appfinder-4.10.1.ebuild,v 1.1 2013/05/05 16:26:55 ssuominen Exp $
 
 EAPI=5
 inherit xfconf
