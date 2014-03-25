@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfce4-session/xfce4-session-4.10.1.ebuild,v 1.2 2013/05/09 14:20:08 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfce4-session/xfce4-session-4.11.0.ebuild,v 1.2 2014/03/15 19:30:21 ssuominen Exp $
 
 EAPI=5
 inherit xfconf
@@ -11,27 +11,27 @@ HOMEPAGE="http://docs.xfce.org/xfce/xfce4-session/start"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="debug systemd udev +xscreensaver"
+IUSE="debug nls systemd udev +xscreensaver"
 
 COMMON_DEPEND=">=dev-libs/dbus-glib-0.100
 	x11-apps/iceauth
 	x11-libs/libSM
 	>=x11-libs/libwnck-2.30:1
 	x11-libs/libX11
-	>=xfce-base/libxfce4util-4.10.1
-	>=xfce-base/libxfce4ui-4.10
+	>=xfce-base/libxfce4util-4.11
+	>=xfce-base/libxfce4ui-4.11
 	>=xfce-base/xfconf-4.10
 	!xfce-base/xfce-utils
 	systemd? ( >=sys-auth/polkit-0.100 )"
 RDEPEND="${COMMON_DEPEND}
 	x11-apps/xrdb
-	x11-misc/xdg-user-dirs
+	nls? ( x11-misc/xdg-user-dirs )
 	udev? ( >=sys-power/upower-0.9.20 )
 	xscreensaver? ( || (
-		>=x11-misc/xscreensaver-5.15
+		>=x11-misc/xscreensaver-5.26
 		gnome-extra/gnome-screensaver
-		>=x11-misc/xlockmore-5.38
-		>=x11-misc/slock-1
+		>=x11-misc/xlockmore-5.43
+		x11-misc/slock
 		) )"
 DEPEND="${COMMON_DEPEND}
 	dev-util/intltool
