@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfwm4/xfwm4-4.10.1.ebuild,v 1.1 2013/05/05 16:35:05 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfwm4/xfwm4-4.11.1.ebuild,v 1.1 2014/03/11 16:00:38 ssuominen Exp $
 
 EAPI=5
 inherit xfconf
@@ -11,7 +11,7 @@ HOMEPAGE="http://www.xfce.org/projects/"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="debug startup-notification +xcomposite"
+IUSE="debug dri startup-notification +xcomposite"
 
 RDEPEND=">=dev-libs/glib-2.20
 	>=x11-libs/gtk+-2.24:2
@@ -26,6 +26,7 @@ RDEPEND=">=dev-libs/glib-2.20
 	>=xfce-base/libxfce4util-4.10
 	>=xfce-base/libxfce4ui-4.10
 	>=xfce-base/xfconf-4.10
+	dri? ( >=x11-libs/libdrm-2.4 )
 	startup-notification? ( x11-libs/startup-notification )
 	xcomposite? (
 		x11-libs/libXcomposite
@@ -40,6 +41,7 @@ DEPEND="${RDEPEND}
 pkg_setup() {
 	XFCONF=(
 		--docdir="${EPREFIX}"/usr/share/doc/${PF}
+		$(use_enable dri libdrm)
 		$(use_enable startup-notification)
 		--enable-xsync
 		--enable-render
