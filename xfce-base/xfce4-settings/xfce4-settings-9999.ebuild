@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfce4-settings/xfce4-settings-4.10.1.ebuild,v 1.1 2013/05/05 16:40:12 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfce4-settings/xfce4-settings-4.11.2.ebuild,v 1.1 2014/03/11 15:11:55 ssuominen Exp $
 
 EAPI=5
 inherit xfconf
@@ -11,7 +11,7 @@ HOMEPAGE="http://www.xfce.org/projects/"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="debug libcanberra libnotify +xklavier"
+IUSE="debug libcanberra libnotify udev +xklavier"
 
 RDEPEND=">=dev-libs/dbus-glib-0.100
 	>=dev-libs/glib-2.24
@@ -23,11 +23,12 @@ RDEPEND=">=dev-libs/dbus-glib-0.100
 	>=x11-libs/libXrandr-1.2
 	>=xfce-base/garcon-0.2
 	>=xfce-base/exo-0.8
-	>=xfce-base/libxfce4ui-4.10
-	>=xfce-base/libxfce4util-4.10
+	>=xfce-base/libxfce4ui-4.11
+	>=xfce-base/libxfce4util-4.11
 	>=xfce-base/xfconf-4.10
 	libcanberra? ( >=media-libs/libcanberra-0.25[sound] )
 	libnotify? ( >=x11-libs/libnotify-0.7 )
+	udev? ( >=sys-power/upower-0.9.8 )
 	xklavier? ( >=x11-libs/libxklavier-5 )"
 DEPEND="${RDEPEND}
 	dev-util/intltool
@@ -38,6 +39,7 @@ DEPEND="${RDEPEND}
 
 pkg_setup() {
 	XFCONF=(
+		$(use_enable udev upower-glib)
 		$(use_enable libnotify)
 		$(use_enable xklavier libxklavier)
 		$(use_enable libcanberra sound-settings)
