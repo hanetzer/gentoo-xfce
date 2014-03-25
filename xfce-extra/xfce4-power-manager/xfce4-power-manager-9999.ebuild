@@ -1,6 +1,6 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-power-manager/xfce4-power-manager-1.2.0-r2.ebuild,v 1.1 2013/07/24 04:34:29 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-power-manager/xfce4-power-manager-1.2.0-r2.ebuild,v 1.4 2014/01/28 14:17:59 ago Exp $
 
 EAPI=5
 inherit flag-o-matic linux-info xfconf
