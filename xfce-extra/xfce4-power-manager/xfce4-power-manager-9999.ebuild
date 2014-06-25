@@ -1,9 +1,9 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-power-manager/xfce4-power-manager-1.2.0-r2.ebuild,v 1.4 2014/01/28 14:17:59 ago Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-extra/xfce4-power-manager/xfce4-power-manager-1.3.0.ebuild,v 1.6 2014/06/23 04:19:25 ssuominen Exp $
 
 EAPI=5
-inherit flag-o-matic linux-info xfconf
+inherit linux-info multilib xfconf
 
 DESCRIPTION="Power manager for the Xfce desktop environment"
 HOMEPAGE="http://goodies.xfce.org/projects/applications/xfce4-power-manager"
@@ -11,12 +11,13 @@ HOMEPAGE="http://goodies.xfce.org/projects/applications/xfce4-power-manager"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="debug kernel_linux networkmanager policykit +udisks +xfce_plugins_brightness"
+IUSE="debug kernel_linux networkmanager policykit +udisks systemd +xfce_plugins_battery +xfce_plugins_brightness"
 
-COMMON_DEPEND=">=dev-libs/dbus-glib-0.100
-	>=dev-libs/glib-2.24
-	>=sys-power/upower-0.9.16
-	>=x11-libs/gtk+-2.20:2
+COMMON_DEPEND=">=dev-libs/dbus-glib-0.100.2
+	>=dev-libs/glib-2.30
+	>=sys-apps/dbus-1.6.18
+	|| ( >=sys-power/upower-0.9.23 >=sys-power/upower-pm-utils-0.9.23-r2 )
+	>=x11-libs/gtk+-2.24:2
 	>=x11-libs/libnotify-0.7
 	x11-libs/libX11
 	>=x11-libs/libXrandr-1.2
@@ -24,11 +25,14 @@ COMMON_DEPEND=">=dev-libs/dbus-glib-0.100
 	>=xfce-base/xfconf-4.10
 	>=xfce-base/libxfce4ui-4.10
 	>=xfce-base/libxfce4util-4.10
-	policykit? ( >=sys-auth/polkit-0.104-r1 )
+	policykit? ( >=sys-auth/polkit-0.112 )
+	xfce_plugins_battery? ( >=xfce-base/xfce4-panel-4.10 )
 	xfce_plugins_brightness? ( >=xfce-base/xfce4-panel-4.10 )"
+# USE="systemd" is for ensuring hibernate/suspend works by enforcing correct runtime -only dependencies
 RDEPEND="${COMMON_DEPEND}
 	networkmanager? ( net-misc/networkmanager )
-	udisks? ( sys-fs/udisks:0 )"
+	udisks? ( sys-fs/udisks:0 )
+	!systemd? ( || ( sys-power/pm-utils sys-power/upower-pm-utils ) )"
 DEPEND="${COMMON_DEPEND}
 	dev-util/intltool
 	sys-devel/gettext
@@ -45,15 +49,29 @@ pkg_setup() {
 		$(use_enable policykit polkit)
 		--enable-dpms
 		$(use_enable networkmanager network-manager)
-		$(use_enable xfce_plugins_brightness panel-plugins)
 		$(xfconf_use_debug)
 		)
 
-	DOCS=( AUTHORS ChangeLog NEWS README TODO )
+	# TODO: Split --disable-panel-plugins to two separate AC_ARG_ENABLEs
+	if ! use xfce_plugins_battery && ! use xfce_plugins_brightness; then
+		XFCONF+=( --disable-panel-plugins )
+	fi
+
+	DOCS=( AUTHORS NEWS README TODO )
 }
 
 src_install() {
-	xfconf_src_install \
-		docdir=/usr/share/doc/${PF}/html \
-		imagesdir=/usr/share/doc/${PF}/html/images
+	xfconf_src_install
+
+	if ! use xfce_plugins_battery; then
+		rm -f \
+			"${ED}"/usr/$(get_libdir)/xfce4/panel/plugins/libxfce4battery.* \
+			"${ED}"/usr/share/xfce4/panel-plugins/xfce4-battery-plugin.desktop
+	fi
+
+	if ! use xfce_plugins_brightness; then
+		rm -f \
+			"${ED}"/usr/$(get_libdir)/xfce4/panel/plugins/libxfce4brightness.* \
+			"${ED}"/usr/share/xfce4/panel-plugins/xfce4-brightness-plugin.desktop
+	fi
 }
