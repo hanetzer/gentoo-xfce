@@ -1,6 +1,6 @@
 # Copyright 1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfce4-session/xfce4-session-4.11.0-r1.ebuild,v 1.3 2014/06/02 16:39:34 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfce4-session/xfce4-session-4.11.0-r2.ebuild,v 1.3 2014/07/24 10:54:57 ssuominen Exp $
 
 EAPI=5
 inherit xfconf
@@ -11,7 +11,7 @@ HOMEPAGE="http://docs.xfce.org/xfce/xfce4-session/start"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="debug nls systemd udev +xscreensaver"
+IUSE="debug nls systemd upower +xscreensaver"
 
 COMMON_DEPEND=">=dev-libs/dbus-glib-0.100
 	x11-apps/iceauth
@@ -22,12 +22,12 @@ COMMON_DEPEND=">=dev-libs/dbus-glib-0.100
 	>=xfce-base/libxfce4ui-4.11
 	>=xfce-base/xfconf-4.10
 	!xfce-base/xfce-utils
-	udev? ( || ( >=sys-power/upower-0.9.23 sys-power/upower-pm-utils ) )
+	upower? ( || ( >=sys-power/upower-0.9.23 sys-power/upower-pm-utils ) )
 	systemd? ( >=sys-auth/polkit-0.100 )"
 RDEPEND="${COMMON_DEPEND}
 	x11-apps/xrdb
 	nls? ( x11-misc/xdg-user-dirs )
-	!systemd? ( udev? ( sys-power/pm-utils ) )
+	!systemd? ( upower? ( sys-power/pm-utils ) )
 	xscreensaver? ( || (
 		>=x11-misc/xscreensaver-5.26
 		gnome-extra/gnome-screensaver
@@ -43,8 +43,7 @@ DEPEND="${COMMON_DEPEND}
 pkg_setup() {
 	PATCHES=( "${FILESDIR}"/${PN}-alock_support_to_xflock4.patch )
 
-	# http://bugs.gentoo.org/512084
-	use udev && PATCHES+=( "${FILESDIR}"/${PN}-upower-0.99.patch )
+	use upower && PATCHES+=( "${FILESDIR}"/${P}-upower-0.99.0.patch )
 
 	XFCONF=(
 		--docdir="${EPREFIX}"/usr/share/doc/${PF}
@@ -52,6 +51,8 @@ pkg_setup() {
 		--with-xsession-prefix="${EPREFIX}"/usr
 		$(xfconf_use_debug)
 		)
+
+	use upower && XFCONF+=( --enable-upower )
 
 	DOCS=( AUTHORS BUGS ChangeLog NEWS README TODO )
 }
