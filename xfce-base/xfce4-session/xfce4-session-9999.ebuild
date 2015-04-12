@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfce4-session/xfce4-session-4.11.0-r2.ebuild,v 1.3 2014/07/24 10:54:57 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfce4-session/xfce4-session-4.12.1.ebuild,v 1.1 2015/03/16 16:02:47 mgorny Exp $
 
 EAPI=5
 inherit xfconf
@@ -11,19 +11,20 @@ HOMEPAGE="http://docs.xfce.org/xfce/xfce4-session/start"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="debug nls systemd upower +xscreensaver"
+IUSE="debug nls policykit systemd upower +xscreensaver"
 
-COMMON_DEPEND=">=dev-libs/dbus-glib-0.100
+COMMON_DEPEND=">=dev-libs/dbus-glib-0.100:=
 	x11-apps/iceauth
-	x11-libs/libSM
-	>=x11-libs/libwnck-2.30:1
-	x11-libs/libX11
-	>=xfce-base/libxfce4util-4.11
-	>=xfce-base/libxfce4ui-4.11
-	>=xfce-base/xfconf-4.10
+	x11-libs/libSM:=
+	>=x11-libs/libwnck-2.30:1=
+	x11-libs/libX11:=
+	>=xfce-base/libxfce4util-4.11:=
+	>=xfce-base/libxfce4ui-4.12.1:=
+	>=xfce-base/xfconf-4.10:=
 	!xfce-base/xfce-utils
-	upower? ( || ( >=sys-power/upower-0.9.23 sys-power/upower-pm-utils ) )
-	systemd? ( >=sys-auth/polkit-0.100 )"
+	!=xfce-base/libxfce4ui-4.12.0
+	policykit? ( >=sys-auth/polkit-0.102:= )
+	upower? ( || ( >=sys-power/upower-0.9.23 sys-power/upower-pm-utils ) )"
 RDEPEND="${COMMON_DEPEND}
 	x11-apps/xrdb
 	nls? ( x11-misc/xdg-user-dirs )
@@ -40,14 +41,14 @@ DEPEND="${COMMON_DEPEND}
 	sys-devel/gettext
 	virtual/pkgconfig"
 
+REQUIRED_USE="systemd? ( policykit )"
+
 pkg_setup() {
 	PATCHES=( "${FILESDIR}"/${PN}-alock_support_to_xflock4.patch )
 
-	use upower && PATCHES+=( "${FILESDIR}"/${P}-upower-0.99.0.patch )
-
 	XFCONF=(
 		--docdir="${EPREFIX}"/usr/share/doc/${PF}
-		$(use_enable systemd)
+		$(use_enable policykit polkit)
 		--with-xsession-prefix="${EPREFIX}"/usr
 		$(xfconf_use_debug)
 		)
