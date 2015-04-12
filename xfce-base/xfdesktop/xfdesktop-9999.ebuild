@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfdesktop/xfdesktop-4.11.8.ebuild,v 1.1 2014/09/16 10:57:14 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfdesktop/xfdesktop-4.12.1.ebuild,v 1.2 2015/04/01 16:22:15 mgorny Exp $
 
 EAPI=5
 inherit xfconf
@@ -14,21 +14,22 @@ KEYWORDS=""
 IUSE="debug libnotify +thunar"
 
 # src/xfdesktop-file-utils.c:#if GLIB_CHECK_VERSION (2, 38, 0)
-RDEPEND=">=dev-libs/dbus-glib-0.100
-	>=dev-libs/glib-2.20
-	>=x11-libs/gtk+-2.24:2
+RDEPEND=">=x11-libs/cairo-1.6:=
+	>=dev-libs/dbus-glib-0.100:=
+	>=dev-libs/glib-2.20:=
+	>=x11-libs/gtk+-2.24:2=
 	x11-libs/libSM
-	>=x11-libs/libwnck-2.30:1
-	x11-libs/libX11
-	>=xfce-base/exo-0.8
-	>=xfce-base/garcon-0.3
-	>=xfce-base/libxfce4ui-4.11
-	>=xfce-base/libxfce4util-4.11
-	>=xfce-base/xfconf-4.10
-	libnotify? ( >=x11-libs/libnotify-0.7 )
+	>=x11-libs/libwnck-2.30:1=
+	x11-libs/libX11:=
+	>=xfce-base/exo-0.8:=
+	>=xfce-base/garcon-0.3:=
+	>=xfce-base/libxfce4ui-4.11:=
+	>=xfce-base/libxfce4util-4.11:=
+	>=xfce-base/xfconf-4.10:=
+	libnotify? ( >=x11-libs/libnotify-0.7:= )
 	thunar? (
-		>=dev-libs/glib-2.38
-		>=xfce-base/thunar-1.6[dbus]
+		>=dev-libs/glib-2.38:=
+		>=xfce-base/thunar-1.6:=[dbus]
 		)"
 DEPEND="${RDEPEND}
 	dev-util/intltool
