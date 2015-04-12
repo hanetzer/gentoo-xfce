@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfce4-settings/xfce4-settings-4.11.3.ebuild,v 1.1 2014/09/16 10:52:21 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfce4-settings/xfce4-settings-4.12.0.ebuild,v 1.1 2015/03/08 15:06:38 mgorny Exp $
 
 EAPI=5
 inherit xfconf
@@ -11,7 +11,7 @@ HOMEPAGE="http://www.xfce.org/projects/"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="debug libcanberra libnotify upower +xklavier"
+IUSE="debug libcanberra libinput libnotify upower +xklavier"
 
 RDEPEND=">=dev-libs/dbus-glib-0.100
 	>=dev-libs/glib-2.24
@@ -27,6 +27,7 @@ RDEPEND=">=dev-libs/dbus-glib-0.100
 	>=xfce-base/libxfce4util-4.11
 	>=xfce-base/xfconf-4.10
 	libcanberra? ( >=media-libs/libcanberra-0.25[sound] )
+	libinput? ( x11-drivers/xf86-input-libinput )
 	libnotify? ( >=x11-libs/libnotify-0.7 )
 	upower? ( || ( >=sys-power/upower-0.9.23 sys-power/upower-pm-utils ) )
 	xklavier? ( >=x11-libs/libxklavier-5 )"
@@ -40,6 +41,7 @@ DEPEND="${RDEPEND}
 pkg_setup() {
 	XFCONF=(
 		$(use_enable upower upower-glib)
+		$(use_enable libinput xorg-libinput)
 		$(use_enable libnotify)
 		$(use_enable xklavier libxklavier)
 		$(use_enable libcanberra sound-settings)
