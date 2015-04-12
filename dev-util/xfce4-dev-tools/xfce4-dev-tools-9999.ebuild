@@ -1,6 +1,6 @@
-# Copyright 1999-2014 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/xfce4-dev-tools/xfce4-dev-tools-4.11.0.ebuild,v 1.1 2014/03/11 13:09:57 ssuominen Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/xfce4-dev-tools/xfce4-dev-tools-4.12.0.ebuild,v 1.1 2015/03/08 15:06:40 mgorny Exp $
 
 EAPI=5
 inherit xfconf
@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS=""
 IUSE=""
 
-RDEPEND=">=dev-libs/glib-2.24"
+RDEPEND=">=dev-libs/glib-2.30"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 
