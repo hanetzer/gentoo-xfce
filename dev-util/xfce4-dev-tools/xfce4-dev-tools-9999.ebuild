@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/xfce4-dev-tools/xfce4-dev-tools-4.12.0.ebuild,v 1.1 2015/03/08 15:06:40 mgorny Exp $
+# $Id$
 
 EAPI=5
 inherit xfconf
@@ -17,7 +17,9 @@ RDEPEND=">=dev-libs/glib-2.30"
 DEPEND="${RDEPEND}
 	virtual/pkgconfig"
 
-DOCS=( AUTHORS ChangeLog HACKING NEWS README )
+pkg_setup() {
+	DOCS=( AUTHORS ChangeLog HACKING NEWS README )
+}
 
 # Avoid running elibtoolize (bug #450452)
 src_prepare() { :; }
