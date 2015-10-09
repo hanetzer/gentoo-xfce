@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/exo/exo-0.10.4.ebuild,v 1.1 2015/03/25 09:49:38 mgorny Exp $
+# $Id$
 
 EAPI=5
 inherit xfconf
@@ -20,6 +20,7 @@ RDEPEND=">=dev-lang/perl-5.6
 	>=xfce-base/libxfce4ui-4.10:=
 	>=xfce-base/libxfce4util-4.10:="
 DEPEND="${RDEPEND}
+	dev-util/gtk-doc-am
 	dev-util/intltool
 	sys-devel/gettext
 	virtual/pkgconfig"
@@ -28,7 +29,6 @@ pkg_setup() {
 	XFCONF=(
 		--docdir="${EPREFIX}"/usr/share/doc/${PF}
 		$(xfconf_use_debug)
-		--with-html-dir="${EPREFIX}"/usr/share/doc/${PF}/html
 		)
 
 	[[ ${CHOST} == *-darwin* ]] && XFCONF+=( --disable-visibility ) #366857
