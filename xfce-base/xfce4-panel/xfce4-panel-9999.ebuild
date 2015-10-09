@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfce4-panel/xfce4-panel-4.12.0.ebuild,v 1.1 2015/03/08 15:06:38 mgorny Exp $
+# $Id$
 
 EAPI=5
 inherit xfconf
@@ -27,6 +27,7 @@ RDEPEND=">=dev-libs/dbus-glib-0.100
 	>=xfce-base/xfconf-4.10"
 DEPEND="${RDEPEND}
 	dev-lang/perl
+	dev-util/gtk-doc-am
 	dev-util/intltool
 	sys-devel/gettext
 	virtual/pkgconfig"
@@ -36,7 +37,6 @@ pkg_setup() {
 		--docdir="${EPREFIX}"/usr/share/doc/${PF}
 		--enable-gtk3
 		$(xfconf_use_debug)
-		--with-html-dir="${EPREFIX}"/usr/share/doc/${PF}/html
 		)
 
 	DOCS=( AUTHORS ChangeLog NEWS THANKS )
