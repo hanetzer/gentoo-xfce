@@ -1,6 +1,6 @@
 # Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/xfce-base/xfdesktop/xfdesktop-4.12.1.ebuild,v 1.2 2015/04/01 16:22:15 mgorny Exp $
+# $Id$
 
 EAPI=5
 inherit xfconf
@@ -18,7 +18,6 @@ RDEPEND=">=x11-libs/cairo-1.6:=
 	>=dev-libs/dbus-glib-0.100:=
 	>=dev-libs/glib-2.20:=
 	>=x11-libs/gtk+-2.24:2=
-	x11-libs/libSM
 	>=x11-libs/libwnck-2.30:1=
 	x11-libs/libX11:=
 	>=xfce-base/exo-0.8:=
