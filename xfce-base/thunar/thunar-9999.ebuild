@@ -13,7 +13,7 @@ HOMEPAGE="http://www.xfce.org/projects/ http://thunar.xfce.org/"
 LICENSE="GPL-2 LGPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="+dbus debug exif libnotify pcre startup-notification test udisks +xfce_plugins_trash"
+IUSE="+dbus debug exif libnotify pcre test udisks +xfce_plugins_trash"
 
 GVFS_DEPEND=">=gnome-base/gvfs-1.18.3"
 COMMON_DEPEND=">=dev-lang/perl-5.6
@@ -28,7 +28,6 @@ COMMON_DEPEND=">=dev-lang/perl-5.6
 	exif? ( >=media-libs/libexif-0.6.19 )
 	libnotify? ( >=x11-libs/libnotify-0.7 )
 	pcre? ( >=dev-libs/libpcre-6 )
-	startup-notification? ( x11-libs/startup-notification )
 	udisks? ( virtual/libgudev:= )
 	xfce_plugins_trash? ( >=xfce-base/xfce4-panel-4.10 )"
 RDEPEND="${COMMON_DEPEND}
@@ -52,13 +51,11 @@ pkg_setup() {
 	XFCONF=(
 		--docdir="${EPREFIX}"/usr/share/doc/${PF}
 		$(use_enable dbus)
-		$(use_enable startup-notification)
 		$(use_enable udisks gudev)
 		$(use_enable libnotify notifications)
 		$(xfconf_use_debug)
 		$(use_enable exif)
 		$(use_enable pcre)
-		--with-html-dir="${EPREFIX}"/usr/share/doc/${PF}/html
 		)
 
 	use xfce_plugins_trash || XFCONF+=( --disable-tpa-plugin )
